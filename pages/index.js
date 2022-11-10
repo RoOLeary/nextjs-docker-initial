@@ -34,7 +34,7 @@ export default function Home({ allo }) {
                 return (
                   <li key={i}>
                     <span>{r.name}</span>
-                    <img src={r.image} />
+                    {/* <img src={r.image} /> */}
                   </li>
                 );
             }): <li>Nada yet</li>}

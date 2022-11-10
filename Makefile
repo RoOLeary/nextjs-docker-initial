@@ -1,8 +1,6 @@
 up:
+	@echo "hmmm"
 	docker run -p 3000:3000 nextjs-docker
-
-down:
-	docker stop nextjs-docker
 
 build:
 	docker build -t nextjs-docker .   
@@ -13,7 +11,7 @@ scan:
 	docker scan
 
 down:
-	docker-compose down --remove-orphans
+	docker stop nextjs-docker
 
 clean:
 	docker-compose rm -vsf
