@@ -40,9 +40,10 @@ export default function Home({ allo }) {
                   </li>
                 );
             }): <li>Nada yet</li>}
-            <li>Test</li>
+            
           </ul>
          <TextVisual />
+         <p>Something went missing. </p>
         </div>
 
       
