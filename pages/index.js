@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Test from '../components/Test'
+// import Test from '../components/Test'
+import Faq from '../components/Faq/Faq'
 
 export default function Home({ allo }) {
   const [data, setData] = useState('')
@@ -26,7 +27,8 @@ export default function Home({ allo }) {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js</a> on Docker{data['name'] ? `, ${data['name']}!` : `!`}
         </h1>
-        <Test />
+        {/* <Test /> */}
+        <Faq />
         <div className={styles.description}>
           Here goes: 
           <ul>
