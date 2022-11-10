@@ -1,8 +1,8 @@
 import '../styles/globals.css';
 
 // eslint-disable-next-line react/prop-types
-function MyApp({Component, pageProps}) {
+function DockerInitial({Component, pageProps}) {
 	return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default DockerInitial;

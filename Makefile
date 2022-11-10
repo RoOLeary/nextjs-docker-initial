@@ -1,71 +1,33 @@
-	up:
-		docker run -p 3000:3000 nextjs-docker
-		@echo ""
-		@echo "You can access the project at: https://$(host)"
-		@echo "DB Admin: https://$(db_admin_host)"
-		@echo ""
+up:
+	docker run -p 3000:3000 nextjs-docker
 
-	build:
-		docker build -t nextjs-docker .   
-		# @echo "If you get a 503 Service Unavailable error, the database might still be importing in the background. Please allow a few minutes for this process to complete."
-		@echo ""
+down:
+	docker stop nextjs-docker
 
-	scan:
-		docker scan
+build:
+	docker build -t nextjs-docker .   
+	@echo "If you get a 503 Service Unavailable error, the database might still be importing in the background. Please allow a few minutes for this process to complete."
+	@echo ""
 
-	down:
-		docker-compose down --remove-orphans
+scan:
+	docker scan
 
-	clean:
-		docker-compose rm -vsf
-		docker-compose down -v --remove-orphans
+down:
+	docker-compose down --remove-orphans
 
-	restart:
-		docker-compose down --remove-orphans
-		docker-compose up -d
+clean:
+	docker-compose rm -vsf
+	docker-compose down -v --remove-orphans
 
-	sync:
-		docker exec -it $(container_id) ./craft project-config/apply
+restart:
+	docker-compose down --remove-orphans
+	docker-compose up -d
 
-	rebuildconfig:
-		docker exec -it $(container_id) ./craft project-config/rebuild
+sync:
+	docker exec -it $(container_id) ./craft project-config/apply
 
-	reindex:
-		docker exec -it $(container_id) ./craft resave/entries --update-search-index
+rebuildconfig:
+	docker exec -it $(container_id) ./craft project-config/rebuild
 
-	sync-db:
-		docker-compose down --remove-orphans
-		docker volume rm website_dbdata
-		docker-compose up -d
-		@echo ""
-		@echo "You can access the project at: https://$(host)"
-		@echo "DB Admin: https://$(db_admin_host)"
-		@echo "If you get a 503 Service Unavailable error, the database might still be importing in the background. Please allow a few minutes for this process to complete."
-		@echo ""
-
-	gc:
-		docker exec -it $(container_id) ./craft gc
-
-	composer-install:
-		docker exec -it $(container_id) composer install
-
-	composer-update:
-		docker exec -it $(container_id) composer update
-
-	npm-install:
-		docker exec -it $(container_id) npm install
-
-	npm-dev:
-		docker exec -it $(container_id) npm run dev
-
-	npm-watch:
-		docker exec -it $(container_id) npm run watch
-
-	npm-prod:
-		docker exec -it $(container_id) npm run prod
-
-	jumpin:
-		docker exec -it $(container_id) bash
-
-	logs:
-		docker-compose logs -f
+reindex:
+	docker exec -it $(container_id) ./craft resave/entries --update-search-index
