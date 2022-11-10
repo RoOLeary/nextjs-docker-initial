@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-// import Test from '../components/Test'
+import TextVisual from '../components/TextVisual'
 import Faq from '../components/Faq/Faq'
 
 export default function Home({ allo }) {
@@ -42,7 +42,7 @@ export default function Home({ allo }) {
             }): <li>Nada yet</li>}
             <li>Test</li>
           </ul>
-         
+         <TextVisual />
         </div>
 
       
