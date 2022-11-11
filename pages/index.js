@@ -43,7 +43,9 @@ export default function Home({ allo }) {
             
           </ul>
          <TextVisual />
+
          <p>Something went missing. </p>
+
         </div>
 
       
