@@ -44,7 +44,7 @@ export default function Home({ allo }) {
           </ul>
          <TextVisual />
 
-         <p>Something was triggered - a preview </p>
+         <p>Something was triggered - a result!</p>
 
         </div>
 
