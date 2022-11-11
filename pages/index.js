@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import MainLayout from '../components/Layouts/MainLayout'
+import TextVisual from '../components/TextVisual'
 import Faq from '../components/Faq/Faq'
 
 export default function Home({ allo }) {
@@ -40,9 +41,12 @@ export default function Home({ allo }) {
                   </li>
                 );
             }): <li>Nada yet</li>}
-
+            
           </ul>
-         
+         <TextVisual />
+
+         <p>Something came back. </p>
+
         </div>
 
       

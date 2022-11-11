@@ -37,4 +37,4 @@ export const TextVisual = ({ textVisualHeading, textVisualContent, textVisualIma
     );
 }
 
-
+export default TextVisual 

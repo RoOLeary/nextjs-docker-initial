@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import Link from 'next/link';
 import FaqItem from './FaqItem'; 
-import { IFaqs } from '../../interfaces/IFaq'
+// import { IFaqs } from './../../interfaces/IFaq'
 
 const Faq = () => {
 
