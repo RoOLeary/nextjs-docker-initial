@@ -43,7 +43,9 @@ export default function Home({ allo }) {
             
           </ul>
          <TextVisual />
-         <div>Check on different branch.</div>
+
+         <p>Something went missing. </p>
+
         </div>
 
       
