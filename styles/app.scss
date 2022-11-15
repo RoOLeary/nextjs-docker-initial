@@ -1,24 +1,73 @@
+@charset 'utf-8';
 
-@import './1-base/grid';
-// @import './2-fonts/fonts.scss';
-// @import './3-variables/vars.scss';
-// @import './4-utils/utils.scss';
+// Vendor
+// @import '~reset-css/sass/reset';
 
+// 1. Settings
+@import '1-settings/fonts';
+@import '1-settings/variables';
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    // background: #e1171e;
-}
+// 2. Settings
+@import '2-tools/animations';
+@import '2-tools/functions';
+@import '2-tools/mixins';
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+// 3. Global
+// @import '3-global/a';
+// @import '3-global/b';
+@import '3-global/body';
+@import '3-global/global';
+@import '3-global/h1';
+// @import '3-global/h2';
+// @import '3-global/h3';
+// @import '3-global/h4';
+@import '3-global/html';
+// @import '3-global/img';
+// @import '3-global/input';
 
-* {
-  box-sizing: border-box;
-}
+// 4. Objects
+@import '4-objects/grid';
+@import '4-objects/media';
+@import '4-objects/page';
+@import '4-objects/wrapper';
+
+// // 5. Components
+// @import '5-components/blocks/session';
+// @import '5-components/blocks/sessions';
+// @import '5-components/blocks/blocks';
+// @import '5-components/blocks/faq';
+// @import '5-components/blocks/header';
+// @import '5-components/blocks/hero';
+// @import '5-components/blocks/partners';
+// @import '5-components/blocks/sign-up';
+// @import '5-components/blocks/speaker';
+// @import '5-components/blocks/speakers';
+// @import '5-components/blocks/stats';
+// @import '5-components/blocks/text';
+// @import '5-components/blocks/text-image';
+// @import '5-components/blocks/ticket';
+// @import '5-components/blocks/tickets';
+// @import '5-components/blocks/video';
+// @import '5-components/button';
+// @import '5-components/challenges';
+// @import '5-components/coming-soon';
+// @import '5-components/formatted';
+// @import '5-components/footer';
+// @import '5-components/input/checkbox';
+// @import '5-components/input/text';
+// @import '5-components/modal';
+// @import '5-components/modal/speaker';
+@import '5-components/nav';
+// @import '5-components/partners';
+// @import '5-components/questions';
+// @import '5-components/section';
+// @import '5-components/sign-up';
+// @import '5-components/tabs';
+// @import '5-components/title';
+// @import '5-components/xhr-modal';
+
+// 6. Utils
+// @import '6-utils/margin';
+// @import '6-utils/text';
+@import '6-utils/visibility';
+

@@ -1,0 +1,8 @@
+*,
+*::after,
+*::before {
+    @include font-1;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    outline: none;
+}

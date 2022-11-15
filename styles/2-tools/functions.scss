@@ -1,0 +1,37 @@
+@function encode-color($color) {
+    @if type-of($color) == 'color' {
+        $hex: str-slice(ie-hex-str($color), 4);
+        $color: unquote('#{$hex}');
+    }
+
+    $color: '%23' + $color;
+    @return $color;
+}
+
+@function space($key, $multiplier: 1) {
+    @if map-has-key($spaces, $key) {
+        @return (map-get($spaces, $key) * $multiplier);
+    }
+
+    @warn 'Space "#{$key}" is not defined in map $spaces.';
+    @return null;
+}
+
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+@function wrapper-width($key: m) {
+    @if map-has-key($wrapper-widths, $key) {
+        @return map-get($wrapper-widths, $key);
+    }
+
+    @warn 'Wrapper width "#{$key}" is not defined in map $wrapper-widths.';
+    @return null;
+}

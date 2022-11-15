@@ -1,0 +1,62 @@
+@mixin grid-col($selector, $i) {
+    #{$selector} {
+        flex-basis: calc(#{$i} * (100% / #{$grid-columns}));
+    }
+}
+
+@mixin grid-gap($selector, $val) {
+    #{$selector} {
+        margin: ($val * -0.5);
+
+        & > .o-grid__col {
+            border-width: ($val * 0.5);
+        }
+    }
+}
+
+.o-grid {
+    display: flex;
+    flex-flow: row wrap;
+
+    &__col {
+        background-clip: padding-box;
+        border: 0px solid transparent;
+        flex: 0 0 100%;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+
+    &--middle {
+        align-items: center;
+    }
+
+    &--evenly {
+        justify-content: space-evenly;
+    }
+}
+
+@for $i from 1 through $grid-columns {
+    @include grid-col('.o-grid__col--span-#{$i}', $i);
+}
+
+@each $key, $val in $spaces {
+    @include grid-gap('.o-grid--gap-#{$key}', $val);
+}
+
+@each $screen in map-keys($screens) {
+    @include screen-min($screen) {
+        .#{$screen}\:o-grid--reverse {
+            flex-direction: row-reverse;
+        }
+
+        @for $i from 1 through $grid-columns {
+            @include grid-col('.#{$screen}\\:o-grid__col--span-#{$i}', $i);
+        }
+
+        @each $key, $val in $spaces {
+            @include grid-gap('.#{$screen}\\:o-grid--gap-#{$key}', $val);
+        }
+    }
+}

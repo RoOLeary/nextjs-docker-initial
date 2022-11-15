@@ -3,7 +3,7 @@ import Image from 'next/image'
 import imageLoader from '../../../imageLoader'
 import { useRouter } from 'next/router'
 import { useRef, useEffect } from 'react'
-// import { AnimateSharedLayout, motion } from 'framer-motion'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 // import styles from '../styles/Nav.module.css'
 import { isActiveLink } from '../../../lib/utils';
 import styled from 'styled-components';
@@ -67,40 +67,29 @@ const Nav = (): JSX.Element => {
     }
 
     const closeOnChange = (e) => {
-        // e.preventDefault();
-        setTimeout(() => {
+        // console.log(mobTogglRef.current);
+        setTimeout((e) => {
             mobTogglRef.current.classList.toggle('mobile-menu-active');
             menuRef.current.classList.toggle("show");
         }, 500)
     }
 
-    // const handleClick = (e) => {
-    //     e.preventDefault();
-    //     console.log(e); 
-    // } 
-
-
     const update = (height) => {
         const num = window.scrollY / height
         const multiplier = Math.min(Math.max(num, 0), 1)
-        unitRef.current.style.setProperty('--multiplier', 1)
+        unitRef.current.style.setProperty('--multiplier', multiplier)
     }
 
-    // useEffect(() => {
-    //     let height = unitRef.current.offsetHeight;
-    //     unitRef.current.style.setProperty('--multiplier', 1)
-    //     window.addEventListener('scroll', () => update(height)); 
-    // }, []);
-
-
-   
+    useEffect(() => {
+        let height = unitRef.current.offsetHeight;
+        window.addEventListener('scroll', () => update(height)); 
+    }, []);
 
     return (
-        <>
-        <div className={'c-nav js-nav t-dark'} ref={unitRef}>
+        <nav className={'c-nav js-nav t-dark'} ref={unitRef}>
             <div className={'c-nav__left'}>
-                <Link href={`/`} className={"c-nav__logoLink"} legacyBehavior>
-                    <Image alt={'Picnic Logo'} src={'/assets/img/logo.png'} width={50} height={50} loader={imageLoader} />
+                <Link href={`/`} className={"c-nav__logoLink"}>
+                    <Image alt={'Ro Ro Lo Go'} src={'/assets/img/logo.png'} width={50} height={50} loader={imageLoader} />
                 </Link>
             </div>
             <label className={'c-nav__mobileMenuToggle'} htmlFor="navMobileMenuToggle" ref={mobTogglRef} onClick={toggleMobileMenu}>
@@ -109,17 +98,14 @@ const Nav = (): JSX.Element => {
                 <div></div>
             </label>
             <div className="c-nav__mobileMenu c-nav__right" ref={menuRef}>
+                <AnimateSharedLayout>
                 <ul className="c-nav__menu">
                     {links.map(({ name, href }) => (
                         <li key={name} className="c-nav__menuItem">
-                            <Link
-                                href={href}
-                                className={'c-nav__menuLink'}
-                                onClick={(e) => closeOnChange(e)}
-                                >
+                            <Link href={href} className={'c-nav__menuLink'} onClick={(e) => closeOnChange(e)}>
                                     {name}
                                     {isActiveLink(href, router.pathname) && (
-                                        <div
+                                        <motion.div
                                             layoutId="navigation-underline"
                                             className="navigation-underline"
                                             animate
@@ -128,26 +114,20 @@ const Nav = (): JSX.Element => {
                             </Link>
                         </li>
                     ))}
-                    {/* {session ? <li className="c-nav__menuItem"><Link href={"/members"} className="c-nav__menuLink">Members</Link></li> : ''}
-                    <li className="c-nav__menuItem">
-                        {!session ? <>
-                        <a className="c-button c-button--primary" onClick={() => signIn()}>Sign In</a></>
-                        :
-                        <>
-                        <a className="c-button c-button--primary" onClick={() => signOut()}>Sign Out</a>
-                        </>}
-                    </li>  */}
-                </ul>
+                   
+                   
+                                    </ul>
+                </AnimateSharedLayout>
             </div>
-            {/* {session ? 
+            {/* {session && 
                 <UserInfo>
                     <UserImage loader={imageLoader} src={session.user.image} width="44px" height="44px" className={''} />
                     <p>Signed in as {session.user.name}</p>
                 </UserInfo>
-            : null } */}
-        </div>
-        </>
-    );
+            } */}
+        </nav>
+       
+    )
 }
 
 export default Nav; 

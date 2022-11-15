@@ -53,9 +53,9 @@ export default function Home({ allo }) {
 				}): <li>Nada yet</li>}
 
 			</ul>
-			<Hero />
+			{/* <Hero />
 			<br />
-			<Button text="Breaking Stuff Rocks" />
+			<Button text="Breaking Stuff Rocks" /> */}
 			<br />
 			<Cards />
 			<br />
