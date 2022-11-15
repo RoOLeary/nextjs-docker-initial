@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 import Faq from '../components/Faq/Faq'
 import Hero from '../components/Hero/Hero'
@@ -28,19 +27,19 @@ export default function Home({ allo }) {
 	}, [])
 
 	return (
-		<div className={styles.container}>
+		<>
 		<Head>
 			<title>Create Next App</title>
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 		<MainLayout>
-		<main className={styles.main}>
-			<h1 className={styles.title}>
+		<main className={'main'}>
+			<h1 className={'title'}>
 			{word ? word : `Welcome to ${data['name']}!`}
 			</h1>
 			{/* <Test /> */}
 			<Faq />
-			<div className={styles.description}>
+			<div className={'description'}>
 			Here goes: 
 			<ul>
 				{data['results'] ? data['results'].map((r, i) => {
@@ -75,17 +74,17 @@ export default function Home({ allo }) {
 		
 		</main>
 		</MainLayout>
-		<footer className={styles.footer}>
+		<footer className={'footer'}>
 			<a
 			href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
 			target="_blank"
 			rel="noopener noreferrer"
 			>
 			Powered by{' '}
-			<img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+			<img src="/vercel.svg" alt="Vercel Logo" className={'logo'} />
 			</a>
 		</footer>
-		</div>
+		</>
 	)
 }
 
