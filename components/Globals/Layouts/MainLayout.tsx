@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import Nav from './../Nav';
+import Nav from './../Nav/Nav';
 // import Footer from './Footer';
 // import { motion } from 'framer-motion';
 
@@ -18,10 +18,8 @@ type Props = {
 const MainLayout = ({ children }: Props): JSX.Element => (
        
         <>
-            {/* <Nav /> */}
+            <Nav />
             {children}
-            
-          
         </>
 
     )

@@ -1,6 +1,11 @@
-# With Docker
+# PicNext Prototype
 
-This examples shows how to use Docker with Next.js based on the [deployment documentation](https://nextjs.org/docs/deployment#docker-image). Additionally, it contains instructions for deploying to Google Cloud Run. However, you can use any container-based deployment host.
+This is an initial sketch out of the Next.js side of the new [] web instance project.
+
+- NextJS with Typescript
+- Built with SCSS
+- Storybook for Documentation/Design System (likely to be separate)
+- Docker set up, please read below. Ideally
 
 ## How to use
 
@@ -22,16 +27,6 @@ pnpm create next-app --example with-docker nextjs-docker
 
 You can view your images created with `docker images`.
 
-### In existing projects
-
-To add support for Docker to an existing project, just copy the `Dockerfile` into the root of the project and add the following to the `next.config.js` file:
-
-```js
-// next.config.js
-module.exports = {
-  // ... rest of the configuration.
-  output: 'standalone',
-}
 ```
 
 This will build the project as a standalone app inside the Docker image.
@@ -64,9 +59,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-# nextjs-docker-initial
+

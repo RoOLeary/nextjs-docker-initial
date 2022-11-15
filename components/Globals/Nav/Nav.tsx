@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import imageLoader from '../../imageLoader'
+import imageLoader from '../../../imageLoader'
 import { useRouter } from 'next/router'
 import { useRef, useEffect } from 'react'
 // import { AnimateSharedLayout, motion } from 'framer-motion'
 // import styles from '../styles/Nav.module.css'
-import { isActiveLink } from '../../lib/utils';
+import { isActiveLink } from '../../../lib/utils';
 import styled from 'styled-components';
 
 const UserInfo = styled.div`
@@ -25,16 +25,20 @@ const links: { name: string; href: string }[] = [
     },
     {
         name: 'Download App',
-        href: '/all-components',
+        href: '/download-app',
     },
     {
         name: 'About Picnic',
-        href: '/posts',
+        href: '/about',
     },
     {
         name: 'FAQ',
-        href: '/about',
+        href: '/faqs',
     },
+    {
+        name: 'Careers',
+        href: '/careers',
+    },       
     {
         name: 'Contact',
         href: '/contact',
@@ -82,20 +86,21 @@ const Nav = (): JSX.Element => {
         unitRef.current.style.setProperty('--multiplier', 1)
     }
 
-    useEffect(() => {
-        let height = unitRef.current.offsetHeight;
-        unitRef.current.style.setProperty('--multiplier', 1)
-        window.addEventListener('scroll', () => update(height)); 
-    }, []);
+    // useEffect(() => {
+    //     let height = unitRef.current.offsetHeight;
+    //     unitRef.current.style.setProperty('--multiplier', 1)
+    //     window.addEventListener('scroll', () => update(height)); 
+    // }, []);
 
 
    
 
     return (
-        <nav className={'c-nav js-nav t-dark'} ref={unitRef}>
+        <>
+        <div className={'c-nav js-nav t-dark'} ref={unitRef}>
             <div className={'c-nav__left'}>
                 <Link href={`/`} className={"c-nav__logoLink"} legacyBehavior>
-                    <Image alt={'Ro Ro Lo Go'} src={'/assets/img/logo.png'} width={50} height={50} loader={imageLoader} />
+                    <Image alt={'Picnic Logo'} src={'/assets/img/logo.png'} width={50} height={50} loader={imageLoader} />
                 </Link>
             </div>
             <label className={'c-nav__mobileMenuToggle'} htmlFor="navMobileMenuToggle" ref={mobTogglRef} onClick={toggleMobileMenu}>
@@ -134,13 +139,14 @@ const Nav = (): JSX.Element => {
                     </li>  */}
                 </ul>
             </div>
-            {session && 
+            {/* {session ? 
                 <UserInfo>
                     <UserImage loader={imageLoader} src={session.user.image} width="44px" height="44px" className={''} />
                     <p>Signed in as {session.user.name}</p>
                 </UserInfo>
-            : null }
-        </nav>
+            : null } */}
+        </div>
+        </>
     );
 }
 

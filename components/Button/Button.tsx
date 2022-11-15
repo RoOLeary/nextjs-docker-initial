@@ -4,7 +4,10 @@
 const Button = ({text}:string) => {
 
     return(
-        <button className={'button'}>{text ? text : 'I am button, click me and feel my wrath'}</button>
+        <div>
+            <h3>Simple Button</h3>
+            <button className={'button'}>{text ? text : 'I am button, click me and feel my wrath'}</button>
+        </div>
     )
 
 }
