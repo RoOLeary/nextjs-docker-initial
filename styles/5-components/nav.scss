@@ -244,3 +244,24 @@
     top: -100px;
     z-index: 1000;
 }
+
+@media screen and (min-width: 960px) {
+    .navigation-underline{
+      border-top: 1px solid red;
+    }
+  }
+
+  .mobile-menu-active > div:first-child{
+    transform: rotate(45deg) translateZ(0)
+  }
+  .mobile-menu-active > div:nth-child(2){
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .mobile-menu-active > div:nth-child(3){
+    transform: rotate(-45deg) translateZ(0)
+  }
+  
+  .show{
+    transform: translateZ(0);
+  }
