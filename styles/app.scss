@@ -8,9 +8,9 @@
 @import '1-settings/variables';
 
 // 2. Settings
-@import '2-tools/animations';
-@import '2-tools/functions';
-@import '2-tools/mixins';
+@import '3-tools/animations';
+@import '3-tools/functions';
+@import '3-tools/mixins';
 
 // 3. Global
 // @import '3-global/a';
@@ -26,10 +26,10 @@
 // @import '3-global/input';
 
 // 4. Objects
-@import '4-objects/grid';
-@import '4-objects/media';
-@import '4-objects/page';
-@import '4-objects/wrapper';
+@import '6-objects/grid';
+@import '6-objects/media';
+@import '6-objects/page';
+@import '6-objects/wrapper';
 
 // // 5. Components
 // @import '5-components/blocks/session';
@@ -69,5 +69,5 @@
 // 6. Utils
 // @import '6-utils/margin';
 // @import '6-utils/text';
-@import '6-utils/visibility';
+@import '7-utils/visibility';
 

@@ -10,6 +10,7 @@ import CTA from '../components/CTA/CTA'
 import Chapters from '../components/Chapters/Chapters'
 import MapComponent from '../components/Map/MapComponent'
 import MiniBanner from '../components/MiniBanner/MiniBanner'
+import Note from '../components/Note/Note'
 import USPs from '../components/USPs/USPs'
 import { useTypingText } from '../hooks/useTypingText';
 
@@ -67,6 +68,8 @@ export default function Home({ allo }) {
 			<MapComponent />
 			<br />
 			<MiniBanner />
+			<br />
+			<Note />
 			<br />
 			<USPs />
 		</div>
