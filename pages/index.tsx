@@ -14,6 +14,7 @@ import MiniBanner from '../components/MiniBanner'
 import Note from '../components/Note'
 import TextVisual from '../components/TextVisual'
 import USPs from '../components/USPs'
+import Video from '../components/Video'
 import { useTypingText } from '../hooks/useTypingText';
 
 export default function Home({ allo }) {
@@ -78,9 +79,11 @@ export default function Home({ allo }) {
 				<br />
 				<Note />
 				<br />
-				<USPs />
-				<br />
 				<TextVisual />
+				<br />
+				<USPs />
+				<br/>
+				<Video />
 			</div>
 		</main>
 		</MainLayout>
