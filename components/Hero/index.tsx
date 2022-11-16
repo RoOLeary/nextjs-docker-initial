@@ -64,7 +64,7 @@ const Hero = ({ eyebrow, heading, subHeading }: IHero ): JSX.Element => {
 
             <div className={"b-hero__content"}>
                 <div className={"b-hero__contentInner"}>
-                
+                    <h1>Supermarket on wheels</h1>
                     <h4 className={"b-hero__eyebrow"}>You will read this first</h4>
                     <h1 className={"b-hero__heading"}>THEN THIS</h1>
                     <div className={"b-hero__intro"}>

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import Nav from './../Nav/Nav';
+import Nav from '../Nav';
 import Footer from './../Footer/Footer';
 // import { motion } from 'framer-motion';
 

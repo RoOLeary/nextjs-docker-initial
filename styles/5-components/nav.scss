@@ -64,13 +64,14 @@
 
     &__menuLink {
         // color: rgb(var(--color-bg));
-        color: red;
+        color: rgb(var(--color-1));
         cursor: pointer;
         display: block;
         font-weight: 600;
         line-height: 48px;
         text-decoration: none;
         white-space: nowrap;
+        font-family: Roboto;
 
         @include screen-max(l) {
             font-size: var(--font-size-l);
@@ -247,7 +248,7 @@
 
 @media screen and (min-width: 960px) {
     .navigation-underline{
-      border-top: 1px solid red;
+      border-top: 1px solid rgb(var(--color-1));
     }
   }
 

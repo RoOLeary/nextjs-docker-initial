@@ -12,6 +12,7 @@ import Chapters from '../components/Chapters/Chapters'
 import MapComponent from '../components/Map/MapComponent'
 import MiniBanner from '../components/MiniBanner'
 import Note from '../components/Note'
+import TextVisual from '../components/TextVisual'
 import USPs from '../components/USPs'
 import { useTypingText } from '../hooks/useTypingText';
 
@@ -78,6 +79,8 @@ export default function Home({ allo }) {
 				<Note />
 				<br />
 				<USPs />
+				<br />
+				<TextVisual />
 			</div>
 		</main>
 		</MainLayout>

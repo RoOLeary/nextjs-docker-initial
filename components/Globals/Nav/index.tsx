@@ -24,7 +24,7 @@ const links: { name: string; href: string }[] = [
         href: '/',
     },
     {
-        name: 'Download App',
+        name: 'Download app',
         href: '/download-app',
     },
     {
@@ -89,7 +89,7 @@ const Nav = (): JSX.Element => {
         <nav className={'c-nav js-nav t-dark'} ref={unitRef}>
             <div className={'c-nav__left'}>
                 <Link href={`/`} className={"c-nav__logoLink"}>
-                    <Image alt={'Logo'} src={'/assets/img/logo.png'} width={50} height={50} loader={imageLoader} />
+                    <Image alt={'Logo'} src={'/assets/images/logo.svg'} width={50} height={50} loader={imageLoader} />
                 </Link>
             </div>
             <label className={'c-nav__mobileMenuToggle'} htmlFor="navMobileMenuToggle" ref={mobTogglRef} onClick={toggleMobileMenu}>
@@ -114,9 +114,7 @@ const Nav = (): JSX.Element => {
                             </Link>
                         </li>
                     ))}
-                   
-                   
-                                    </ul>
+                </ul>
                 </AnimateSharedLayout>
             </div>
             {/* {session && 
