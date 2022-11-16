@@ -15,7 +15,7 @@ import Note from '../components/Note'
 import USPs from '../components/USPs'
 import { useTypingText } from '../hooks/useTypingText';
 
-export default function Home({ allo }) {
+export default function AllComponents({ allo }) {
 	const [data, setData] = useState('')
 	const { word } = useTypingText(['Testing', 'To See', 'If This', 'works'], 250, 20);
 	useEffect(() => {

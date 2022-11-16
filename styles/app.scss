@@ -1,16 +1,10 @@
 @charset 'utf-8';
 
-// Vendor
-// @import '~reset-css/sass/reset';
-
 // 1. Settings
 @import '1-settings/fonts';
 @import '1-settings/variables';
 
-// 2. Settings
-@import '3-tools/animations';
-@import '3-tools/functions';
-@import '3-tools/mixins';
+// 2. Fonts
 
 // 3. Global
 // @import '3-global/a';
@@ -25,11 +19,12 @@
 // @import '3-global/img';
 // @import '3-global/input';
 
-// 4. Objects
-@import '6-objects/grid';
-@import '6-objects/media';
-@import '6-objects/page';
-@import '6-objects/wrapper';
+
+// 4. Tools 
+@import '4-tools/animations';
+@import '4-tools/functions';
+@import '4-tools/mixins';
+
 
 // // 5. Components
 // @import '5-components/blocks/session';
@@ -66,8 +61,16 @@
 // @import '5-components/title';
 // @import '5-components/xhr-modal';
 
-// 6. Utils
+// 6. Objects
+@import '6-objects/grid';
+@import '6-objects/media';
+@import '6-objects/page';
+@import '6-objects/wrapper';
+
+// 7. Utils
 // @import '6-utils/margin';
 // @import '6-utils/text';
 @import '7-utils/visibility';
+
+
 
