@@ -7,10 +7,14 @@ const About = ({entry}) => {
     
     return(
         <MainLayout>
-            
-            <h1>{entry.title}</h1>
-            <p>Just a scratch about page, nothing to see here yet</p>
-
+            <section className="b-text c-section" id="about">
+                <div className="o-wrapper">
+                    <div className="o-grid o-grid--gap-xxl">
+                        <h1>{entry.title}</h1>
+                        <p>Just a scratch about page, nothing to see here yet</p>
+                    </div>
+                </div>
+            </section>
 
         </MainLayout>
 
