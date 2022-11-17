@@ -1,0 +1,268 @@
+@keyframes navSubmenu {
+    0% { transform: translate3d(0, -16px, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+.c-nav {
+    --multiplier: 0;
+    align-items: center;
+    background: rgba(var(--color-1), var(--multiplier));
+    color: rgb(var(--color-bg));
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    left: 0;
+    padding: 0 space(l);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    @include screen-min(m) {
+        height: 80px;
+    }
+
+    &__left {
+        align-items: center;
+        display: flex;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__logo {
+        height: 32px;
+        min-width: 0;
+    }
+
+    &__menu {
+        @include screen-max(l) {
+            margin-bottom: space(xl);
+        }
+        
+        @include screen-min(l) {
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &__menuItem {
+        @include screen-max(l) {
+            border-bottom: 1px solid rgba(var(--color-4), 0.15);
+        }
+
+        @include screen-min(l) {
+            margin-right: 24px;
+            position: relative;
+
+            &:hover {
+                .c-nav__submenu {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__menuLink {
+        // color: rgb(var(--color-bg));
+        color: rgb(var(--color-1));
+        cursor: pointer;
+        display: block;
+        font-weight: 600;
+        line-height: 48px;
+        text-decoration: none;
+        white-space: nowrap;
+        font-family: Roboto;
+
+        @include screen-max(l) {
+            font-size: var(--font-size-l);
+            padding: 8px 0;
+        }
+    }
+
+    &__submenu {
+        @include screen-max(l) {
+            padding-bottom: space(m);
+        }
+
+        @include screen-min(l) {
+            animation: navSubmenu 500ms cubic-bezier(.25, 1, .25, 1) both;
+            background: rgb(var(--color-bg));
+            border-radius: 4px;
+            box-shadow: 0 16px 32px rgba(var(--color-1), 0.25);
+            display: none;
+            left: calc(50% - 96px);
+            width: 192px;
+            padding: 8px 0;
+            position: absolute;
+        }
+    }
+
+    &__submenuItem {
+        @include screen-min(l) {
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(var(--color-2), 0.1);
+            }
+        }
+    }
+
+    &__submenuLink {
+        display: block;
+        text-decoration: none;
+
+        @include screen-max(l) {
+            color: rgb(var(--color-4));
+            font-size: var(--font-size-l);
+            padding: 12px 0 12px 20px;
+            position: relative;
+
+            &::before {
+                background: rgb(var(--color-4), 1);
+                mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><polyline points="1.5 1 6.5 6 1.5 11" fill="none" stroke="%23000" stroke-miterlimit="10" stroke-width="2"/></svg>');
+                mask-repeat: no-repeat;
+                content: '';
+                display: block;
+                height: 16px;
+                left: 0;
+                position: absolute;
+                top: calc(50% - 6px);
+                width: 8px;
+            }
+        }
+
+        @include screen-min(l) {
+            color: rgb(var(--color-2));
+            font-weight: 600;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        &:hover {
+            color: rgb(var(--color-bg));
+
+            @include screen-min(l) {
+                color: rgb(var(--color-1));
+            }
+        }
+    }
+
+    &__right {
+        @include screen-min(l) {
+            align-items: center;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__mobileMenuToggle {
+        border-radius: 50%;
+        display: block;
+        height: 48px;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        width: 48px;
+        z-index: 3;
+
+        @include screen-min(m) {
+            display: none;
+        }
+
+        div {
+            background: rgb(var(--color-bg));
+            height: 2px;
+            position: absolute;
+            left: calc(50% - 10px);
+            top: calc(50% - 1px);
+            transition: all var(--duration-slow) cubic-bezier(.25, 1, .25, 1);
+            width: 20px;
+            will-change: opacity, transform;
+
+            &:nth-child(1) {
+                transform: translate3d(0, -6px, 0);
+            }
+
+            &:nth-child(3) {
+                transform: translate3d(0, 6px, 0);
+            }
+
+            #navMobileMenuToggle:checked ~ .c-nav & {
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate3d(0, 0, 0);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    transform: scaleX(0);
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate3d(0, 0, 0);
+                }
+            }
+        }
+    }
+
+    &__mobileMenu {
+        @include screen-max(l) {
+            background: rgb(var(--color-1));
+            height: 100vh;
+            left: 0;
+            position: fixed;
+            top: 0;
+            padding: 64px 24px 40px 24px;
+            transform: translate3d(100%, 0, 0);
+            transition: transform var(--duration-slow) cubic-bezier(.25, 1, .25, 1);
+            width: 100%;
+            will-change: transform;
+            z-index: 1;
+
+            #navMobileMenuToggle:checked ~ .c-nav & {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    .c-button {
+        @include screen-max(l) {
+            width: 100%;
+        }
+
+        @include screen-min(l) {
+            height: 40px;
+            padding: 9px 24px;
+
+            &:active {
+                padding-bottom: 8px;
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+#navMobileMenuToggle {
+    left: -100px;
+    position: absolute;
+    top: -100px;
+    z-index: 1000;
+}
+
+@media screen and (min-width: 960px) {
+    .navigation-underline{
+      border-top: 1px solid rgb(var(--color-1));
+    }
+  }
+
+  .mobile-menu-active > div:first-child{
+    transform: rotate(45deg) translateZ(0)
+  }
+  .mobile-menu-active > div:nth-child(2){
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .mobile-menu-active > div:nth-child(3){
+    transform: rotate(-45deg) translateZ(0)
+  }
+  
+  .show{
+    transform: translateZ(0);
+  }

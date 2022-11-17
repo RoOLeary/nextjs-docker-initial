@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/Video"  ],
   "exclude": [
     "node_modules"
   ]

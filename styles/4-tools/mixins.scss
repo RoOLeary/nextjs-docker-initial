@@ -1,0 +1,122 @@
+@mixin alternates {
+    font-feature-settings: 'ss01' 1, 'ss02' 1, 'ss03' 1;
+}
+
+@mixin cover() {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+@mixin font-1 {
+    font-family: var(--font-1);
+    letter-spacing: var(--font-1-spacing);
+}
+
+@mixin font-2 {
+    font-family: var(--font-2);
+    letter-spacing: var(--font-2-spacing);
+}
+
+@mixin font-3 {
+    font-family: var(--font-3);
+    letter-spacing: var(--font-3-spacing);
+}
+
+@mixin font-mono {
+    font-family: var(--font-mono);
+    letter-spacing: var(--font-mono-spacing);
+}
+
+@mixin ligatures($ligatures: none) {
+    font-variant-ligatures: $ligatures;
+}
+
+@mixin margin-x($margin: auto) {
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+@mixin margin-y($margin: auto) {
+    margin-bottom: $margin;
+    margin-top: $margin;
+}
+
+@mixin overflow-scrolling {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+}
+
+@mixin padding-x($padding: auto) {
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+@mixin padding-y($padding: auto) {
+    padding-bottom: $padding;
+    padding-top: $padding;
+}
+
+@mixin screen-between($screen-min, $screen-max, $orientation: false) {
+    @if map-has-key($screens, $screen-min) {
+        $screen-min: map-get($screens, $screen-min);
+
+        @if map-has-key($screens, $screen-max) {
+            $screen-max: map-get($screens, $screen-max) - 1px;
+
+            @if $orientation {
+                @media (min-width: $screen-min) and (max-width: $screen-max) and (orientation: $orientation) {
+                    @content;
+                }
+            } @else {
+                @media (min-width: $screen-min) and (max-width: $screen-max) {
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+@mixin screen-max($screen, $orientation: false) {
+    @if map-has-key($screens, $screen) {
+        $screen: map-get($screens, $screen) - 1px;
+    }
+
+    @if $orientation {
+        @media (max-width: $screen) and (orientation: $orientation) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $screen) {
+            @content;
+        }
+    }
+}
+
+@mixin screen-min($screen, $orientation: false) {
+    @if map-has-key($screens, $screen) {
+        $screen: map-get($screens, $screen);
+    }
+
+    @if $orientation {
+        @media (min-width: $screen) and (orientation: $orientation) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $screen) {
+            @content;
+        }
+    }
+}
+
+@mixin screen-orientation($orientation) {
+    @media (orientation: $orientation) {
+        @content;
+    }
+}
+
+@mixin tabular-numbers {
+    font-feature-settings: 'tnum' 1;
+}
