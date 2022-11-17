@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-const TextVisual = () =>{
-    return(
-        <p>TV stuff</p>
-    )
-
-}
-
-export default TextVisual 
-=======
 import React from 'react';
 import Link from 'next/link'
 import Image from 'next/image';
