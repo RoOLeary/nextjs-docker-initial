@@ -71,7 +71,7 @@ const Hero = ({ eyebrow, heading, subHeading }: IHero ): JSX.Element => {
                        <p>Then you will read this</p>
                     </div>
                     <div className={"b-hero__cta"}>
-                        <Link href={"/all-components"} className={"c-button c-button--primary"}>All Components</Link>
+                        <Link href={"/test-article-three"} className={"c-button c-button--primary"}>Test Article</Link>
                     </div>
                 </div>
             </div>

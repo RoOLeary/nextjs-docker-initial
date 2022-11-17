@@ -3,7 +3,7 @@ import Image from 'next/image'
 import imageLoader from '../../../imageLoader'
 import { useRouter } from 'next/router'
 import { useRef, useEffect } from 'react'
-import { AnimateSharedLayout, motion } from 'framer-motion'
+import { LayoutGroup, motion } from 'framer-motion'
 // import styles from '../styles/Nav.module.css'
 import { isActiveLink } from '../../../lib/utils';
 import styled from 'styled-components';
@@ -98,7 +98,7 @@ const Nav = (): JSX.Element => {
                 <div></div>
             </label>
             <div className="c-nav__mobileMenu c-nav__right" ref={menuRef}>
-                <AnimateSharedLayout>
+                <LayoutGroup>
                 <ul className="c-nav__menu">
                     {links.map(({ name, href }) => (
                         <li key={name} className="c-nav__menuItem">
@@ -115,7 +115,7 @@ const Nav = (): JSX.Element => {
                         </li>
                     ))}
                 </ul>
-                </AnimateSharedLayout>
+                </LayoutGroup>
             </div>
             {/* {session && 
                 <UserInfo>
