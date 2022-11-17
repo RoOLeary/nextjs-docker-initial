@@ -8,8 +8,8 @@ const Page = ({ entry }:any) => {
 
     const router = useRouter()
     const slug = router.query
-    console.log(slug);
     const {title, body} = entry;
+    console.log(title);
     // const tags = entry.tags;
     // const tagList = Object.entries(tags).map((tag, i) => {
     //     return(

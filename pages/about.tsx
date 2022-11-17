@@ -4,7 +4,7 @@ const About = ({entry}) => {
 
 
     console.log(entry);
-
+    
     return(
         <MainLayout>
             
@@ -36,6 +36,8 @@ export const getStaticProps = async (context) => {
     // console.log(entry);
     const preview = context.preview;
     const previewData = context.preview;
+
+    console.log(preview);
 
     return {
         props: {
