@@ -1,10 +1,11 @@
 @charset 'utf-8';
 
 // 1. Settings
-@import '1-settings/fonts';
 @import '1-settings/variables';
 
 // 2. Fonts
+@import '2-fonts/fonts';
+
 
 // 3. Global
 // @import '3-global/a';

@@ -63,7 +63,7 @@ export default function Home({ allo }) {
 				<br />*/}
 				<BoxedImage />
 				<br />
-				<Button text="Breaking Stuff Rocks" /> 
+				{/* <Button text="Breaking Stuff Rocks" />  */}
 				<br />
 				<Cards />
 				<br />

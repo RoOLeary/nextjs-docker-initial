@@ -61,7 +61,7 @@ export default function AllComponents({ allo }) {
 				<br />*/}
 				<BoxedImage />
 				<br />
-				<Button text="Breaking Stuff Rocks" /> 
+				{/* <Button text:string="Breaking Stuff Rocks" />  */}
 				<br />
 				<Cards />
 				<br />

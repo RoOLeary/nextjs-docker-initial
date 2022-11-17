@@ -15,8 +15,8 @@ const variants = {
   };
   interface IHero {   
     eyebrow?: string
-    heading: string
-    subHeading: string
+    heading?: string
+    subHeading?: string
 }
   
 const Hero = ({ eyebrow, heading, subHeading }: IHero ): JSX.Element => {

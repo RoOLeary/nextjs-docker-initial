@@ -1,7 +1,7 @@
 
 
 
-const Button = ({text}:string) => {
+const Button = (text) => {
 
     return(
         <div>
