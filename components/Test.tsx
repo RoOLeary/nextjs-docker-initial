@@ -7,12 +7,12 @@ const Heading = styled.h1`
     align-items: left;
     color: ${props => props.primary ? "red" : "green"};
     text-transform: capitalize;
-
 `
 
 const headingText = 'This is just a heading'
 
 const Test = ({ props }:any) => {
+    console.log(props);
     headingText ? headingText : null
     return <Heading primary>{headingText}</Heading>;
 

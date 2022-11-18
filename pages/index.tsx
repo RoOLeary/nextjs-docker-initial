@@ -86,7 +86,7 @@ export default function Home({ allo }) {
 				<br/>
 				<Video />
 				<br />
-				<Test />
+				<Test color="primary"/>
 			</div>
 		</main>
 		</MainLayout>
