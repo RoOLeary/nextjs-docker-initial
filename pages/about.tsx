@@ -1,7 +1,11 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
+import { GetStaticProps } from 'next';
 
 const About = ({entry, preview}) => {
-    
+
+    console.log(entry)
+    // console.log(preview);
+
     return(
         <MainLayout>
             <section className="b-text c-section" id="about">
@@ -19,25 +23,52 @@ const About = ({entry, preview}) => {
 
 }
 
-export async function getStaticProps({context, params, preview = false}) {
+// export async function getStaticProps({ params, preview }) {
     
-    const slug = context?.params?.slug || "about";
-    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/${slug}.json`);
     
-    // if(context.preview){
-    //     console.log('in preview mode')
-    // } else {
-    //     console.log('flying blind')
-    // }
+//     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`);
+//     const entry = await res.json();  
+  
 
-    const entry = await res.json();  
     
-    return {
-        props: {
-            entry: entry
-        }
+
+//     return {
+//         props: {
+//             entry: entry
+//         }
+//     }
+// }
+
+export const getStaticProps: GetStaticProps = async (context) => {
+
+    //make an api call to a particular entry with required headers
+    // console.log(process.env.PREVIEW_TOKEN);
+
+    const res = await fetch('https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json', {
+      headers: {
+        token: process.env.PREVIEW_TOKEN
+      }
+    })
+    const data = await res.json()
+    
+    // console.log(context.preview);
+
+    if (!data) {
+      return {
+        notFound: true,
+      }
     }
-}
+    return {
+      props: {
+        entry: {...data} ,
+      }
+    };
+  };
+
+
+
+
+
 export default About; 
 
 

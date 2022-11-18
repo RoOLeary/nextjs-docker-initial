@@ -12,6 +12,7 @@ import Chapters from '../components/Chapters/Chapters'
 import MapComponent from '../components/Map/MapComponent'
 import MiniBanner from '../components/MiniBanner'
 import Note from '../components/Note'
+import Test from '../components/Test'
 import TextVisual from '../components/TextVisual'
 import USPs from '../components/USPs'
 import Video from '../components/Video'
@@ -84,6 +85,8 @@ export default function Home({ allo }) {
 				<USPs />
 				<br/>
 				<Video />
+				<br />
+				<Test />
 			</div>
 		</main>
 		</MainLayout>

@@ -44,19 +44,22 @@ const Page = ({ entry, preview, previewData }:any) => {
 // // This also gets called at build time
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    // console.log(context.query.slug);
+    
     const slug = context.query.slug ? context.query.slug : 'test-article-three'
     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/${slug}.json`);
     let data = await res.json();
 
     const preview = context.preview;
-    const previewData = context.preview;
+    const previewData = context.previewData;
 
-    console.log(preview, 'should be here');
+    // console.log(preview, 'should be here');
+    console.log(preview);
+
+    let entry = data;
 
     return {
         props: { 
-            entry: data
+            entry: entry
         }
     };
 }
