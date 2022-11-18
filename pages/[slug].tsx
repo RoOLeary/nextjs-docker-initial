@@ -52,6 +52,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const preview = context.preview;
     const previewData = context.preview;
 
+    console.log(preview, 'should be here');
 
     return {
         props: { 

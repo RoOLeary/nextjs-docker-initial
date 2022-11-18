@@ -1,9 +1,6 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 
 const About = ({entry, preview}) => {
-
-
-    console.log(preview);
     
     return(
         <MainLayout>
@@ -22,29 +19,19 @@ const About = ({entry, preview}) => {
 
 }
 
-export const getStaticProps = async ( context ) => {
+export async function getStaticProps({context, params, preview = false}) {
     
     const slug = context?.params?.slug || "about";
-    
-    console.log(context, 'slug');
-    
     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/${slug}.json`);
-    //     {
-    //         credentials: "include",
-    //         headers: {
-    //             "Access-Control-Allow-Origin" : "*", 
-    //             "Access-Control-Allow-Credentials" : true
-    //         },
-    //     }
-    // );
     
-    let entry = await res.json();
-    
-    const preview = context.preview;
-    const previewData = context.preview;
+    // if(context.preview){
+    //     console.log('in preview mode')
+    // } else {
+    //     console.log('flying blind')
+    // }
 
+    const entry = await res.json();  
     
-
     return {
         props: {
             entry: entry
