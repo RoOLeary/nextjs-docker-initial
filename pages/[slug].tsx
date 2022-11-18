@@ -3,7 +3,7 @@ import Link from 'next/link'
 import MainLayout from './../components/Globals/Layouts/MainLayout'
 import { GetServerSideProps } from 'next'
 
-const Page = ({ entry }:any) => {
+const Page = ({ entry, preview, previewData }:any) => {
 
     const router = useRouter()
     const slug = router.query
@@ -51,6 +51,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const preview = context.preview;
     const previewData = context.preview;
+
+
     return {
         props: { 
             entry: data
