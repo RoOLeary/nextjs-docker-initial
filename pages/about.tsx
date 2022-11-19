@@ -28,7 +28,7 @@ const About = ({ page, preview }:any) => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     // console.log(context);
-    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/about.json`);
+    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`);
     const data = await res.json();
 
     const preview = context.preview;
