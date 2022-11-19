@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   if(preview){
     const previewData = context.previewData;
-    console.log(previewData['token']);
+    // console.log(previewData['token']);
     const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
     prevData = await prevResponse.json()
   } 
