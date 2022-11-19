@@ -1,13 +1,13 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 import { GetStaticProps } from 'next';
 
-const About = ({ page }) => {
+const About = ({ page, preview }) => {
 
     const { title } = page;
 
     return(
         <MainLayout>
-
+            {preview ? <h1>In Preview Mode</h1> : null}
             <section className="b-text c-section" id="about">
                 <div className="o-wrapper">
                     <div>
@@ -42,7 +42,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     if(preview){
         console.log('preview is true');
         const previewData = context.previewData;
-        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData}`);
+        console.log(previewData['token']);
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
         prevData = await prevResponse.json()
         console.log(prevData);
     } 
@@ -55,7 +56,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
     return {
       props: {
-        page: page ,
+        preview: preview ? true : false,
+        page: page
       }
     };
   };
