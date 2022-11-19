@@ -20,7 +20,7 @@ import { useTypingText } from '../hooks/useTypingText';
 import PageBlocks from '../components/PageBlocks'
 import { GetStaticProps } from 'next';
 
-const Home = ({ page, preview, allo }) => {
+const Home = () => {
 	
 	const { word } = useTypingText(['Testing', 'To See', 'If This', 'works'], 250, 20);
 	
@@ -36,7 +36,7 @@ const Home = ({ page, preview, allo }) => {
 
 		
 		<main className={'main'}>
-			<PageBlocks content={page.data[0].blocks} />
+			{/* <PageBlocks content={page.data[0].blocks} /> */}
 			<BoxedImage />
 			<br />
 			<Test color="primary"/>
@@ -45,38 +45,6 @@ const Home = ({ page, preview, allo }) => {
 		</>
 	)
 }
-
-export const getStaticProps: GetStaticProps = async (context) => {
-	// console.log(context);
-	const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/homepage.json`);
-	const data = await res.json();
-
-	const preview = context.preview;
-	let prevData;
-
-	if(preview){
-		const previewData = context.previewData;
-		console.log(previewData['token']);
-		const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/homepage.json?token=${previewData['token']}`);
-		prevData = await prevResponse.json()
-	} 
-	let page = preview ? prevData : data;
-
-	if (!data) {
-		return {
-			notFound: true,
-		}
-	}
-	return {
-	props: {
-		preview: preview ? true : false,
-		page: page
-	}
-	};
-};
-
-
-
 
 
 export default Home; 

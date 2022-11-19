@@ -40,7 +40,7 @@ const Hero = ({ eyebrow, heading, subHeading }: IHero ): JSX.Element => {
                 className="b-hero__photo b-hero__photo--1"
                 style={{ y: y2, x: 350 }}
             >
-                <Image alt="photo1 - Audience member photo" loader={imageLoader} src={"https://source.unsplash.com/500x300/?tech"} sizes="20vh" width={200} height={200}/>
+                <Image alt="photo1 - Audience member photo" loader={imageLoader} src={"https://source.unsplash.com/500x300/?tech"} sizes="20vh" width={200} height={200} unoptimized/>
             </motion.figure>
             <motion.figure
                 className="b-hero__photo b-hero__photo--2"
