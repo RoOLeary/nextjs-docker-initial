@@ -12,7 +12,7 @@ const Heading = styled.h1`
 const headingText = 'This is just a heading'
 
 const Test = ({ props }:any) => {
-    console.log(props);
+    // console.log(props);
     headingText ? headingText : null
     return <Heading primary>{headingText}</Heading>;
 

@@ -6,7 +6,7 @@ interface IVideo {
 }
 
 const Video = ({ heading, videoEmbedCode }: IVideo ) => {
-    console.log(videoEmbedCode);
+
     return(
         <section className="b-video">
             <div className="o-wrapper">

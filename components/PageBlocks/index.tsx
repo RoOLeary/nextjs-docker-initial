@@ -23,7 +23,7 @@ function renderContent(content){
         switch(blockContent['blockType']) {
             
             case 'header':
-                console.log(blockContent['headline'])
+                
                 return (
                     <Header key={block[1]['uid']} headline={blockContent['headline']}  />
                 );
@@ -37,7 +37,8 @@ function renderContent(content){
                         eyebrow={blockContent['eyebrow']} 
                         heading={blockContent['heading']}
                         subHeading={blockContent['subHeading']} 
-                    />);
+                    />
+                );
             // case 'text':
             //     return <Text key={block[1]['uid']} content={blockContent} />
             // case 'textVisual':
