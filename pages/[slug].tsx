@@ -11,7 +11,7 @@ const Page = ({ page, preview }:any) => {
     const slug = router.query
     const {title, body} = page;
 
-    let content = page.pageBlocks;
+    let content = page.blocks;
     console.log(page);
     return (
         <MainLayout>

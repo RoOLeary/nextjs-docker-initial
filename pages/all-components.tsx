@@ -18,35 +18,21 @@ import { GetStaticProps } from 'next';
 import { useTypingText } from '../hooks/useTypingText';
 
 const AllComponents = ({ page, preview }) => {
-	// const [data, setData] = useState('')
-	// const { word } = useTypingText(['Testing', 'To See', 'If This', 'works'], 250, 20);
-	// useEffect(() => {
-	// // setLoading(true)
-	// 	fetch('/api/hello')
-	// 		.then((res) => res.json())
-	// 		.then((data) => {
-	// 		setData(data)
-	// 		console.log(data);
-	// 		})
-	// }, [])
-
+	
 	let content = page.pageBlocks;
 
 	return (
 		<>
 		<Head>
-			<title>Create Next App</title>
+			<title>PicNext Prototype</title>
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
-		<MainLayout>
-
-		
-		<main className={'main'}>
-			{preview ? `previewing ${page.title}` : ''}
-			
-			<PageBlocks content={content} />
-			
-		</main>
+		<MainLayout>	
+			<main className={'main'}>
+				{preview ? `previewing ${page.title}` : ''}
+				<h1>{page.title}</h1>
+				<PageBlocks content={content} />
+			</main>
 		</MainLayout>
 		</>
 	)
@@ -55,36 +41,43 @@ const AllComponents = ({ page, preview }) => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
     // console.log(context);
-    // const slug = context?.query?.slug ? context.query.slug : 'test-article-three'
-    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/all-components.json`);
+    
+	// const slug = context?.query?.slug ? context.query.slug : 'test-article-three'
+    
+	const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/all-components.json`);
     const data = await res.json();
 
-	console.log(data);
-	
+	// console.log(data);
+	// grab the preview from context
+
     const preview = context.preview;
     let prevData;
 
+	// if is preview, call home to get the latest draft, by pinging the element-api and passing along the same token we did with thw original
+	// request.
+
     if(preview){
-        // console.log('preview is true');
         const previewData = context.previewData;
         const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/all-components.json?token=${previewData['token']}`);
         prevData = await prevResponse.json()
-        // console.log(prevData);
-    } 
+	}
+	
+	// set the page data based on preview. If preview mode, get the draft stuff, and if not, get the last published entry in the db
+
     let page = preview ? prevData : data;
 
     if (!page) {
-      return {
-        notFound: true,
-      }
+		return {
+			notFound: true,
+		}
     }
     return {
-      props: {
-        preview: preview ? true : false,
-        page: page
-      }
-    };
-  };
+		props: {
+			preview: preview ? true : false,
+			page: page
+		}
+	};
+};
 
 
 export default AllComponents; 
