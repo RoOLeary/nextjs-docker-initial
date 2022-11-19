@@ -46,7 +46,7 @@ export default function Home({ allo }) {
 			{word ? word : `Welcome to ${data['name']}!`}
 			</h1>
 			{/* <Test /> */}
-			<Faq />
+			{/* <Faq /> */}
 			<div className={'description'}>
 				Here goes: 
 				<ul>

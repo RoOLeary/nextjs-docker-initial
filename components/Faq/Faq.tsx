@@ -2,27 +2,11 @@ import React from 'react';
 import { useEffect } from 'react';
 import Link from 'next/link';
 import FaqItem from './FaqItem'; 
-// import { IFaqs } from './../../interfaces/IFaq'
+// import { IFaqs } from '../../interfaces/IFaq'
 
-const Faq = () => {
+const Faq = ({ content }) => {
 
-    // const { faqHeading, faqLeadtext } = content;
-    
-    let faqs = [
-        {
-          "question": "What is the meaning of this?",
-          "answer": "Portland 90's scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn."
-        },
-        {
-          "question": "Does anyone know how to get to the bright side?",
-          "answer": "Coloring book flannel truffaut craft beer drinking vinegar sartorial, disrupt fashion axe normcore meh butcher."
-        },
-        {
-          "question": "Where will the series be taking place?",
-          "answer": "Algarve in Portugal. Portland 90's scenester vexillologist forage post-ironic asymmetrical, chartreuse disrupt butcher paleo intelligentsia pabst before they sold out four loko. 3 wolf moon brooklyn."
-        }
-    ]
-
+    const { faqHeading, faqLeadtext, faqs } = content;
     const selectorAnswerInner: any = '.js-faqAnswerInner';
     
     const onQuestionClick = (e: any) => {

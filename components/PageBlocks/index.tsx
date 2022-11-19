@@ -1,8 +1,10 @@
 import React, { Children, PropsWithChildren } from 'react';
 import Header from './../Header';
 import Hero from './../Hero';
+import Faq from './../Faq/Faq';
 import Test from './../Test'
 import TextVisual from './../TextVisual'
+import Video from './../Video'
 import IBlocks from '../../interfaces/IBlocks'
 
 interface IProps {
@@ -48,20 +50,18 @@ function renderContent(content){
             //     />);
             // case 'imageSlider':
             //     return <Slider key={block[1]['uid']} content={blockContent} />
-            // case 'faq':
-            //     return <Faq key={block[1]['uid']} content={blockContent} />
-            // case 'video':
-            //     return (
-            //         <Video 
-            //             key={block[1]['uid']} 
-            //             heading={blockContent['heading']}
-            //             text={blockContent['text']}
-            //             hasCta={blockContent['hasCta']}
-            //             ctaLabel={blockContent['ctaLabel']}
-            //             ctaLink={blockContent['ctaLink']}
-            //             videoEmbedCode={blockContent['videoEmbedCode']} 
-            //         />
-            //         );
+            case 'faq':
+                return  (
+                    <Faq key={block[1]['uid']} content={blockContent} />
+                );
+            case 'video':
+                return (
+                    <Video 
+                        key={block[1]['uid']} 
+                        heading={blockContent['heading']}
+                        videoEmbedCode={blockContent['videoEmbedCode']} 
+                    />
+                );
             // case 'speakers':
             //     return (
             //         <Speakers 

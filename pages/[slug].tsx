@@ -40,7 +40,8 @@ const Page = ({ page, preview }:any) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
     
     const slug = context.query.slug ? context.query.slug : 'test-article-three'
-    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/${slug}.json`);
+    let sectionHandle = 'articles';
+    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${sectionHandle}/${slug}.json`);
     const data = await res.json();
 
     const preview = context.preview;
@@ -49,7 +50,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     if(preview){
         console.log('preview is true');
         const previewData = context.previewData;
-        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/${slug}.json?token=${previewData['token']}`);
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${sectionHandle}/${slug}.json?token=${previewData['token']}`);
         prevData = await prevResponse.json()
         
     } 
