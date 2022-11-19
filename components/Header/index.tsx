@@ -11,11 +11,11 @@ const Header = ({ headline }: IHeader ): JSX.Element => {
                 <div className="b-header__backdropLayer b-header__backdropLayer--2"></div>
             </div>
             <div className="b-header__grid">
-                <div className="b-header__shape b-header__shape--1" id="circle">
+                <div className="b-header__shape b-header__shape--1" id="tomato">
                 </div>
-                <div className="b-header__shape b-header__shape--2" id="donut">
+                <div className="b-header__shape b-header__shape--2" id="cucumber">
                 </div>
-                <div className="b-header__shape b-header__shape--3" id="lines">
+                <div className="b-header__shape b-header__shape--3" id="evp">
                 </div>
                 <div className="b-header__content">
                     <h2 className="b-header__title">{headline ? headline : 'Header Component'}</h2>
