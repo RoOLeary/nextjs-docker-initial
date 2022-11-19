@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import MainLayout from './../components/Globals/Layouts/MainLayout'
+import PageBlocks from './../components/PageBlocks'
 import { GetServerSideProps } from 'next'
 
 const Page = ({ page, preview }:any) => {
@@ -9,7 +10,9 @@ const Page = ({ page, preview }:any) => {
     const router = useRouter()
     const slug = router.query
     const {title, body} = page;
-    console.log(title);
+
+    let content = page.pageBlocks;
+    console.log(page);
     return (
         <MainLayout>
            {preview ? <h1>In Preview Mode</h1> : null}
@@ -24,7 +27,7 @@ const Page = ({ page, preview }:any) => {
                
             </section>
             
-            {/* <PageBlocks content={pageBlocks} /> */}
+            <PageBlocks content={content} />
 
             {/* <Related related={entry.manualRelatedArticles} currentslug={entry.slug} /> */}
         
