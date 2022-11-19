@@ -1,10 +1,11 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
-import { GetServerSideProps } from 'next';
+import PageBlocks from '../components/PageBlocks'
+import { GetStaticProps } from 'next';
 
 const About = ({ page, preview }:any) => {
 
     const { title } = page;
-    console.log(page);
+    const content = page.pageBlocks;
     return(
         <MainLayout>
             {preview ? <h1>In Preview Mode</h1> : null}
@@ -15,6 +16,7 @@ const About = ({ page, preview }:any) => {
                       Some random stuff
                     </div>
                 </div>
+                <PageBlocks content={content} />
             </section>
 
         </MainLayout>
@@ -24,9 +26,8 @@ const About = ({ page, preview }:any) => {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
     // console.log(context);
-    const slug = context?.query?.slug ? context.query.slug : 'about'
     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/about.json`);
     const data = await res.json();
 
@@ -36,6 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     if(preview){
         // console.log('preview is true');
         const previewData = context.previewData;
+        console.log(previewData['token']);
         const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
         prevData = await prevResponse.json()
         // console.log(prevData);

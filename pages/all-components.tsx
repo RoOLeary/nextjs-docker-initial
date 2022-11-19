@@ -54,11 +54,13 @@ const AllComponents = ({ page, preview }) => {
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-    console.log(context);
+    // console.log(context);
     // const slug = context?.query?.slug ? context.query.slug : 'test-article-three'
     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/all-components.json`);
     const data = await res.json();
 
+	console.log(data);
+	
     const preview = context.preview;
     let prevData;
 
