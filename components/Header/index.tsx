@@ -3,8 +3,7 @@ export interface IHeader {
 }
 
 const Header = ({ headline }: IHeader ): JSX.Element => {
-    // const { headline } = props;
-    console.log(headline);
+    
     return(
         <header className="b-header js-equinoxNode t-dark">
             <div className="b-header__backdrop">
