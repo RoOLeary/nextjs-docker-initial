@@ -3,30 +3,21 @@ import Link from 'next/link'
 import MainLayout from './../components/Globals/Layouts/MainLayout'
 import { GetServerSideProps } from 'next'
 
-const Page = ({ entry, preview, previewData }:any) => {
+const Page = ({ page }:any) => {
 
+   
     const router = useRouter()
     const slug = router.query
-    const {title, body} = entry;
-    
+    const {title, body} = page;
+    console.log(title);
     return (
         <MainLayout>
            
             <section className="b-text  c-section" id="learn-more">
                 <div className="o-wrapper">
-                    {/* <div className="o-grid o-grid--gap-xxl">
-                        <div className="o-grid__col l:o-grid__col--span-4">
-                            <h2 className="b-text__heading">General Page on  <code> {slug.slug} </code></h2>
-                        </div>
-                        <div className="o-grid__col l:o-grid__col--span-8">
-                            <div className={"c-formatted"} dangerouslySetInnerHTML={{__html: body }} />     
-                               
-                               
-                        </div>
-                    </div> */}
-
+                    
                     <div>
-                        <h1>{entry.title}</h1>
+                        <h1>{title}</h1>
                         <div className={"c-formatted"} dangerouslySetInnerHTML={{__html: body }} />  
                     </div>
                 </div>
@@ -50,16 +41,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     let data = await res.json();
 
     const preview = context.preview;
-    const previewData = context.previewData;
+    let prevData;
 
-    // console.log(preview, 'should be here');
-    console.log(preview);
-
-    let entry = data;
+    if(preview){
+        console.log('preview is true');
+        const previewData = context.previewData;
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/${slug}.json?token=${previewData}`);
+        prevData = await prevResponse.json()
+        
+    } 
+    let page = preview ? prevData : data;
 
     return {
         props: { 
-            entry: entry
+            page: page
         }
     };
 }

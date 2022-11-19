@@ -1,9 +1,9 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 import { GetStaticProps } from 'next';
 
-const About = ({entry}) => {
+const About = ({ page }) => {
 
-    const { title } = entry;
+    const { title } = page;
 
     return(
         <MainLayout>
@@ -11,7 +11,7 @@ const About = ({entry}) => {
             <section className="b-text c-section" id="about">
                 <div className="o-wrapper">
                     <div>
-                      <h1>{entry.title}</h1>
+                      <h1>{page.title}</h1>
                       Some random stuff
                     </div>
                 </div>
@@ -25,10 +25,10 @@ const About = ({entry}) => {
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-
+  
     //make an api call to a particular entry with required headers
     // console.log(process.env.PREVIEW_TOKEN);
-
+    // const slug = context.query.slug ? context.query.slug : 'test-article-three'
     const res = await fetch('https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json', {
       headers: {
         token: process.env.PREVIEW_TOKEN
@@ -36,7 +36,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
     })
     const data = await res.json()
     
-    console.log(context);
+    const preview = context.preview;
+    let prevData;
+
+    if(preview){
+        console.log('preview is true');
+        const previewData = context.previewData;
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData}`);
+        prevData = await prevResponse.json()
+        console.log(prevData);
+    } 
+    let page = preview ? prevData : data;
 
     if (!data) {
       return {
@@ -45,7 +55,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     }
     return {
       props: {
-        entry: {...data} ,
+        page: page ,
       }
     };
   };
