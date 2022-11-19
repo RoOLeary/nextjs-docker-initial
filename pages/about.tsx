@@ -12,7 +12,7 @@ const About = ({ page, preview }:any) => {
       <section className="b-text c-section" id="about">
         <div className="o-wrapper">
           <div>
-          <h1>{title ? title : 'lalala'}</h1>
+          <h1>{title ? title : 'about pages'}</h1>
           </div>
         </div>
         <PageBlocks content={content} />
