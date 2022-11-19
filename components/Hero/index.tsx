@@ -64,11 +64,11 @@ const Hero = ({ eyebrow, heading, subHeading }: IHero ): JSX.Element => {
 
             <div className={"b-hero__content"}>
                 <div className={"b-hero__contentInner"}>
-                    <h1>Supermarket on wheels</h1>
-                    <h4 className={"b-hero__eyebrow"}>You will read this first</h4>
-                    <h1 className={"b-hero__heading"}>THEN THIS</h1>
+                    
+                    <h4 className={"b-hero__eyebrow"}>{eyebrow}</h4>
+                    <h1 className={"b-hero__heading"}>{heading}</h1>
                     <div className={"b-hero__intro"}>
-                       <p>Then you will read this</p>
+                       <p>{subHeading}</p>
                     </div>
                     <div className={"b-hero__cta"}>
                         <Link href={"/test-article-three"} className={"c-button c-button--primary"}>Test Article</Link>

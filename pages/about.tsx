@@ -25,27 +25,20 @@ const About = ({ page, preview }) => {
 
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  
-    //make an api call to a particular entry with required headers
-    // console.log(process.env.PREVIEW_TOKEN);
-    // const slug = context.query.slug ? context.query.slug : 'test-article-three'
-    const res = await fetch('https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json', {
-      headers: {
-        token: process.env.PREVIEW_TOKEN
-      }
-    })
-    const data = await res.json()
-    
+    console.log(context);
+    // const slug = context?.query?.slug ? context.query.slug : 'test-article-three'
+    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/articles/demo-hope-this-works.json`);
+    const data = await res.json();
+
     const preview = context.preview;
     let prevData;
 
     if(preview){
-        console.log('preview is true');
+        // console.log('preview is true');
         const previewData = context.previewData;
-        console.log(previewData['token']);
-        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/demo-hope-this-works.json?token=${previewData['token']}`);
         prevData = await prevResponse.json()
-        console.log(prevData);
+        // console.log(prevData);
     } 
     let page = preview ? prevData : data;
 
