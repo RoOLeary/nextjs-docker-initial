@@ -38,14 +38,14 @@ function renderContent(content){
                     />);
             // case 'text':
             //     return <Text key={block[1]['uid']} content={blockContent} />
-            case 'textVisual':
-                return (
-                    <TextVisual 
-                        key={block[1]['uid']}
-                        textVisualHeading={blockContent['textVisualHeading']}
-                        textVisualContent={blockContent['textVisualContent']}
-                        textVisualImage={blockContent['textVisualImage']} 
-                />);
+            // case 'textVisual':
+            //     return (
+            //         <TextVisual 
+            //             key={block[1]['uid']}
+            //             textVisualHeading={blockContent['textVisualHeading']}
+            //             textVisualContent={blockContent['textVisualContent']}
+            //             textVisualImage={blockContent['textVisualImage']} 
+            //     />);
             // case 'imageSlider':
             //     return <Slider key={block[1]['uid']} content={blockContent} />
             // case 'faq':
