@@ -1,0 +1,57 @@
+.u-text-align-center {
+    text-align: center;
+}
+
+.u-text-align-left {
+    text-align: left;
+}
+
+.u-text-align-right {
+    text-align: right;
+}
+
+.u-text-case-lower {
+    text-transform: lowercase;
+}
+
+.u-text-case-upper {
+    text-transform: uppercase;
+}
+
+.u-text-color-hc {
+    color: var(--color-text-hc);
+}
+
+.u-text-color-lc {
+    color: var(--color-text-lc);
+
+    a {
+        color: var(--color-text-lc);
+        text-decoration: underline;
+
+        &:hover {
+            color: var(--color-link-hover);
+        }
+    }
+}
+
+.u-text-mask {
+    display: inline;
+    margin: 0 2px;
+    filter: blur(2px);
+    opacity: 0.5;
+}
+
+.u-text-mono {
+    font-family: var(--font-mono);
+}
+
+.u-text-trunc {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+

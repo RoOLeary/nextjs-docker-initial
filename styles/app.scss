@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 // 1. Settings
+@import '1-settings/mixins';
 @import '1-settings/variables';
 
 // 2. Fonts
@@ -16,6 +17,7 @@
 // @import '3-global/h2';
 // @import '3-global/h3';
 // @import '3-global/h4';
+@import '3-global/footer';
 @import '3-global/html';
 // @import '3-global/img';
 // @import '3-global/input';
@@ -69,8 +71,8 @@
 @import '6-objects/wrapper';
 
 // 7. Utils
-// @import '6-utils/margin';
-// @import '6-utils/text';
+@import '7-utils/margin';
+@import '7-utils/text';
 @import '7-utils/visibility';
 
 
