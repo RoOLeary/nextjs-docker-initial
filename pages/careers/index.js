@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 export default function Careers() {
 
     const { locale } = useRouter(); 
-
     return(
         <MainLayout>
             <StaticHeader content={'Careers List'} />
@@ -14,5 +13,4 @@ export default function Careers() {
             </div>
         </MainLayout>
     )
-
 }

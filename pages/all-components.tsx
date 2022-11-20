@@ -14,7 +14,7 @@ import MiniBanner from '../components/MiniBanner'
 import Note from '../components/Note'
 import PageBlocks from '../components/PageBlocks'
 import USPs from '../components/USPs'
-import { GetStaticProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import { useTypingText } from '../hooks/useTypingText';
 
 const AllComponents = ({ page, preview }) => {
@@ -39,7 +39,7 @@ const AllComponents = ({ page, preview }) => {
 }
 
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     // console.log(context);
     
 	// const slug = context?.query?.slug ? context.query.slug : 'test-article-three'

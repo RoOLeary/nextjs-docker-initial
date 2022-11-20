@@ -1,14 +1,14 @@
+import MainLayout from '../../components/Globals/Layouts/MainLayout';
+import StaticHeader from '../../components/StaticHeader';
+
 export default function Jobs() {
-
     return(
-
-        <div className={'jobs'}>
-     
-            <p>Jobs List</p>
-        </div>
-
+        <MainLayout>
+            <StaticHeader content={'Jobs List'} />
+            <div className={'jobs'}>
+                <p>Jobs List</p>
+            </div>
+        </MainLayout>
     )
-
 }
-
 

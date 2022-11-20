@@ -1,6 +1,6 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 import PageBlocks from '../components/PageBlocks'
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next'
 
 const About = ({ page, preview }:any) => {
 
@@ -15,7 +15,7 @@ const About = ({ page, preview }:any) => {
 }
 
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   // console.log(context);
   const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`);
   const data = await res.json();
