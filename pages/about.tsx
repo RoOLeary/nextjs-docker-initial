@@ -14,8 +14,8 @@ const About = ({ page, preview }:any) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<MainLayout>
-			{preview ? <h3>Preview Mode</h3> : null}
-			<PageBlocks content={content} />
+				{preview ? <h3>Preview Mode</h3> : null}
+				<PageBlocks content={content} />
 			</MainLayout>
 		</>
 	)
@@ -38,21 +38,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   } 
   let page = preview ? prevData : data;
 
-  if (!data) {
   return {
-    notFound: true,
-  }
-  }
-  return {
-  props: {
-    preview: preview ? true : false,
-    page: page
-  }
+	props: {
+		preview: preview ? true : false,
+		page: page
+	}
   };
 };
-
-
-
 
 
 export default About; 
