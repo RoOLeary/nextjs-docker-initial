@@ -40,9 +40,10 @@ const links: { name: string; href: string }[] = [
         href: '/careers',
     },       
     {
-        name: 'Contact',
-        href: '/contact',
+        name: 'Store',
+        href: '/webstore',
     },
+   
     // {
     //     name: 'Programs',
     //     href: '/programs',
