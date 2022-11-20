@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import MainLayout from './../components/Globals/Layouts/MainLayout'
+import StaticHeader from './../components/StaticHeader'
 import PageBlocks from './../components/PageBlocks'
 import { GetServerSideProps } from 'next'
 
@@ -16,17 +16,7 @@ const Page = ({ page, preview }:any) => {
     return (
         <MainLayout>
            {preview ? <h1>In Preview Mode</h1> : null}
-            <section className="b-text  c-section" id="learn-more">
-                <div className="o-wrapper">
-                    
-                    <div>
-                        <h1>{title}</h1>
-                        <div className={"c-formatted"} dangerouslySetInnerHTML={{__html: body }} />  
-                    </div>
-                </div>
-               
-            </section>
-            
+            <StaticHeader content={title} />
             <PageBlocks content={content} />
 
             {/* <Related related={entry.manualRelatedArticles} currentslug={entry.slug} /> */}

@@ -17,7 +17,7 @@ import USPs from '../components/USPs'
 import { GetServerSideProps, GetStaticProps } from 'next';
 import { useTypingText } from '../hooks/useTypingText';
 
-const AllComponents = ({ page, preview }) => {
+const AllComponents = ({ page, preview }:any) => {
 	
 	let content = page.pageBlocks;
 
@@ -66,11 +66,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     let page = preview ? prevData : data;
 
-    if (!page) {
-		return {
-			notFound: true,
-		}
-    }
     return {
 		props: {
 			preview: preview ? true : false,
