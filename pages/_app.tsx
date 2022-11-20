@@ -22,11 +22,11 @@ declare const window: any
 //   pageProps: { auth?: boolean; session?: Session }
 // }
 
-function DockerInitial({
+function PicNextPrototype({
     Component,
     pageProps,
   }: AppProps<{}>) {
-    
+
   const [isLoading, setIsLoading] = useState(false);
   const router = Router;
 
@@ -105,4 +105,4 @@ function DockerInitial({
     );
   }
 
-  export default DockerInitial
+  export default PicNextPrototype
