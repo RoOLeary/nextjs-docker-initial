@@ -1,0 +1,25 @@
+.c-questions {
+    counter-reset: question-counter;
+    list-style-type: none;
+    margin-top: 2em;
+
+    li {
+        counter-increment: question-counter;
+        font-weight: 700;
+        font-size: var(--font-size-l);
+        line-height: var(--line-height-m);
+        margin-left: 32px;
+        position: relative;
+
+        &::before {
+            content: counter(question-counter)  ".";
+            font-weight: 700;
+            position: absolute;
+            left: -32px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+}

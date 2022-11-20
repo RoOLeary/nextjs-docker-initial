@@ -1,0 +1,72 @@
+.c-session {
+    border-top: 1px solid rgb(var(--color-border));
+    display: flex;
+    padding: 12px 0;
+    position: relative;
+
+    @include screen-min(m) {
+        padding: 16px 0;
+    }
+
+    &::after {
+        background: transparent;
+        border-radius: 4px;
+        bottom: 8px;
+        content: '';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 8px;
+        width: 8px;
+    }
+
+    &__time {
+        @include tabular-numbers;
+        font-size: var(--font-size-s);
+        margin-right: space(m);
+        padding-top: 4px;
+
+        @include screen-min(m) {
+            font-size: var(--font-size-m);
+            margin-right: space(l);
+        }
+    }
+
+    &__text {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    &__title {
+        font-weight: 500;
+        
+        @include screen-min(m) {
+            font-size: var(--font-size-l);
+        }
+    }
+
+    &__speaker {
+        color: rgb(var(--color-text-muted));
+        font-size: var(--font-size-s);
+
+        @include screen-min(m) {
+            font-size: var(--font-size-m);
+        }
+    }
+
+    &--break::after {
+        background: #C9ECF6;
+    }
+
+    &--hopin::after {
+        background: #F6CC63;
+    }
+
+    &--live-studio::after {
+        background: #497FA3;
+    }
+
+    &--slack::after {
+        background: #C560A3;
+    }
+}

@@ -1,0 +1,7 @@
+h4 {
+    @include font-3;
+    font-size: var(--font-size-s);
+    font-weight: 500;
+    line-height: line-height(s);
+    text-transform: uppercase;
+}

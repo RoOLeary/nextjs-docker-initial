@@ -1,0 +1,49 @@
+.c-section {
+    padding: space(3xl) 0;
+
+    @include screen-min(l) {
+        padding: space(6xl) 0;
+    }
+
+    &__sticky {
+        position: sticky;
+        top: 128px;
+    }
+
+    &__header {
+        margin-bottom: space(xxl);
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &__intro {
+        font-size: var(--font-size-l);
+
+        @include screen-min(l) {
+            max-width: 75%;
+            margin: space(l) auto 0 auto;
+        }
+    }
+
+    &__text {
+        margin-top: space(xxl);
+    }
+
+    &__cta {
+        margin-top: space(xl);
+    }
+
+    &--tint {
+        background: rgb(var(--color-bg-tint));
+
+        & + .c-section--tint {
+            border-top: 1px solid rgb(var(--color-border));
+        }
+    }
+
+    &:not(.c-section--tint) + .c-section:not(.c-section--tint) {
+        border-top: 1px solid rgb(var(--color-border));
+    }
+}

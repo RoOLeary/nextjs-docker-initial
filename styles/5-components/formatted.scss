@@ -1,0 +1,10 @@
+.c-formatted {
+    hyphens: auto;
+    line-height: var(--line-height-l);
+
+    p {
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+}

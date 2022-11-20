@@ -1,0 +1,28 @@
+.c-modalApply {
+    &__text {
+        font-size: var(--font-size-xs);
+        margin-bottom: space(l);
+
+        p {
+            margin-bottom: 1em;
+        }
+    }
+
+    &__option {
+        margin: space(m) 0;
+    }
+
+    &__terms {
+        transition: all var(--duration-medium) cubic-bezier(.25, 1, .25, 1);
+
+        &.is-error {
+            background: rgba(255, 51, 51, 0.15);
+            border-radius: 2px;
+            box-shadow: 0 0 0 8px rgba(255, 51, 51, 0.15);
+        }
+    }
+
+    .c-button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,40 @@
+.c-tabs {
+    &__list {
+        border-bottom: 1px solid rgb(var(--color-border));
+        display: flex;
+        user-select: none;
+
+        .o-wrapper {
+            display: flex;
+        }
+    }
+
+    &__tab {
+        appearance: none;
+        background: transparent;
+        border: none;
+        color: rgb(var(--color-text-muted));
+        cursor: pointer;
+        display: block;
+        font-family: font(1);
+        font-size: font-size(m);
+        font-weight: 400;
+        line-height: 48px;
+        margin: 0 0 1px 0;
+        outline: none;
+        padding: 0;
+
+        &:hover {
+            color: color(text);
+        }
+
+        &:not(:last-child) {
+            margin-right: space(l);
+        }
+
+        &[aria-selected='true'] {
+            box-shadow: 0 2px 0 #000;
+            color: #000;
+        }
+    }
+}

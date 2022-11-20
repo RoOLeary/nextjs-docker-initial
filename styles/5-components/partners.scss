@@ -1,0 +1,22 @@
+.c-partners {
+    align-items: center;
+    display: flex;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+
+    &__label {
+        margin-right: 10px;
+    }
+
+    &__logo {
+        height: 24px;
+
+        @include screen-min(m) {
+            height: 32px;
+        }
+    }
+
+    &__and {
+        margin: 0 10px;
+    }
+}

@@ -1,0 +1,173 @@
+@keyframes modalSpeakerPhoto {
+    0% { opacity: 0; transform: translateY(-16px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.c-modalSpeaker {
+    h5 {
+        margin-bottom: space(m);
+    }
+
+    &__header {
+        background: #000000 url('/assets/img/modal-header.jpg') no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: -24px -24px 24px -24px;
+        padding: 48px space(m) space(m) space(m);
+        position: relative;
+        z-index: 10;
+
+        .c-modal__hide {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        @include screen-min(l) {
+            margin: space(l, -1) space(l, -1) space(xl) space(l, -1);
+            padding: 64px space(l) space(l) space(l);
+        }
+    }
+
+    &__heading {
+        color: #FFF; 
+        margin-bottom: space(xs);
+    }
+
+    &__details {
+        font-size: var(--font-size-s);
+    }
+
+    &__credentials {
+        color: #fff; 
+    }
+
+    &__social {
+        margin-top: space(m);
+    }
+
+    &__socialLink {
+        display: inline-block;
+        
+        &:not(:first-child) {
+            margin-left: space(s);
+        }
+    }
+
+    &__socialIcon {
+        fill: color(text);
+        height: 20px;
+        width: 20px;
+    }
+
+    &__photo {
+        animation: modalSpeakerPhoto 500ms ease-out both;
+        aspect-ratio: 3 / 4;
+        box-shadow: 0 8px 24px rgba(#000, 0.25);
+        float: left;
+        margin: -1px space(m) space(m) 0;
+        width: 112px;
+        
+        @include screen-min(m) {
+            margin: 0 space(l) space(l) -24px;
+            width: 128px;
+        }
+
+        img {
+            height: 100%;
+            left: 0;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        &::before {
+            background: #FFF;
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path d="M116.22868,160,160,116.22852v7.54231L123.771,160Zm-45.79053,0L160,70.43815V62.89551L62.89571,160Zm26.66626,0L160,97.10417V89.56185L89.56213,160Zm-79.99959,0L160,17.10482V9.56217L9.56246,160Zm26.66666,0L160,43.77148V36.22884L36.22909,160Zm106.66606,0L160,150.4375v-7.54232L142.89526,160ZM0,36.22852v7.54264L43.77124,0H36.2286ZM0,142.89583v7.54232L150.43815,0h-7.5426ZM0,62.89518v7.54265L70.438,0H62.8953ZM0,9.56185v7.54264L17.10453,0H9.56189ZM0,89.5625v7.54232L97.10482,0H89.5623Zm0,26.66667v7.54231L123.77148,0h-7.54256Z"/></svg>');
+            mask-size: cover;
+            content: '';
+            display: block;
+            height: 0;
+            left: 0;
+            padding-top: 100%;
+            position: absolute;
+            top: -100px;
+            width: 100%;
+        }
+    }
+
+    &__body {
+        padding: 12px;
+
+        @include screen-min(m) {
+            padding: 0 space(l) space(m) space(l);
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+       
+        a {
+            box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+            color: color(--color1);
+            text-decoration: none;
+            transition: box-shadow 250ms ease;
+            
+            &:hover {
+               box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+            }
+        }
+    }
+
+    &__topic {
+        line-height: line-height(s);
+        padding-left: space(m);
+        position: relative;
+
+        @include screen-min(m) {
+            padding-left: space(l);
+        }
+
+        &::before {
+            background: color(ft-pink);
+            border-radius: 50%;
+            content: '';
+            height: 6px;
+            left: 0;
+            position: absolute;
+            top: 7px;
+            width: 6px;
+
+            @include screen-min(m) {
+                height: 8px;
+                top: 6px;
+                width: 8px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: space(s);
+        }
+    }
+
+    &__topicTitle {
+        margin-bottom: space(xs);
+    }
+
+    // &__topicLink {
+    //     box-shadow: 0 1px 0 rgba(color(--color1), 0.33);
+    //     color: color(text);
+    //     text-decoration: none;
+    //     transition: box-shadow 250ms ease;
+        
+    //     &:hover {
+    //        box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+    //     }
+    // }
+
+    &__topicDateTime {
+        font-size: font-size(s);
+    }
+}

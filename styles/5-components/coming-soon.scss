@@ -1,0 +1,13 @@
+.c-comingSoon {
+    background: rgba(var(--color-4), 0.25);
+    padding: space(l);
+    text-align: center;
+
+    @include screen-min(l) {
+        padding: space(xxl);
+    }
+
+    &__heading {
+        margin-bottom: space(s);
+    }
+}

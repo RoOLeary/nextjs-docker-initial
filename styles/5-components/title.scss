@@ -1,0 +1,41 @@
+@keyframes titleWordInner {
+    0% { opacity: 0; transform: translate3d(0, 100%, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.c-title {
+    font-size: var(--font-size-xl);
+
+    &::after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+    .word {
+        display: block;
+        float: left;
+        margin-right: 0.25em;
+        overflow: hidden;
+
+        .word__inner {
+            display: inline-block;
+            transform: translate3d(0, 100%, 0);
+        }
+    }
+
+    @for $i from 1 through 20 {
+        .word:nth-child(#{$i}) .word__inner {
+            animation-delay: calc(#{$i} * 50ms);
+        }
+    }
+
+    &.is-visible {
+        .word__inner {
+            animation-fill-mode: both;
+            animation-duration: 1s;
+            animation-name: titleWordInner;
+            animation-timing-function: cubic-bezier(.25, 1, .25, 1);
+        }
+    }
+}

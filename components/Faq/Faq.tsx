@@ -2,9 +2,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import Link from 'next/link';
 import FaqItem from './FaqItem'; 
-// import { IFaqs } from '../../interfaces/IFaq'
+import { IFaqs } from '../../interfaces/IFaq'
 
-const Faq = ({ content }) => {
+const Faq = ({ content }: IFaqs ) => {
 
     const { faqHeading, faqLeadtext, faqs } = content;
     const selectorAnswerInner: any = '.js-faqAnswerInner';
@@ -20,18 +20,18 @@ const Faq = ({ content }) => {
             answerInner.parentElement.style.setProperty('--height', answerInner.offsetHeight + 'px')
         })
     },[]);
-    return (
+    return(
         <section className="b-faq c-section js-faq">
             <div className="o-wrapper">
                 <div className="o-grid o-grid--gap-xxl l:o-grid--reverse">
                     <div className="o-grid__col l:o-grid__col--span-4">
                         <div className="c-section__sticky">
-                            <h2 className="c-section__heading">{'ASK ME ANYTHING?'}</h2>
+                            <h2 className="c-section__heading">{faqHeading ? faqHeading : 'ASK ME ANYTHING?'}</h2>
                             <div className="c-formatted c-section__text">
-                                {'We’re here to help you find the answers to your questions.'}
+                                {faqLeadtext ? faqLeadtext : 'We’re here to help you find the answers to your questions.'}
                             </div>
                             <div className="c-section__cta">
-                                <Link href={'/contact'} className="c-button c-button--primary">CONTACT</Link>
+                                <Link href={'/contact'} className="c-button c-button--primary">Contact us</Link>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ const Faq = ({ content }) => {
                 </div>
             </div>
         </section>
-    );
+    )
 }
 
 export default Faq;

@@ -1,0 +1,44 @@
+.c-inputText {
+    @include font-1;
+    @include ligatures(none);
+    @include tabular-numbers;
+    appearance: none;
+    background: rgb(var(--color-input-bg));
+    border: 1px solid rgb(var(--color-input-border));
+    border-radius: var(--border-radius);
+    color: rgb(var(--color-input));
+    display: block;
+    font-size: var(--font-size-m);
+    height: 48px;
+    line-height: 20px;
+    min-width: 0;
+    padding: 13px;
+    transition: var(--duration-medium) ease;
+    width: 100%;
+
+    &:focus {
+        border-color: rgb(var(--color-input-border-focus));
+    }
+
+    .t-dark & {
+        background: rgba(var(--color-input-bg), 0.15);
+        border-color: transparent;
+
+        &:focus {
+            background: rgba(var(--color-input-bg), 0.25);
+        }
+
+        &::placeholder {
+            color: rgba(var(--color-input), 0.5);
+        }
+    }
+
+    &--mono {
+        @include font-mono;
+    }
+
+    &--rounded {
+        border-radius: 24px;
+        padding-left: 24px;
+    }
+}

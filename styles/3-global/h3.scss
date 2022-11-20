@@ -1,0 +1,7 @@
+h3 {
+    @include alternates;
+    @include font-1;
+    font-size: var(--font-size-l);
+    font-weight: 500;
+    line-height: line-height(s);
+}

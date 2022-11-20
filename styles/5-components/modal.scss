@@ -1,0 +1,106 @@
+@keyframes modalWindow {
+    0% { transform: scale(0.75); }
+    100% { transform: scale(1); }
+}
+
+.c-modal {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.66);
+    backdrop-filter: blur(8px);
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    left: 0;
+    padding: 8px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    
+    &__window {
+        animation: modalWindow var(--duration-medium) both ease;
+        background-color: rgb(var(--color-bg));
+        border-radius: var(--border-radius);
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 16px);
+        max-width: 480px;
+        overflow: hidden;
+        width: 100%;
+        will-change: transform;
+    }
+
+    &__header  {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1),
+            0 0 4px rgba(0, 0, 0, 0.05);
+        height: 48px;
+        line-height: 48px;
+        padding: 0 24px;
+        position: relative;
+        user-select: none;
+    }
+
+    &__title {
+        @include font-1;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        text-transform: none;
+        white-space: nowrap;
+        width: calc(100% - 48px);
+    }
+
+    &__hide {
+        background: #FFF;
+        border: none;
+        color: transparent;
+        cursor: pointer;
+        height: 48px;
+        mask-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><line x1="18" y1="18" x2="30" y2="30" fill="none" stroke="%23000" stroke-miterlimit="10" stroke-width="1.5"/><line x1="30" y1="18" x2="18" y2="30" fill="none" stroke="%23000" stroke-miterlimit="10" stroke-width="1.5"/></svg>');
+        mask-size: 100%;
+        opacity: 0.5;
+        position: absolute;
+        transition: opacity var(--duration-medium) ease;
+        top: 0;
+        right: 0;
+        width: 48px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__body {
+        flex: 1;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 24px 24px 32px 24px;
+
+        .hr {
+            margin-left: -24px;
+            margin-right: -24px;
+        }
+    }
+
+    &__footer {
+        align-items: center;
+        border-top: 1px solid rgb(var(--color-border-muted));
+        color: rgb(var(--color-text-muted));
+        display: flex;
+        padding: 16px 24px;
+
+        .button {
+            margin-right: 12px;
+        }
+    }
+
+    &.is-visible {
+        display: flex;
+    }
+}
+
+.has-modal {
+    overflow: hidden;
+}
+
+

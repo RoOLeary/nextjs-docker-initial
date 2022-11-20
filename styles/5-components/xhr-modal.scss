@@ -1,0 +1,31 @@
+@keyframes xhrModalSpinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.c-xhrModal {
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 5000;
+
+    &.is-loading {
+        background: rgba(#000, 0.5);
+        backdrop-filter: blur(8px);
+
+        &::after {
+            animation: xhrModalSpinner 1s linear both;
+            background-image: url('/assets/img/spinner.png');
+            background-size: 24px 24px;
+            content: '';
+            color: #FFF;
+            height: 24px;
+            left: calc(50% - 12px);
+            position: absolute;
+            top: calc(50% - 12px);
+            width: 24px;
+        }
+    }
+}

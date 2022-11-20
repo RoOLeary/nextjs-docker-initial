@@ -1,0 +1,31 @@
+.b-stats {
+    padding: space(3xl) 0;
+    text-align: center;
+
+    @include screen-min(l) {
+        padding: space(6xl) 0;
+    }
+    
+    &__value {
+        @include font-2;
+        color: rgb(var(--color-2));
+        font-size: var(--font-size-3xl);
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1;
+    }
+
+    &__label {
+        font-weight: 500;
+    }
+
+    &__sources {
+        color: rgb(var(--color-text-muted));
+        font-size: var(--font-size-xs);
+        margin-top: space(xl);
+        
+        @include screen-min(l) {
+            text-align: center;
+        }
+    }
+}

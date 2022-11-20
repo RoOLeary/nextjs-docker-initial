@@ -1,0 +1,11 @@
+.b-text {
+    padding: space(3xl) 0;
+
+    @include screen-min(l) {
+        padding: space(6xl) 0;
+    }
+
+    &--tint {
+        background: rgba(var(--color-4), 0.25);
+    }
+}

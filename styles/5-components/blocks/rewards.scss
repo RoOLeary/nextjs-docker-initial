@@ -1,0 +1,103 @@
+@keyframes rewardsIcon {
+    0% { opacity: 0; transform: scale(0.9) translate3d(0, 24px, 0); }
+    100% { opacity: 1; transform: scale(1) translate3d(0, 0, 0); }
+}
+
+.b-rewards {
+    &__prize {
+        @include screen-max(l) {
+            align-items: center;
+            display: flex;
+        }
+
+        @include screen-min(l) {
+            text-align: center;
+        }
+    }
+
+    &__prizeIcon {
+        @include screen-max(l) {
+            width: 112px;
+            margin-right: space(l);
+        }
+        
+        @include screen-min(l) {
+            margin: 0 auto space(l) auto;
+            max-width: 75%;
+        }
+    }
+
+    &__prizeText {
+        flex: 1;
+    }
+
+    &__prizeTotal {
+        font-size: var(--font-size-l);
+        font-weight: 600;
+    }
+
+    &__prizeUpTo {
+        font-size: var(--font-size-s);
+    }
+
+    &__prizeValue {
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+    }
+
+    &__heading {
+        margin-bottom: space(xxl);
+    }
+
+    &__reward {
+        @include screen-max(l) {
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &__rewardIcon {
+        opacity: 0;
+        transform: translate3d(0, 0, 0);
+        will-change: opacity, transform;
+
+        @include screen-max(l) {
+            margin: 0 40px 0 16px;
+            width: 80px;
+        }
+
+        @include screen-min(l) {
+            margin: 0 auto space(xl) auto;
+            max-width: 50%;
+        }
+
+        &--1 {
+            animation-delay: 300ms;
+        }
+
+        &--2 {
+            animation-delay: 400ms;
+        }
+
+        &--3 {
+            animation-delay: 500ms;
+        }
+
+        &--4 {
+            animation-delay: 600ms;
+        }
+
+        .is-visible & {
+            animation-duration: 250ms;
+            animation-fill-mode: both;
+            animation-name: rewardsIcon;
+            animation-timing-function: cubic-bezier(.25, 1.5, .75, 1.5);
+        }
+    }
+
+    &__rewardDescription {
+        @include screen-min(l) {
+            text-align: center;
+        }
+    }
+}

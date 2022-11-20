@@ -1,5 +1,5 @@
 .b-hero {
-    background: #ffffff url('/assets/img/hero-glow.jpg') no-repeat;
+    background: #000 url('/assets/img/hero-glow.jpg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center top;
@@ -117,8 +117,8 @@
             z-index: 3;
 
             @include screen-min(m) {
-                grid-column: 3 / span 4;
-                grid-row: 5 / span 2;
+                grid-column: 3 / span 6;
+                grid-row: 4 / span 3;
             }
 
             @include screen-min(l) {
@@ -236,9 +236,5 @@
         font-size: var(--font-size-l);
         font-weight: 500;
         margin-bottom: space(xxl);
-    }
-
-    h4, h1{
-        color: #000000;
     }
 }

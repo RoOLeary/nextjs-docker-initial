@@ -9,14 +9,7 @@ const About = ({ page, preview }:any) => {
   return(
     <MainLayout>
       {preview ? <h1>In Preview Mode</h1> : null}
-      <section className="b-text c-section" id="about">
-        <div className="o-wrapper">
-          <div>
-          <h1>{title ? title : 'about pages'}</h1>
-          </div>
-        </div>
-        <PageBlocks content={content} />
-      </section>
+      <PageBlocks content={content} />
     </MainLayout>
   )
 }
