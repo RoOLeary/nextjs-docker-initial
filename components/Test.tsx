@@ -20,6 +20,7 @@ const Test = ({ props }:any) => {
             <div className="o-wrapper">
                 <div className="o-grid o-grid--gap-xxl">
                     <Heading primary>{headingText}</Heading>
+                    <p>All I'm doing is demonstating a unit styled with styled-components</p>
                 </div>
             </div>
         </section>  

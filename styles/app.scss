@@ -1,18 +1,7 @@
 @charset 'utf-8';
 
-// html, body{
-//     margin: 0;
-//     scrollbar-width: none;  /* Firefox */
-//     overflow-x: scroll;
-//   }
-  
-//   ::-webkit-scrollbar {
-//     display: none;
-//   }
-  
 @import '~reset-css/sass/reset';
   
-
 // 1. Settings
 @import '1-settings/fonts';
 @import '1-settings/variables';
@@ -80,3 +69,9 @@
 @import '6-utils/margin';
 @import '6-utils/text';
 @import '6-utils/visibility';
+
+// 7. Dirty Hacks and Overrides: 
+
+._picnic_logo{
+    border-radius: 5px;
+}

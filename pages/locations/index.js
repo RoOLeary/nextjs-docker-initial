@@ -1,17 +1,14 @@
+import MainLayout from '../../components/Globals/Layouts/MainLayout';
+import StaticHeader from '../../components/StaticHeader';
+
 export default function Locations() {
-
     return(
-
-        <div className={'locations'}>
-     
-            <ul>
-                <li>The Netherlands</li>
-                <li>Germany</li>
-                <li>France</li>
-            </ul>
-
-        </div>
-
+        <MainLayout>
+            <StaticHeader content={'Locations List'} />
+            <div className={'locations'}>
+                <p>Locations</p>
+            </div>
+        </MainLayout>
     )
 
 }

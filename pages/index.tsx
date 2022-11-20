@@ -70,7 +70,7 @@ const Home = () => {
 						<Image alt="photo1 - Audience member photo" loader={imageLoader} src="https://placedog.net/550/550" sizes="100vw" fill />
 					</motion.figure> */}
 				<motion.figure className={"b-hero__photo b-hero__photo--4"} style={{ y: y5, x: 0 }}>
-					<Image alt="photo1 - Audience member photo" loader={imageLoader} src="https://placedog.net/250/550" sizes="100vw" fill />
+					<Image alt="photo1 - Audience member photo" loader={imageLoader} src="https://source.unsplash.com/800x500/?picnic" sizes="100vw" fill />
 				</motion.figure>
 				<figure className={"b-hero__shape b-hero__shape--1"} id="dots"></figure>
 				<figure className={"b-hero__shape b-hero__shape--2"} id="donut"></figure>
