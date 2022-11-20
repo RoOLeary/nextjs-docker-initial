@@ -14,8 +14,16 @@ const headingText = 'This is just a heading'
 const Test = ({ props }:any) => {
     // console.log(props);
     headingText ? headingText : null
-    return <Heading primary>{headingText}</Heading>;
-
+    return (
+        
+        <section className="b-text c-section" id="learn-more">
+            <div className="o-wrapper">
+                <div className="o-grid o-grid--gap-xxl">
+                    <Heading primary>{headingText}</Heading>
+                </div>
+            </div>
+        </section>  
+    );
 }
 
 export default Test; 

@@ -13,8 +13,9 @@ import BoxedImage from '../components/BoxedImage'
 // import MiniBanner from '../components/MiniBanner'
 // import Note from '../components/Note'
 import Test from '../components/Test'
-// import TextVisual from '../components/TextVisual'
-// import USPs from '../components/USPs'
+import Text from '../components/Text'
+import TextVisual from '../components/TextVisual'
+import USPs from '../components/USPs'
 // import Video from '../components/Video'
 import { useTypingText } from '../hooks/useTypingText';
 import PageBlocks from '../components/PageBlocks'
@@ -35,6 +36,8 @@ const Home = () => {
     const x1 = useTransform(scrollY, [500, 0], [-250, 0]);
     const x2 = useTransform(scrollY, [750, 0], [150, 0]);
 	// console.log(page.data[0].blocks);
+
+	const dummyText = `Man, that guy is the Red Grin Grumbold of pretending he knows what's going on. Oh you agree huh? You like that Red Grin Grumbold reference? Well guess what, I made him up. You really are your father's children. Think for yourselves, don't be sheep.`;
 
 	return (
 		<>
@@ -90,6 +93,8 @@ const Home = () => {
 				</div>
 			</section>
 			<Test color="primary"/>
+			<Text heading={'Text Block Here'} column={dummyText} />
+			<USPs />
 		</main>
 		</MainLayout>
 		</>

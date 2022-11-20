@@ -1,15 +1,16 @@
 @charset 'utf-8';
 
-html, body{
-    margin: 0;
-    scrollbar-width: none;  /* Firefox */
-    overflow-x: scroll;
-  }
+// html, body{
+//     margin: 0;
+//     scrollbar-width: none;  /* Firefox */
+//     overflow-x: scroll;
+//   }
   
-  ::-webkit-scrollbar {
-    display: none;
-  }
+//   ::-webkit-scrollbar {
+//     display: none;
+//   }
   
+@import '~reset-css/sass/reset';
   
 
 // 1. Settings

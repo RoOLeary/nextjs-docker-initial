@@ -95,7 +95,7 @@
             }
 
             @include screen-min(l) {
-                grid-column: 7 / span 2;
+                grid-column: 5 / span 4;
                 grid-row: 2 / span 2;
             }
         }
@@ -122,7 +122,7 @@
             }
 
             @include screen-min(l) {
-                grid-column: 5 / span 4;
+                grid-column: 4 / span 6;
                 grid-row: 4 / span 2;
             }
         }

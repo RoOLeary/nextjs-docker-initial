@@ -243,3 +243,10 @@
     top: -100px;
     z-index: 1000;
 }
+
+
+@media screen and (min-width: 960px) {
+    .navigation-underline{
+        border-top: 1px solid rgb(var(--color-1));
+    }
+}
