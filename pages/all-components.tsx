@@ -29,8 +29,7 @@ const AllComponents = ({ page, preview }:any) => {
 		</Head>
 		<MainLayout>	
 			<main className={'main'}>
-				{preview ? `previewing ${page.title}` : ''}
-				<h1>{page.title}</h1>
+				{preview ? 'Preview Mode' : ''}
 				<PageBlocks content={content} />
 			</main>
 		</MainLayout>

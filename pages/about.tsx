@@ -8,7 +8,7 @@ const About = ({ page, preview }:any) => {
   const content = page.pageBlocks;
   return(
     <MainLayout>
-      {preview ? <h1>In Preview Mode</h1> : null}
+      {preview ? <h3>Preview Mode</h3> : null}
       <PageBlocks content={content} />
     </MainLayout>
   )
