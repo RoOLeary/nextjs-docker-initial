@@ -13,7 +13,7 @@ const Product = ({ product }: IProduct ) => {
     // const { show, toggleVisibility } = useModal();
 
     return(
-        <li className="o-grid__col xs:o-grid__col--span-3 m:o-grid__col--span-4 l:o-grid__col--span-3">
+        <li className="o-grid__col xs:o-grid__col--span-6 m:o-grid__col--span-4 l:o-grid__col--span-3">
             <article className="b-product" itemType="http://schema.org/Person" itemProp="performer">
                 
                 <div className="b-product__photo">

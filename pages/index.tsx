@@ -93,10 +93,11 @@ const Home = () => {
 					</div>
 				</div>
 			</section>
+			<Products heading={'Products'} productsintro={'blah blah blah'} products={products} />
 			<Test color="primary"/>
 			<Text heading={'Text Block Here'} column={dummyText} />
 			<USPs />
-			<Products heading={'Products'} productsintro={'blah blah blah'} products={products} />
+			
 		</main>
 		</MainLayout>
 		</>
