@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import PageBlocks from '../components/PageBlocks'
-// import USPs from '../components/USPs'
+import MainLayout from '../components/Globals/Layouts/MainLayout'
 import { GetServerSideProps, GetStaticProps } from 'next';
 import { useTypingText } from '../hooks/useTypingText';
 
