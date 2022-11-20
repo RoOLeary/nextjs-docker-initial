@@ -2,7 +2,7 @@
     "theme_color": "#e1171e",
     "background_color": "#e1171e",
     "display": "standalone",
-    "start_url": "/",
+    "start_url": "/webstore",
     "scope": "/",
     "name": "PicNext_Prototype",
     "short_name": "ppt",
