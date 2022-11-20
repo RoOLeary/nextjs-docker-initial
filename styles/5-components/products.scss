@@ -1,0 +1,20 @@
+.b-products {
+    &__list {
+        @include screen-max(m) {
+            margin: 0 -20px;
+        }
+    }
+
+    &__show {
+        margin-top: space(xxl);
+        text-align: center;
+
+        .c-button {
+            display: inline-block;
+        }
+
+        .is-showAll & {
+            display: none;
+        }
+    }
+}

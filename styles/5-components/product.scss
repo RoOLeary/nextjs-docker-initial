@@ -1,0 +1,97 @@
+.b-product {
+    font-size: var(--font-size-s);
+    overflow: hidden;
+    padding-bottom: space(m);
+    position: relative;
+
+    &__photo {
+        height: 0;
+        left: 0;
+        margin-bottom: space(s);
+        overflow: hidden;
+        padding-top: 125%;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
+    &__photoImg {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        top: 0;
+        transform: scale(1.025);
+        transition: transform var(--duration-medium) ease;
+        width: 100%;
+        will-change: transform;
+        z-index: 1;
+    }
+
+    &__trigger {
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &__name {
+        font-size: var(--font-size-m);
+    }
+
+    &__company {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+        color: rgb(var(--color-text));
+        text-decoration: none;
+    }
+
+    @include screen-max(l) {
+        &.is-hideForMobile {
+            display: none;
+        }
+    }
+
+    @include screen-min(l) {
+        &.is-hideForDesktop {
+            display: none;
+        }
+    }
+
+    .is-showAll & {
+        &.is-hideForDesktop,
+        &.is-hideForMobile {
+            display: block;
+        }
+    }
+
+    .no-touchevents &:hover {
+        .c-product {
+            &__photo::after {
+                background-color: color(--color-1, 0.25);
+            }
+        }
+    }
+
+    .no-touchevents &.has-social:hover {
+        .c-product {
+            &__details,
+            &__social {
+                transform: translateY(0);
+            }
+
+            &__social {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:hover {
+        .b-product__photoImg {
+            transform: scale(1);
+        }
+    }
+}

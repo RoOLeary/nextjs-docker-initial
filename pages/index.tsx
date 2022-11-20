@@ -18,11 +18,12 @@ import TextVisual from '../components/TextVisual'
 import USPs from '../components/USPs'
 // import Video from '../components/Video'
 import { useTypingText } from '../hooks/useTypingText';
-import PageBlocks from '../components/PageBlocks'
+import Products from '../components/Products/Products'
 import Link from 'next/link';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import imageLoader from './../imageLoader';
 import Image from 'next/image';
+import { products } from './../lib/utils';
 
 const Home = () => {
 	
@@ -38,7 +39,7 @@ const Home = () => {
 	// console.log(page.data[0].blocks);
 
 	const dummyText = `Man, that guy is the Red Grin Grumbold of pretending he knows what's going on. Oh you agree huh? You like that Red Grin Grumbold reference? Well guess what, I made him up. You really are your father's children. Think for yourselves, don't be sheep.`;
-
+	
 	return (
 		<>
 		<Head>
@@ -95,6 +96,7 @@ const Home = () => {
 			<Test color="primary"/>
 			<Text heading={'Text Block Here'} column={dummyText} />
 			<USPs />
+			<Products heading={'Products'} productsintro={'blah blah blah'} products={products} />
 		</main>
 		</MainLayout>
 		</>
