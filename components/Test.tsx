@@ -7,6 +7,7 @@ const Heading = styled.h1`
     align-items: left;
     color: ${props => props.primary ? "red" : "green"};
     text-transform: capitalize;
+    padding: 0 2em;
 `
 
 const headingText = 'This is just a heading'
