@@ -94,7 +94,7 @@ const Home = () => {
 				</div>
 			</section>
 			<Products heading={'Products'} productsintro={'blah blah blah'} products={products} />
-			<Test color="primary"/>
+			{/* <Test color="primary"/> */}
 			<Text heading={'Text Block Here'} column={dummyText} />
 			<USPs />
 			
