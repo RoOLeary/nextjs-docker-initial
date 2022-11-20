@@ -8,8 +8,6 @@ interface IProducts {
 }
 
 const Products = ({ heading, productsintro, products }: IProducts ) => { 
-    
-    console.log(products.length);
 
     let introText = productsintro ? productsintro : 'Holding text';
     return(

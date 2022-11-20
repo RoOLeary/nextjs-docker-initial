@@ -53,7 +53,7 @@ const Home = () => {
 			<section className={"b-hero js-equinoxNode t-dark"}>
 				<div className={"b-hero__grid"}>
 
-				<motion.figure
+				{/* <motion.figure
 						className="b-hero__photo b-hero__photo--1"
 						style={{ y: y2, x: 350 }}
 					>
@@ -64,15 +64,15 @@ const Home = () => {
 					style={{ y: y3, x: x1 }}
 				>
 					<Image alt="photo2 - Speaker" loader={imageLoader} src={"https://source.unsplash.com/800x500/?cucumbers"} sizes="20vh" width={200} height={200}/>
-				</motion.figure>
+				</motion.figure> */}
 				
 				
 					{/* <motion.figure className="b-hero__photo b-hero__photo--3" style={{ y: y4, x: x2 }}>
 						<Image alt="photo1 - Audience member photo" loader={imageLoader} src="https://placedog.net/550/550" sizes="100vw" fill />
 					</motion.figure> */}
-				<motion.figure className={"b-hero__photo b-hero__photo--4"} style={{ y: y5, x: 0 }}>
+				{/* <motion.figure className={"b-hero__photo b-hero__photo--4"} style={{ y: y5, x: 0 }}>
 					<Image alt="photo1 - Audience member photo" loader={imageLoader} src="https://source.unsplash.com/800x500/?picnic" sizes="100vw" fill />
-				</motion.figure>
+				</motion.figure> */}
 				<figure className={"b-hero__shape b-hero__shape--1"} id="dots"></figure>
 				<figure className={"b-hero__shape b-hero__shape--2"} id="donut"></figure>
 				<figure className={"b-hero__shape b-hero__shape--3"} id="bars"></figure>
