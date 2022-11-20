@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import MainLayout from '../../components/Globals/Layouts/MainLayout';
 import StaticHeader from '../../components/StaticHeader';
 import { useRouter } from 'next/router'; 
@@ -8,11 +9,17 @@ export default function WebStore() {
 
     const { locale } = useRouter(); 
     return(
-        <MainLayout>
-            <StaticHeader content={'WebStore'} />
-            <div className={'WebStore'}>
-                <Products heading={'Featured Products'} productsintro={'blah blah blah'} products={products} />
-            </div>
-        </MainLayout>
+        <>
+            <Head>
+                <title>Store | PicNext Prototype</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <MainLayout>
+                <StaticHeader content={'WebStore'} />
+                <div className={'WebStore'}>
+                    <Products heading={'Featured Products'} productsintro={'blah blah blah'} products={products} />
+                </div>
+            </MainLayout>
+        </>
     )
 }
