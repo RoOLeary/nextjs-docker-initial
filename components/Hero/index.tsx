@@ -47,7 +47,7 @@ const Hero = ({ eyebrow, heading, subHeading }: IHero ): JSX.Element => {
                 style={{ y: y3, x: x1 }}
             >
             
-            <Image alt="photo2 - Speaker" loader={imageLoader} src={"https://source.unsplash.com/300x200/?picnic"} sizes="20vh" width={200} height={200}/>
+            {/* <Image alt="photo2 - Speaker" loader={imageLoader} src={"https://source.unsplash.com/300x200/?picnic"} sizes="20vh" width={200} height={200}/> */}
             </motion.figure>
            
            
