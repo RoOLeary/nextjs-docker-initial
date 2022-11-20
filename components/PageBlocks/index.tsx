@@ -5,6 +5,21 @@ import Faq from './../Faq/Faq';
 import Test from './../Test'
 import TextVisual from './../TextVisual'
 import Video from './../Video'
+
+// import Head from 'next/head'
+// import Faq from './../Faq/Faq'
+// import Hero from './../Hero'
+// import BoxedImage from './../BoxedImage'
+// import Button from './../Button'
+// import Cards from './../Cards/Cards'
+// import Contact from './../Contact/Contact'
+// import CTA from './../CTA/CTA'
+// import Chapters from './../Chapters/Chapters'
+// import MapComponent from './../Map/MapComponent'
+// import MiniBanner from './../MiniBanner'
+// import Note from './../Note'
+
+
 import IBlocks from '../../interfaces/IBlocks'
 
 interface IProps {
@@ -13,25 +28,22 @@ interface IProps {
 }
 
 function renderContent(content){
-     
+    
+    // get the pageBlocks. get content object, map over each block and then run a switch statement
+    // to loop over the various components and pass in the appropriate data types
+    // this can be further extrapolated with a generic component, but is out of initial scope
+    
     const pageBlocksList = content ? Object.entries(content).map((block: any, id: number) => {
-        
+
         const blockContent = block[1];
         
-        
-        
         switch(blockContent['blockType']) {
-            
             case 'header':
-                
                 return (
                     <Header key={block[1]['uid']} headline={blockContent['headline']}  />
                 );
-            
             case 'hero':
-                
                 return (
-
                     <Hero 
                         key={block[1]['uid']} 
                         eyebrow={blockContent['eyebrow']} 
@@ -63,13 +75,13 @@ function renderContent(content){
                         videoEmbedCode={blockContent['videoEmbedCode']} 
                     />
                 );
-            // case 'speakers':
+            // case 'products':
             //     return (
-            //         <Speakers 
+            //         <Products 
             //             key={block[1]['uid']} 
             //             heading={blockContent['heading']} 
-            //             speakersIntro={blockContent['speakersIntro']} 
-            //             speakers={blockContent['speakers']} 
+            //             productinfo={blockContent['productinfo']} 
+            //             produucts={blockContent['produucts']} 
             //         />
             //     )
             // case 'signup':

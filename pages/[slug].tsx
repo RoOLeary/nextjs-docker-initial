@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import MainLayout from './../components/Globals/Layouts/MainLayout'
 import StaticHeader from './../components/StaticHeader'
@@ -14,6 +15,11 @@ const Page = ({ page, preview }:any) => {
     let content = page.blocks;
     console.log(page);
     return (
+        <>
+        <Head>
+			<title>{page.title} | PicNext Prototype</title>
+			<link rel="icon" href="/favicon.ico" />
+		</Head>
         <MainLayout>
            {preview ? <h1>In Preview Mode</h1> : null}
             <StaticHeader content={title} />
@@ -22,6 +28,7 @@ const Page = ({ page, preview }:any) => {
             {/* <Related related={entry.manualRelatedArticles} currentslug={entry.slug} /> */}
         
         </MainLayout>
+        </>
     )
   }
   

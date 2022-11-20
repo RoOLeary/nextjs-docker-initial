@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 import PageBlocks from '../components/PageBlocks'
 import { GetServerSideProps } from 'next'
@@ -6,12 +7,18 @@ const About = ({ page, preview }:any) => {
 
   const { title } = page;
   const content = page.pageBlocks;
-  return(
-    <MainLayout>
-      {preview ? <h3>Preview Mode</h3> : null}
-      <PageBlocks content={content} />
-    </MainLayout>
-  )
+	return(
+		<>
+			<Head>
+				<title>About us | PicNext Prototype</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<MainLayout>
+			{preview ? <h3>Preview Mode</h3> : null}
+			<PageBlocks content={content} />
+			</MainLayout>
+		</>
+	)
 }
 
 

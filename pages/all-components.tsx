@@ -1,19 +1,7 @@
 import { useState, useEffect } from 'react'
 import Head from 'next/head'
-import MainLayout from '../components/Globals/Layouts/MainLayout'
-import Faq from '../components/Faq/Faq'
-import Hero from '../components/Hero'
-import BoxedImage from '../components/BoxedImage'
-import Button from '../components/Button'
-import Cards from '../components/Cards/Cards'
-// import Contact from '../components/Contact/Contact'
-import CTA from '../components/CTA/CTA'
-import Chapters from '../components/Chapters/Chapters'
-import MapComponent from '../components/Map/MapComponent'
-import MiniBanner from '../components/MiniBanner'
-import Note from '../components/Note'
 import PageBlocks from '../components/PageBlocks'
-import USPs from '../components/USPs'
+// import USPs from '../components/USPs'
 import { GetServerSideProps, GetStaticProps } from 'next';
 import { useTypingText } from '../hooks/useTypingText';
 
@@ -24,7 +12,7 @@ const AllComponents = ({ page, preview }:any) => {
 	return (
 		<>
 		<Head>
-			<title>PicNext Prototype</title>
+			<title>All Components | PicNext Prototype</title>
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 		<MainLayout>	
