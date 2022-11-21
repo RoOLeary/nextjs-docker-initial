@@ -1,25 +1,43 @@
 # PicNext Prototype
 
-This is an initial sketch out of the Next.js side of the new [] web instance project.
+This is an initial sketch out of the Next.js side of the new [] web instance project. The objective is provide a functional guideline as to how to achieve the implementation of the Picnic web properties using NextJS. Following instance features: 
 
-- NextJS with Typescript
-- Built with SCSS
-- Storybook for Documentation/Design System (likely to be separate)
-- Docker set up, please read below. Ideally
+- NextJS (with Typescript) *caveat - could use improvement
+- Built with SCSS - although support for styled-components and css modules
+- Includes support for live preview (currently via CraftCMS instance)
+- Provides basis for discovery of the idea Docker set up, please read below.
+- To follow: further fields and feature support
 
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Clone the repo
 
 ```bash
-npx create-next-app --example with-docker picnext_prototype
-# or
-yarn create next-app --example with-docker picnext_prototype
-# or
-pnpm create next-app --example with-docker picnext_prototype
+npx create-next-app --example with-docker picnic-web-nextjs
+
 ```
 
-## Using Docker
+```
+npm install
+```
+
+```
+npm run dev 
+```
+will start a local instance on http://localhost:3000
+
+```
+npm run build
+```
+Builds a complete instance
+
+```
+npm run start
+```
+Generates sw.js for local PWA
+
+
+## Using Docker - boilerplate
 
 1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
 1. Build your container: `docker build -t nextjs-docker .`.

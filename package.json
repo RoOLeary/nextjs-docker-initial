@@ -4,9 +4,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"lint": "next build",
-		"storybook": "start-storybook -p 6006",
-		"start": "serve out",
-		"build-storybook": "build-storybook"
+		"start": "serve out"
 	},
 	"dependencies": {
 		"framer-motion": "^7.6.6",
@@ -23,14 +21,6 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.2",
-		"@storybook/addon-actions": "^6.5.13",
-		"@storybook/addon-essentials": "^6.5.13",
-		"@storybook/addon-interactions": "^6.5.13",
-		"@storybook/addon-links": "^6.5.13",
-		"@storybook/builder-webpack5": "^6.5.13",
-		"@storybook/manager-webpack5": "^6.5.13",
-		"@storybook/react": "^6.5.13",
-		"@storybook/testing-library": "^0.0.13",
 		"@types/node": "18.11.9",
 		"@types/react": "18.0.25",
 		"@typescript-eslint/eslint-plugin": "^5.42.1",
