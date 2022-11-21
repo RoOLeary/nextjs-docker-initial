@@ -90,7 +90,7 @@ const Nav = (): JSX.Element => {
         <nav className={'c-nav js-nav t-dark'} ref={unitRef}>
             <div className={'c-nav__left'}>
                 <Link href={`/`} className={"c-nav__logoLink"}>
-                    <Image alt={'Logo'} src={'/assets/images/logo.svg'} width={50} height={50} loader={imageLoader} className={'_picnic_logo'}/>
+                    <Image alt={'Logo'} src={'/assets/images/logo.svg'} width={50} height={50} loader={imageLoader} className={'_picnic_logo shake'}/>
                 </Link>
             </div>
             <label className={'c-nav__mobileMenuToggle'} htmlFor="navMobileMenuToggle" ref={mobTogglRef} onClick={toggleMobileMenu}>

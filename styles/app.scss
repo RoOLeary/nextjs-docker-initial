@@ -74,7 +74,29 @@
 
 ._picnic_logo{
     border-radius: 5px;
-}
+
+    // thought this would look kind of cool. 
+    &.shake{
+
+        &:hover, &:focus {
+            animation: logoshake .5s cubic-bezier(.36,.07,.19,.97) both;
+            backface-visibility: hidden;
+            transform-origin: center;
+        }
+    }
+  
+    @keyframes logoshake {
+            0% { transform: rotate(0); }
+            15% { transform: rotate(5deg); }
+            30% { transform: rotate(-5deg); }
+            45% { transform: rotate(4deg); }
+            60% { transform: rotate(-4deg); }
+            75% { transform: rotate(2deg); }
+            85% { transform: rotate(-2deg); }
+            92% { transform: rotate(1deg); }
+            100% { transform: rotate(0); }
+        }
+    }
 
 .mobile-menu-active > div:first-child{
     transform: rotate(45deg) translateZ(0)
