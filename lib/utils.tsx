@@ -74,48 +74,48 @@ export const jobs: { id: number, jobCategory: string; jobImage: string, jobLink:
         id: 1,
         jobCategory: 'Technology',
         jobImage: 'https://source.unsplash.com/280x120/?technology',
-        jobLink: "#",
+        jobLink: "technology",
     },
     {
         id: 2,
-        jobCategory: 'Consumer',
-        jobLink: "#",
+        jobCategory: 'Consumer Services',
+        jobLink: "consumer-services",
         jobImage: 'https://source.unsplash.com/280x120/?consumer'
     },
     {
         id: 3,
         jobCategory: 'Driver',
-        jobLink: "#",
+        jobLink: "driver",
         jobImage: 'https://source.unsplash.com/280x120/?driver'
     },
     {
         id: 4,
-        jobCategory: 'Warehouse',
-        jobLink: "#",
+        jobCategory: 'Runner',
+        jobLink: "runner",
         jobImage: 'https://source.unsplash.com/280x120/?warehouse'
     },
     {
         id: 5,
-        jobCategory: 'Platform',
-        jobLink: "#",
-        jobImage: 'https://source.unsplash.com/280x120/?platform'
+        jobCategory: 'Shopper',
+        jobLink: "shopper",
+        jobImage: 'https://source.unsplash.com/280x120/?sales'
     },
     {
         id: 6,
-        jobCategory: 'Human Resources',
-        jobLink: "#",
-        jobImage: 'https://source.unsplash.com/280x120/?hr'
+        jobCategory: 'Head Office',
+        jobLink: "head-office",
+        jobImage: 'https://source.unsplash.com/280x120/?hq'
     },
     {
         id: 7,
-        jobCategory: 'Accounting',
-        jobLink: "#",
+        jobCategory: 'Sales',
+        jobLink: "sales",
         jobImage: 'https://source.unsplash.com/280x120/?accounting'
     },
     {
         id: 8,
         jobCategory: 'Management',
-        jobLink: "#",
+        jobLink: "management",
         jobImage: 'https://source.unsplash.com/280x120/?management'
     },
 ]
