@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/Image';
+import Image from 'next/image';
 import imageLoader from '../../imageLoader';
 import MainLayout from '../../components/Globals/Layouts/MainLayout';
 import StaticHeader from '../../components/StaticHeader';
