@@ -57,7 +57,7 @@ const Footer = () => (
                     <li className="c-footer__socialItem"><a className="c-footer__socialLink" href="https://www.instagram.com/" target="_blank" rel="noreferrer"><img alt="Instagram" className="c-footer__socialIcon" src="/assets/images/instagram.svg" /></a></li>
                 </ul>
 
-                <p className="c-footer__copyright">Copyright &copy; {new Date().getFullYear()} </p>
+                <p className="c-footer__copyright">Copyright &copy; {new Date().getFullYear()} Picnic Technologies B.V.</p>
             </div>
         </div>
     </footer>
