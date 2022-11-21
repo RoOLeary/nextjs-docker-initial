@@ -65,3 +65,57 @@ export const products: { id: number, productName: string; productDescription: st
         price: '€3,50'
     },
 ]
+
+
+
+
+export const jobs: { id: number, jobCategory: string; jobImage: string, jobLink: string }[] = [
+    {
+        id: 1,
+        jobCategory: 'Technology',
+        jobImage: 'https://source.unsplash.com/280x120/?technology',
+        jobLink: "#",
+    },
+    {
+        id: 2,
+        jobCategory: 'Consumer',
+        jobLink: "#",
+        jobImage: 'https://source.unsplash.com/280x120/?consumer'
+    },
+    {
+        id: 3,
+        jobCategory: 'Driver',
+        jobLink: "#",
+        jobImage: 'https://source.unsplash.com/280x120/?driver'
+    },
+    {
+        id: 4,
+        jobCategory: 'Warehouse',
+        jobLink: "#",
+        jobImage: 'https://source.unsplash.com/280x120/?warehouse'
+    },
+    {
+        id: 5,
+        jobCategory: 'Platform',
+        jobLink: "#",
+        jobImage: 'https://source.unsplash.com/280x120/?platform'
+    },
+    {
+        id: 6,
+        jobCategory: 'Human Resources',
+        jobLink: "#",
+        jobImage: 'https://source.unsplash.com/280x120/?hr'
+    },
+    {
+        id: 7,
+        jobCategory: 'Accounting',
+        jobLink: "#",
+        jobImage: 'https://source.unsplash.com/280x120/?accounting'
+    },
+    {
+        id: 8,
+        jobCategory: 'Management',
+        jobLink: "#",
+        jobImage: 'https://source.unsplash.com/280x120/?management'
+    },
+]

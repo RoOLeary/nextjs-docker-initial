@@ -3,7 +3,9 @@ import Image from 'next/image';
 import imageLoader from '../../imageLoader';
 import MainLayout from '../../components/Globals/Layouts/MainLayout';
 import StaticHeader from '../../components/StaticHeader';
-import { useRouter } from 'next/router'; 
+import { useRouter } from 'next/router';
+import Jobs from '../../components/Jobs/Jobs'
+import { jobs } from './../../lib/utils'; 
 
 export default function Careers() {
 
@@ -26,9 +28,8 @@ export default function Careers() {
                     
                     />
                 </div>
-                <StaticHeader content={'Careers List'} />
-                <div className={'Careers'}>
-                    <p>Careers {locale} </p>
+                <div className={'WebStore'}>
+                    <Jobs heading={'Careers'} jobsintro={'Work With Us'} jobs={jobs} />
                 </div>
             </MainLayout>
         </>
