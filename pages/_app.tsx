@@ -90,7 +90,7 @@ function PicNextPrototype({
   return (
     	<> 
        <AnimatePresence
-          exitBeforeEnter
+          mode='wait'
           initial={false}
           onExitComplete={() => window.scrollTo({
             top: 0,
@@ -98,10 +98,10 @@ function PicNextPrototype({
             behavior: 'smooth',
           })}
         > 
-          {isLoading && <Loader /> } 
-          <Component {...pageProps} />
-        </AnimatePresence>
-		  </>
+			{isLoading && <Loader /> } 
+			<Component {...pageProps} />
+		</AnimatePresence>
+		</>
     );
   }
 
