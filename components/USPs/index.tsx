@@ -1,7 +1,7 @@
 const USPs = () => {
 
     return(
-        <section className="b-text c-section" id="learn-more">
+        <section className="b-text c-section is_tinted" id="usps">
             <div className="o-wrapper">
                 <div className="o-grid o-grid--gap-xxl">
                     <div className="o-grid__col l:o-grid__col--span-4">

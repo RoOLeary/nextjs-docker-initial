@@ -17,7 +17,7 @@ type Props = {
 
 const MainLayout = ({ children }: Props): JSX.Element => (
        
-        <>
+        <>  
             <Nav />
                 {children}
             <Footer />

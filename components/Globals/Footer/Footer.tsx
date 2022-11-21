@@ -1,4 +1,5 @@
 import styles from './../styles/Footer.module.css'
+import Link from 'next/link'; 
 
 const Footer = () => (
 
@@ -8,31 +9,40 @@ const Footer = () => (
                 <div className="o-grid o-grid--gap-xxl">
                     
                     <div className="o-grid__col l:o-grid__col--span-4">
-                        <h3 className="u-m-m">Lorem ipsum dolor</h3>
-                        <p className="c-footer__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet lacus in ante semper dictum. In eu sapien blandit, tincidunt nibh nec, pharetra nisi. Suspendisse ac ante rhoncus, tristique nibh ac, faucibus quam.
-                        </p>
+                        <h3 className="u-m-m">Picnic</h3>
+                        <ul>
+                            <li><Link href="/about">About Picnic</Link></li>
+                            <li><Link href="/careers">Careers at Picnic</Link></li>
+                            <li><Link href="/jobs">Become a delivery person</Link></li>
+                            <li><Link href="/jobs">Become a warehouse worker</Link></li>
+                            <li><Link href="/blog">Blog</Link></li>
+                        </ul>
+                    </div>
+
+                    <div className="o-grid__col l:o-grid__col--span-4">
+                        <h3 className="u-m-m">Online Supermarket</h3>
+                        <ul>
+                            <li><Link href="/download-app">Download app</Link></li>
+                            <li><Link href="/webstore">Our assortment</Link></li>
+                            <li><Link href="/about-us">How does it work?</Link></li>
+                            <li><Link href="/locations">Where does Picnic deliver?</Link></li>
+                            <li><Link href="/blog">Business order</Link></li>
+                            <li><Link href="/blog">Home Deliveries</Link></li>
+                            <li><Link href="/blog">Blog</Link></li>
+                        </ul>
                     </div>
                 
 
                     
-                
-                    <div className="o-grid__col l:o-grid__col--span-5">
+                    <div className="o-grid__col l:o-grid__col--span-4">
                         <h3 className="u-m-m">Contact</h3>
-                        <p className="c-footer__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet lacus in ante semper dictum. In eu sapien blandit, tincidunt nibh nec, pharetra nisi. Suspendisse ac ante rhoncus, tristique nibh ac, faucibus quam.
-                        </p>
-                    </div>
-                
-
-                    <div className="o-grid__col l:o-grid__col--span-3">
-                        <h3 className="u-m-m">Quick Links</h3>
                         <ul>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
-                            <li><a href="#">Lorem ipsum dolor</a></li>
+                            <li><Link href="/faqs">Frequently Asked Questions</Link></li>
+                            <li><Link href="/terms-and-conditions">Terms and Conditions</Link></li>
+                            <li><Link href="/announcements">Important notices</Link></li>
+                            <li><Link href="/webstore">Promotions and Prices</Link></li>
+                            <li><Link href="/guarantee">Thusiwinkel Guarantee</Link></li>
+                            <li><Link href="/contact">Contact</Link></li>
                         </ul>
                     </div>
 

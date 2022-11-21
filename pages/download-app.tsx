@@ -35,7 +35,5 @@ const DownLoadApp = () => {
             </MainLayout>
         </>
     )
-
-
 }
 export default DownLoadApp; 
