@@ -43,11 +43,10 @@ const links: { name: string; href: string }[] = [
         name: 'Store',
         href: '/webstore',
     },
-   
-    // {
-    //     name: 'Programs',
-    //     href: '/programs',
-    // },
+    {
+        name: 'Recipies',
+        href: '/recipies',
+    }
     // {
     //     name: 'Spaces',
     //     href: '/spaces',
