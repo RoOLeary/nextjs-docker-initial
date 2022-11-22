@@ -33,7 +33,8 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
 	props: {
 		preview: preview ? true : false,
 		page: page
-	}
+	},
+	revalidate: 10, // In seconds
   };
 };
 
