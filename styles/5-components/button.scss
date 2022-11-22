@@ -3,9 +3,9 @@
     appearance: none;
     background: transparent;
     background-clip: border-box;
-    border-radius: 24px;
+    border-radius: 5px;
     border: 1px solid rgba(var(--color-button), 0.25);
-    color: rgb(var(--color-button-text));
+    color: rgb(var(--color-1));
     cursor: pointer;
     display: inline-block;
     font-size: var(--font-size-m);
@@ -58,13 +58,13 @@
         .t-dark & {
             background: rgb(var(--color-button-primary));
             border-color: transparent;
-            color: rgb(var(--color-button-primary-text));
+            color: rgb(var(--color-1));
 
             &:focus,
             &:hover {
                 background: rgb(var(--color-button-primary-hover));
                 border-color: transparent;
-                color: rgb(var(--color-button-primary-text-hover));
+                color: #f00; //rgb(var(--color-button-primary-text-hover));
             }
         }
     }
