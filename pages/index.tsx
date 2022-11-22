@@ -84,7 +84,7 @@ const Home = () => {
 							<h4 className={"b-hero__eyebrow"}>Lastly, you will read this.</h4>
 							<h1 className={"b-hero__heading"}>Supermarkt op wielen</h1>
 							<div className={"b-hero__intro"}>
-								<p>THEN YOU WILL READ THIS</p>
+								<p>Laagste Prijs Garantie</p>
 							</div>
 							<div className={"b-hero__cta"}>
 								<Link href={"/all-components"} className={"c-button c-button--primary"}>All Components</Link>
