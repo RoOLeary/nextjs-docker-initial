@@ -58,13 +58,13 @@ const Home = () => {
 						style={{ y: y2, x: 350 }}
 					>
 						<Image alt="photo1 - Audience member photo" loader={imageLoader} src={"https://source.unsplash.com/500x300/?apples"} sizes="20vh" width={200} height={200} unoptimized/>
-				</motion.figure>
+	</motion.figure> */}
 				<motion.figure
-					className="b-hero__photo b-hero__photo--2"
+					className="b-hero__photo b-hero__photo--2 shake"
 					style={{ y: y3, x: x1 }}
 				>
-					<Image alt="photo2 - Speaker" loader={imageLoader} src={"https://source.unsplash.com/800x500/?cucumbers"} sizes="20vh" width={200} height={200}/>
-				</motion.figure> */}
+					<Image alt="photo2 - Speaker" className={`homeHeader`} loader={imageLoader} src={"../assets/images/picnic-app.png"} sizes="5vh" width={200} height={200}/>
+				</motion.figure> 
 				
 				
 					{/* <motion.figure className="b-hero__photo b-hero__photo--3" style={{ y: y4, x: x2 }}>
@@ -82,7 +82,7 @@ const Home = () => {
 						<div className={"b-hero__contentInner"}>
 							
 							<h4 className={"b-hero__eyebrow"}>Lastly, you will read this.</h4>
-							<h1 className={"b-hero__heading"}>You Will Read This First</h1>
+							<h1 className={"b-hero__heading"}>Supermarkt op wielen</h1>
 							<div className={"b-hero__intro"}>
 								<p>THEN YOU WILL READ THIS</p>
 							</div>

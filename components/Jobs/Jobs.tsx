@@ -13,18 +13,12 @@ const Jobs = ({ heading, jobsintro, jobs }: IJobs ) => {
     return(
         <section className="b-jobs c-section jobs">
             <div className="o-wrapper">
-                <h1>{introText.replace(/<\/?p[^>]*>/g, '')}</h1>
-                {/* <br />
-                {introText.replace(/<\/?p[^>]*>/g, '')}
-                <br /> */}
-                <div>
-                <br />
                 <ul className={'b-jobs__list o-grid o-grid--gap-m'}>
                     {jobs.length >= 0 && jobs.map((job, i) => {
                         return <Job key={i} job={job} />
                     })}
                 </ul>
-                </div>
+               
             </div>
             
         </section>

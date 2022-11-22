@@ -66,6 +66,10 @@
             transform: translate3d(0, calc(var(--equinox-pos) * -33.33333%), 0);
             width: 100%;
             will-change: transform;
+
+            &.homeHeader{
+                object-fit: contain;
+            }
         }
 
         &--1 {

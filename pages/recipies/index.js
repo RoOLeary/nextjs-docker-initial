@@ -17,8 +17,7 @@ export default function Recipies() {
             <MainLayout>
                 <div className={`c-static-header text-img-container`}>
                     <div className={`c-static-header text`}>
-                        <h1 className={`c-static-header headline`}>Recipies</h1>
-                        <p>Want to work with us? Check out the open vacancies across our company below"</p>
+                        <h1 className={`c-static-header headline careers`}>Recipies</h1>
                     </div>
                     <div className={`c-static-header image`}>
                         <Image
@@ -31,6 +30,7 @@ export default function Recipies() {
                         />
                     </div>
                 </div>
+             
                 <StaticHeader content={'Recipies List'} />
                 <div className={'Recipies'}>
                     <p>Recipies {locale} </p>
