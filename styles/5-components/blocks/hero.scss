@@ -89,6 +89,12 @@
         }
 
         &--2 {
+            &.homeHeader{
+                grid-column: 5 / span 4;
+                grid-row: 1 / span 5;
+                z-index: 5;
+            }
+
             grid-column: 2 / span 2;
             grid-row: 5 / span 2;
             z-index: 5;
@@ -99,6 +105,7 @@
             }
 
             @include screen-min(l) {
+                
                 grid-column: 5 / span 4;
                 grid-row: 2 / span 2;
             }
