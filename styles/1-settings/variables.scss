@@ -91,6 +91,25 @@
     --color-input-border-focus: 255, 255, 255;  // #A7AAB2
 }
 
+.t-beige{
+    --color-button: 255, 255, 255; // #FFFFFF
+    --color-button-text: 255, 255, 255; // #FFFFFF
+    --color-button-primary: 255, 255, 255; // #FFFFFF
+    --color-button-primary-hover: 255, 255, 255; // #FFFFFF
+    --color-button-primary-text: 204, 0, 153; // #FFFFFF
+    --color-button-primary-text-hover: 0, 0, 0; // #000000
+
+    --color-input: 255, 255, 255;               // #FFFFFF
+    --color-input-placeholder: 167, 170, 178;   // #FFFFFF
+    --color-input-bg: 255, 255, 255;            // #FFFFFF
+    --color-input-border: 255, 255, 255;        // #DCDDE0
+    --color-input-border-focus: 255, 255, 255;  // #A7AAB2
+}
+
+.t-shadow{
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)
+}
+
 $grid-columns: 12 !default;
 
 $screens: (

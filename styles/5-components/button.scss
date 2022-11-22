@@ -40,6 +40,15 @@
         }
     }
 
+    .t-beige & {
+        border-color: rgba(var(--color-button), 0.5);
+
+        &:focus,
+        &:hover {
+            border-color: rgba(var(--color-button), 0.75);
+        }
+    }
+
     &--block {
         display: block;
         width: 100%;
@@ -56,6 +65,18 @@
         }
 
         .t-dark & {
+            background: rgb(var(--color-button-primary));
+            border-color: transparent;
+            color: rgb(var(--color-1));
+
+            &:focus,
+            &:hover {
+                background: rgb(var(--color-button-primary-hover));
+                border-color: transparent;
+                color: #f00; //rgb(var(--color-button-primary-text-hover));
+            }
+        }
+        .t-beige & {
             background: rgb(var(--color-button-primary));
             border-color: transparent;
             color: rgb(var(--color-1));

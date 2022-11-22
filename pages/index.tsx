@@ -50,7 +50,7 @@ const Home = () => {
 
 		
 		<main className={'main'}>
-			<section className={"b-hero js-equinoxNode t-dark"}>
+			<section className={"b-hero js-equinoxNode t-beige"}>
 				<div className={"b-hero__grid"}>
 
 				{/* <motion.figure
@@ -59,12 +59,12 @@ const Home = () => {
 					>
 						<Image alt="photo1 - Audience member photo" loader={imageLoader} src={"https://source.unsplash.com/500x300/?apples"} sizes="20vh" width={200} height={200} unoptimized/>
 	</motion.figure> */}
-				<motion.figure
+				<figure
 					className="b-hero__photo b-hero__photo--2 shake homeHeader"
-					style={{ y: y3, x: x1 }}
+					// style={{ y: y3, x: x1 }}
 				>
 					<Image alt="photo2 - Speaker" className={`homeHeader`} loader={imageLoader} src={"../assets/images/picnic-app.png"} sizes="5vh" width={200} height={200}/>
-				</motion.figure> 
+				</figure> 
 				
 				
 					{/* <motion.figure className="b-hero__photo b-hero__photo--3" style={{ y: y4, x: x2 }}>
@@ -86,8 +86,9 @@ const Home = () => {
 							<div className={"b-hero__intro"}>
 								<p>Laagste Prijs Garantie</p>
 							</div>
-							<div className={"b-hero__cta"}>
-								<Link href={"/all-components"} className={"c-button c-button--primary"}>All Components</Link>
+							<div className={"b-hero__cta"} style={{"display": "flex"}}>
+								<Link href={"https://apps.apple.com/app/id1018175041"}><Image alt={'App Store'}src={'../assets/images/app-store-badge.svg'} loader={imageLoader} height={55} width={150}/></Link>
+								<Link href={"https://play.google.com/store/apps/details?id=com.picnic.android&referrer=adjust_reftag%3Dc7L3Cu1Ahk76o%26utm_source%3Dpicnic.nl%2BInstalls%26utm_campaign%3Dnull%26utm_content%3Dapp-downloaden&pli=1"}><Image src={'../assets/images/google-play-badge.svg'} alt={"Play Store"} loader={imageLoader} height={50} width={150} /></Link>
 							</div>
 						</div>
 					</div>
