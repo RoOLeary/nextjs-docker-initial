@@ -60,7 +60,7 @@ const Home = () => {
 						<Image alt="photo1 - Audience member photo" loader={imageLoader} src={"https://source.unsplash.com/500x300/?apples"} sizes="20vh" width={200} height={200} unoptimized/>
 	</motion.figure> */}
 				<figure
-					className="b-hero__photo b-hero__photo--2 shake homeHeader"
+					className="b-hero__photo b-hero__photo--2 homeHeader"
 					// style={{ y: y3, x: x1 }}
 				>
 					<Image alt="photo2 - Speaker" className={`homeHeader`} loader={imageLoader} src={"../assets/images/picnic-app.png"} sizes="5vh" width={200} height={200}/>
