@@ -15,16 +15,21 @@ export default function Recipies() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MainLayout>
-                <div>
-                    <Image
-                    alt={'imagetest'}
-                    src={'/assets/images/recipies_hero_image.png'}
-                    loader={imageLoader}
-                    height={500}
-                    width={600}
-                    layout="responsive"
-                    
-                    />
+                <div className={`c-static-header text-img-container`}>
+                    <div className={`c-static-header text`}>
+                        <h1 className={`c-static-header headline`}>Recipies</h1>
+                        <p>Want to work with us? Check out the open vacancies across our company below"</p>
+                    </div>
+                    <div className={`c-static-header image`}>
+                        <Image
+                        alt={'imagetest'}
+                        src={'/assets/images/recipies_hero_image.png'}
+                        loader={imageLoader}
+                        height={500}
+                        width={600}
+                        layout="responsive"
+                        />
+                    </div>
                 </div>
                 <StaticHeader content={'Recipies List'} />
                 <div className={'Recipies'}>

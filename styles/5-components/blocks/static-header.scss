@@ -1,0 +1,46 @@
+.c-static-header{
+
+    &.text-img-container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+
+        .image{
+                &::after{
+                    position: absolute;
+                    top: 0;
+                    right: -1px;
+                    bottom: -1px;
+                    left: -1px;
+                    background-image: linear-gradient(180deg, transparent 45%, #000 100%);
+                    content: "";
+                    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+                    transition-duration: .5s;
+                    transition-timing-function: cubic-bezier(0,0,.2,1);
+                }
+            }
+        }
+        
+        &.text{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+
+        &.headline{
+
+            @include screen-max(m) {
+                font-size: 2rem;
+            }
+            color: rgb(var(--color-1));
+
+            &.careers{
+                color: #ffffff;
+        }
+    }
+
+
+
+}
