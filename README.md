@@ -12,11 +12,6 @@ This is an initial sketch out of the Next.js side of the new [] web instance pro
 
 Clone the repo
 
-```bash
-npx create-next-app --example with-docker picnic-web-nextjs
-
-```
-
 ```
 npm install
 ```
