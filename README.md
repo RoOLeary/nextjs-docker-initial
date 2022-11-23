@@ -1,6 +1,6 @@
 # PicNext Prototype
 
-This is an initial, bare bones sketch out of a Next.js site. The objective is provide a functioning, demoable guideline as to how to implement the future Picnic web properties. Following instance features: 
+This is an initial, bare bones, "kitchen sink" sketch out of a Next.js site. The objective is provide a functioning, demoable guideline as to how to implement the future Picnic web properties. Following instance features: 
 
 - NextJS (with Typescript) *caveat - could use improvement
 - Built with SCSS - although support for styled-components and css modules
