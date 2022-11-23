@@ -57,7 +57,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 		props: {
 			preview: preview ? true : false,
 			page: page
-		}
+		},
+		revalidate: 10, // In seconds
 	};
 };
 
