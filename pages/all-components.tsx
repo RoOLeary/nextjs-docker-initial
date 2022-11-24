@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import PageBlocks from '../components/PageBlocks'
 import MainLayout from '../components/Globals/Layouts/MainLayout'
-import { GetServerSideProps, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { useTypingText } from '../hooks/useTypingText';
 
 const AllComponents = ({ page, preview }:any) => {
@@ -26,7 +26,7 @@ const AllComponents = ({ page, preview }:any) => {
 }
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
     // console.log(context);
     
 	// const slug = context?.query?.slug ? context.query.slug : 'test-article-three'

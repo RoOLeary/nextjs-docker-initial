@@ -2822,11 +2822,6 @@
     "workbox-webpack-plugin" "^6.5.4"
     "workbox-window" "^6.5.4"
 
-"next-seo@^5.14.1":
-  "integrity" "sha512-NiJeQbxYP3z+EMp52q8k3Q+OfX2+Yv2WehERDj98r2wjXxL+woKpRBdsSVYolTD0Hm8IWs42SzaISE93RoQdOw=="
-  "resolved" "https://registry.npmjs.org/next-seo/-/next-seo-5.14.1.tgz"
-  "version" "5.14.1"
-
 "next-sitemap@^3.1.32":
   "integrity" "sha512-jkIKpwLXpWWTPfmDO46+6nu4+qpar4CjvUwCR9rYZHWtzE/wFfaCVFKpGtFMl6MFjpu8GjiE6kWFEa7uF3bzzg=="
   "resolved" "https://registry.npmjs.org/next-sitemap/-/next-sitemap-3.1.32.tgz"
