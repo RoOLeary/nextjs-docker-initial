@@ -1,3 +1,4 @@
+const runtimeCaching = require('next-pwa/cache');
 const withPWA = require('next-pwa')({
   dest: 'public'
 })
@@ -17,6 +18,9 @@ module.exports = withPWA({
   pwa: {
     dest: 'public',
     swSrc: 'service-worker.js',
+    runtimeCaching,
+    mode: 'production',
+    disable: process.env.NODE_ENV === 'development',
   },
   async headers() {
     return [
