@@ -44,8 +44,8 @@ const links: { name: string; href: string }[] = [
         href: '/webstore',
     },
     {
-        name: 'Recipies',
-        href: '/recipies',
+        name: 'Recipes',
+        href: '/recipes',
     }
     // {
     //     name: 'Spaces',

@@ -2,6 +2,7 @@ import MainLayout from '../../components/Globals/Layouts/MainLayout'
 import PageBlocks from '../../components/PageBlocks'
 import StaticHeader from '../../components/StaticHeader'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 
 const Recipe = ({ post, preview }:any) => {
 
@@ -17,6 +18,9 @@ const { title } = post;
   )
 }
 
+interface IParams extends ParsedUrlQuery {
+  slug: string
+}
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
@@ -31,12 +35,12 @@ export async function getStaticPaths() {
     
     // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
-    return { paths, fallback: true }
+    return { paths, fallback: false }
   }
   
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { slug } = params.slug as IParams // no longer causes error
+    // const { slug:IParams } = params.slug // no longer causes error
     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`)
     const post = await res.json()
     return { props: { post } }
