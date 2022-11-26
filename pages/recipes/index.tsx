@@ -69,6 +69,6 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, previewD
       props: {
           page: data
       },
-      revalidate: 10, // In seconds
+      revalidate: 60, // In seconds
     };
   };
