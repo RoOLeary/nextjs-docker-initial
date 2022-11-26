@@ -1,12 +1,15 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import imageLoader from '../../imageLoader';
 import MainLayout from '../../components/Globals/Layouts/MainLayout';
 import StaticHeader from '../../components/StaticHeader';
 import { useRouter } from 'next/router'; 
+import { GetStaticProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 
-export default function Recipies() {
-
+export default function Recipies(props) {
+    const recipeList = props.page.data;
     const { locale } = useRouter(); 
     return(
         <>
@@ -34,13 +37,38 @@ export default function Recipies() {
                 <StaticHeader content={'Recipies List'} />
                 <div className={'Recipies'}>
                     <p>Recipies {locale} </p>
+                    <ul>
+                    {recipeList ? recipeList.map((recipe, i) => {
+                        // console.log(recipe)
+                        return <li key={i}><Link href={`/recipes/${recipe.slug}`}>{recipe.title}</Link></li>  
+                    }) : null}
+                    </ul>
 
-
-                    <h3>Featured</h3>
-
-                    <h3>User Submitted</h3>
+                   
                 </div>
             </MainLayout>
         </>
     )
 }
+
+
+
+interface IParams extends ParsedUrlQuery {
+    slug: string
+}
+
+export const getStaticProps: GetStaticProps = async ({ preview = false, previewData }) => {
+  
+    
+    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`);
+    const data = await res.json();
+  
+    // console.log(data);
+    
+    return {
+      props: {
+          page: data
+      },
+      revalidate: 10, // In seconds
+    };
+  };
