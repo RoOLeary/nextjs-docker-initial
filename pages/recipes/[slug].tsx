@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // const { slug:IParams } = params.slug // no longer causes error
     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`)
     const post = await res.json()
-    return { props: { post } }
+    return { props: { post }, revalidate: 10 }
 } 
 
 export default Recipe; 
