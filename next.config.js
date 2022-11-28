@@ -18,7 +18,7 @@ module.exports = withPWA({
   images: {
     loader: 'custom',
     path: '/',
-    domains: ['placedog.net', 'source.unsplash.com', 'nextjs-docker-tau.vercel.app', 'localhost:3000'],
+    domains: ['placedog.net', 'unsplash.com', 'nextjs-docker-tau.vercel.app', 'localhost:3000'],
   },
   pwa: {
     dest: 'public',
