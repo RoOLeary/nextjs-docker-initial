@@ -4,6 +4,7 @@ import Link from 'next/link';
 import imageLoader from '../../imageLoader';
 import MainLayout from '../../components/Globals/Layouts/MainLayout';
 import StaticHeader from '../../components/StaticHeader';
+import Recipe from '../../components/Recipes/Recipe';
 import { useRouter } from 'next/router'; 
 import { GetStaticProps } from 'next'
 import { ParsedUrlQuery } from 'querystring'
@@ -11,6 +12,7 @@ import { ParsedUrlQuery } from 'querystring'
 export default function Recipies(props) {
     const recipeList = props.page.data;
     const { locale } = useRouter(); 
+    // console.log(locale);
     return(
         <>
             <Head>
@@ -39,12 +41,12 @@ export default function Recipies(props) {
                     <div className="o-wrapper">
                         <div className="c-content">
                             <div className={'Recipies'}>
-                                <p>Recipies {locale} </p>
-                                <ul>
-                                {recipeList ? recipeList.map((recipe, i) => {
+                                <p>Recipies </p>
+                                <ul className={'b-products__list o-grid o-grid--gap-m'}>
+                                {recipeList && recipeList.map((recipe, i) => {
                                     // console.log(recipe)
-                                    return <li key={i}><Link href={`/recipes/${recipe.slug}`}>{recipe.title}</Link></li>  
-                                }) : null}
+                                    return( <Recipe recipe={recipe} key={i} /> );  
+                                })}
                                 </ul>            
                             </div>
                         </div>
