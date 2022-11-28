@@ -6,6 +6,7 @@ export default async (req, res) => {
     if (req.query.uri === null) {
       return res.status(401).json({ message: 'No URI provided' })
     }
+    
     res.setPreviewData(
       {
         token: req.query.token ?? null,

@@ -17,7 +17,7 @@ const Recipe = ({ page, preview }:any) => {
 }
 
 interface IParams extends ParsedUrlQuery {
-    slug: string
+  slug: string
 }
 
 export async function getStaticPaths() {

@@ -1,0 +1,12 @@
+body {
+    @include font-1;
+    color: rgb(var(--color-text));
+    line-height: var(--line-height-m);
+    text-rendering: optimizelegibility;
+
+    &.is-loading,
+    &.is-loading * {
+        cursor: wait;
+        pointer-events: none;
+    }
+}
