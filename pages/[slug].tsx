@@ -26,7 +26,13 @@ const Page = ({ page, preview }:any) => {
             <PageBlocks content={content} />
 
             {/* <Related related={entry.manualRelatedArticles} currentslug={entry.slug} /> */}
-        
+            <section className="c-section">
+                <div className="o-wrapper">
+                    <div className="c-content">
+                        <p dangerouslySetInnerHTML={{__html: body }} />
+                    </div>
+                </div>
+            </section>
         </MainLayout>
         </>
     )
