@@ -72,50 +72,50 @@ export const products: { id: number, productName: string; productDescription: st
 export const jobs: { id: number, jobCategory: string; jobImage: string, jobLink: string }[] = [
     {
         id: 1,
-        jobCategory: 'Technology',
-        jobImage: 'https://source.unsplash.com/280x120/?technology',
-        jobLink: "technology",
+        jobCategory: 'Commercial',
+        jobImage: 'assets/images/commercial.jpg',
+        jobLink: "/commercial",
     },
     {
         id: 2,
-        jobCategory: 'Consumer Services',
-        jobLink: "consumer-services",
-        jobImage: 'https://source.unsplash.com/280x120/?consumer'
+        jobCategory: 'Customer Success',
+        jobLink: "/customer-sucsess",
+        jobImage: 'assets/images/customer-success.webp'
     },
     {
         id: 3,
-        jobCategory: 'Driver',
-        jobLink: "driver",
-        jobImage: 'https://source.unsplash.com/280x120/?driver'
+        jobCategory: 'Construction & Real Estate',
+        jobLink: "/construction-real-estate",
+        jobImage: 'assets/images/commercial.jpg'
     },
     {
         id: 4,
-        jobCategory: 'Runner',
-        jobLink: "runner",
-        jobImage: 'https://source.unsplash.com/280x120/?warehouse'
+        jobCategory: 'Creative',
+        jobLink: "/creative",
+        jobImage: 'assets/images/creative.jpg'
     },
     {
         id: 5,
-        jobCategory: 'Shopper',
-        jobLink: "shopper",
-        jobImage: 'https://source.unsplash.com/280x120/?sales'
+        jobCategory: 'Internships',
+        jobLink: "/internships",
+        jobImage: 'assets/images/internships.jpg'
     },
     {
         id: 6,
-        jobCategory: 'Head Office',
-        jobLink: "head-office",
-        jobImage: 'https://source.unsplash.com/280x120/?hq'
+        jobCategory: 'Facilities & Admin',
+        jobLink: "/facilities-admin",
+        jobImage: 'assets/images/facilities.webp'
     },
     {
         id: 7,
-        jobCategory: 'Sales',
-        jobLink: "sales",
-        jobImage: 'https://source.unsplash.com/280x120/?accounting'
+        jobCategory: 'Strategy & Analytics',
+        jobLink: "/strategy-analytics",
+        jobImage: 'assets/images/strategy.webp'
     },
     {
         id: 8,
-        jobCategory: 'Management',
-        jobLink: "management",
-        jobImage: 'https://source.unsplash.com/280x120/?management'
+        jobCategory: 'People & Finance',
+        jobLink: "people-finance",
+        jobImage: 'assets/images/people.webp'
     },
 ]
