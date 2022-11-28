@@ -10,9 +10,9 @@ const Recipe = ({ page, preview }:any) => {
     <MainLayout>
         {preview ? <h1>In Preview Mode</h1> : null}
         <StaticHeader content={page.title ? page.title : null} />
-        <section className="b-text c-section" id="learn-more">
+        <section className="c-section">
             <div className="o-wrapper">
-                <div className="o-grid o-grid--gap-xxl">
+                <div className="c-content">
                     <h1>{page.title ? page.title : null}</h1>
                     <p dangerouslySetInnerHTML={{__html: page.articleBody }} />
                 </div>

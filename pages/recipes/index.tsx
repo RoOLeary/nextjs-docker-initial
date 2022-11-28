@@ -35,9 +35,9 @@ export default function Recipies(props) {
                 </div>
              
                 <StaticHeader content={'Recipies List'} />
-                <section className="b-text c-section" id="learn-more">
+                <section className="c-section" id="learn-more">
                     <div className="o-wrapper">
-                        <div className="o-grid o-grid--gap-xxl">
+                        <div className="c-content">
                             <div className={'Recipies'}>
                                 <p>Recipies {locale} </p>
                                 <ul>
