@@ -6,6 +6,9 @@ import { ParsedUrlQuery } from 'querystring'
 
 const Recipe = ({ page, preview }:any) => {
     
+  const { title, articleBody } = page;
+
+
   return(
     <MainLayout>
       {preview ? <h1>In Preview Mode</h1> : null}
@@ -32,7 +35,7 @@ export async function getStaticPaths() {
 
     // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
-    return { paths, fallback: "blocking" }
+    return { paths, fallback: 'blocking' }
   }
   
 export const getStaticProps: GetStaticProps = async ({ params, preview = false, previewData }) => {
