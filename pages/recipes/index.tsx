@@ -35,17 +35,21 @@ export default function Recipies(props) {
                 </div>
              
                 <StaticHeader content={'Recipies List'} />
-                <div className={'Recipies'}>
-                    <p>Recipies {locale} </p>
-                    <ul>
-                    {recipeList ? recipeList.map((recipe, i) => {
-                        // console.log(recipe)
-                        return <li key={i}><Link href={`/recipes/${recipe.slug}`}>{recipe.title}</Link></li>  
-                    }) : null}
-                    </ul>
-
-                   
-                </div>
+                <section className="b-text c-section" id="learn-more">
+                    <div className="o-wrapper">
+                        <div className="o-grid o-grid--gap-xxl">
+                            <div className={'Recipies'}>
+                                <p>Recipies {locale} </p>
+                                <ul>
+                                {recipeList ? recipeList.map((recipe, i) => {
+                                    // console.log(recipe)
+                                    return <li key={i}><Link href={`/recipes/${recipe.slug}`}>{recipe.title}</Link></li>  
+                                }) : null}
+                                </ul>            
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </MainLayout>
         </>
     )

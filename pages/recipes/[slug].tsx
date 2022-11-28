@@ -6,21 +6,24 @@ import { ParsedUrlQuery } from 'querystring'
 
 const Recipe = ({ page, preview }:any) => {
     
-  const { title, articleBody } = page;
-
-
   return(
     <MainLayout>
-      {preview ? <h1>In Preview Mode</h1> : null}
-      <StaticHeader content={page.title ? page.title : null} />
-      <h1>{page.title ? page.title : null}</h1>
-      <p>{page.articleBody && page.articleBody}</p>
+        {preview ? <h1>In Preview Mode</h1> : null}
+        <StaticHeader content={page.title ? page.title : null} />
+        <section className="b-text c-section" id="learn-more">
+            <div className="o-wrapper">
+                <div className="o-grid o-grid--gap-xxl">
+                    <h1>{page.title ? page.title : null}</h1>
+                    <p dangerouslySetInnerHTML={{__html: page.articleBody }} />
+                </div>
+            </div>
+        </section>
     </MainLayout>
   )
 }
 
 interface IParams extends ParsedUrlQuery {
-  slug: string
+    slug: string
 }
 
 export async function getStaticPaths() {
@@ -35,7 +38,7 @@ export async function getStaticPaths() {
 
     // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
-    return { paths, fallback: 'blocking' }
+    return { paths, fallback: "blocking" }
   }
   
 export const getStaticProps: GetStaticProps = async ({ params, preview = false, previewData }) => {
