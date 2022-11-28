@@ -12,56 +12,56 @@ export const products: { id: number, productName: string; productDescription: st
         id: 1,
         productName: 'Vegetables',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?vegetables',
+        productImage: 'assets/images/basket.jpeg',
         price: '€3,50'
     },
     {
         id: 2,
         productName: 'Meat',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?meat',
+        productImage: 'assets/images/basket2.jpeg',
         price: '€5,50'
     },
     {
         id: 3,
         productName: 'Coffee',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?coffee',
+        productImage: 'assets/images/basket.jpeg',
         price: '€4,50'
     },
     {
         id: 4,
         productName: 'Fruit',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?fruit',
+        productImage: 'assets/images/fruit.jpeg',
         price: '€3,50'
     },
     {
         id: 5,
         productName: 'Frozen Meals',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?ice',
+        productImage: 'assets/images/basket.jpeg',
         price: '€3,50'
     },
     {
         id: 6,
         productName: 'Tomatoes',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?tomatoes',
+        productImage: 'assets/images/basket2.jpeg',
         price: '€3,50'
     },
     {
         id: 7,
         productName: 'Cucumbers',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?cucumbers',
+        productImage: 'assets/images/fruit.jpeg',
         price: '€3,50'
     },
     {
         id: 8,
         productName: 'Cola',
         productDescription: '/',
-        productImage: 'https://source.unsplash.com/280x180/?cola',
+        productImage: 'assets/images/basket.jpeg',
         price: '€3,50'
     },
 ]
