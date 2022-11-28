@@ -6,10 +6,10 @@ module.exports = withPWA({
   reactStrictMode: false,
   trailingSlash: false,
   distDir: '/build',
-  i18n: {
-    locales: ['en', 'fr', 'de', 'nl'],
-    defaultLocale: 'en',
-  },
+  // i18n: {
+  //   locales: ['en', 'fr', 'de', 'nl'],
+  //   defaultLocale: 'en',
+  // },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
