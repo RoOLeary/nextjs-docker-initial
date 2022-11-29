@@ -40,6 +40,10 @@
 
             .is-expanded & {
                 transform: scaleY(0);
+
+                > .b-faq__question.js-faqQuestion{
+                    color: rgb(var(--color-1))
+                }
             }
         }
     }
