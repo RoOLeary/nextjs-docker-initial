@@ -79,7 +79,7 @@ export const jobs: { id: number, jobCategory: string; jobImage: string, jobLink:
     {
         id: 2,
         jobCategory: 'Customer Success',
-        jobLink: "/customer-sucsess",
+        jobLink: "/customer-success",
         jobImage: 'assets/images/customer-success.webp'
     },
     {
