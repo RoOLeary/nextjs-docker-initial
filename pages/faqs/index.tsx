@@ -31,6 +31,9 @@ const FAQs = () => {
                 <StaticHeader content={'FAQs List'} />
                 <section className="c-section">
                     <div className="o-wrapper o-wrapper--narrow">
+                        <h3>You can always email, whatsapp or call us, but perhaps the answer to your question is also among the frequently asked questions below.</h3>
+                        <br />
+                        <br />
                         <div className={'faqs'}>
                             <ol className="b-faq__list">
                                 {faqs.map((faq, i) => {
