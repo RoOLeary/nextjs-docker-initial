@@ -6,15 +6,17 @@ import { ParsedUrlQuery } from 'querystring'
 
 const Recipe = ({ page, preview }:any) => {
     
+
+  console.log(page);
   return(
     <MainLayout>
         {preview ? <h1>In Preview Mode</h1> : null}
-        <StaticHeader content={page.title ? page.title : null} />
+        <StaticHeader content={page ? page.title : null} />
         <section className="c-section">
             <div className="o-wrapper">
                 <div className="c-content">
-                    <h1>{page.title ? page.title : null}</h1>
-                    <p dangerouslySetInnerHTML={{__html: page.articleBody }} />
+                    <h1>{page ? page.title : null}</h1>
+                    <p>{page ? page.articleBody : null }</p>
                 </div>
             </div>
         </section>
@@ -42,15 +44,16 @@ export async function getStaticPaths() {
   }
   
 export const getStaticProps: GetStaticProps = async ({ params, preview = false, previewData }) => {
+    // console.log(params.slug);
     const slug = params.slug;
     // console.log(slug);
-    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${slug}.json`)
+    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`)
     const post = await res.json()
     let prevData; 
 
     if(preview){
         // console.log('previewData', previewData)    
-        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${slug}.json?token=${previewData['token']}`);
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json?token=${previewData['token']}`);
         prevData = await prevResponse.json();
         
     } 
