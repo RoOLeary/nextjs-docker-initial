@@ -49,6 +49,8 @@ export const getStaticProps: GetStaticProps = async ({ params, preview = false, 
     // console.log(slug);
     const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`)
     const post = await res.json()
+
+    console.log(post);
     let prevData; 
 
     if(preview){
