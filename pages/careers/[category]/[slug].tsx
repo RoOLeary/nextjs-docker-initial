@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import MainLayout from '../../components/Globals/Layouts/MainLayout'
-import StaticHeader from '../../components/StaticHeader'
+import MainLayout from '../../../components/Globals/Layouts/MainLayout'
+import StaticHeader from '../../../components/StaticHeader'
 
 
 export default function Category() {
