@@ -22,7 +22,7 @@ export default function Recipies(props) {
             <MainLayout>
                 <div className={`c-static-header text-img-container`}>
                     <div className={`c-static-header text`}>
-                        <h1 className={`c-static-header headline careers`}>Recipies</h1>
+                        <h1 className={`c-static-header headline careers`}>Recipes</h1>
                     </div>
                     <div className={`c-static-header image`}>
                         <Image
@@ -36,7 +36,7 @@ export default function Recipies(props) {
                     </div>
                 </div>
              
-                <StaticHeader content={'Recipies List'} />
+                <StaticHeader content={'Recipes List'} />
                 <section className="c-section" id="learn-more">
                     <div className="o-wrapper">
                         <div className="c-content">
