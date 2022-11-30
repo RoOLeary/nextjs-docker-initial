@@ -24,9 +24,14 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import imageLoader from './../imageLoader';
 import Image from 'next/image';
 import { products } from './../lib/utils';
+import { useRouter } from 'next/router'
+import { GetStaticProps } from 'next'
 
-const Home = () => {
-	
+const Home = ({ page }) => {
+
+	const { title, headline } = page.data[0];
+
+	const { locale } = useRouter();  
 	const { word } = useTypingText(['Testing', 'To See', 'If This', 'works'], 250, 20);
 	const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 300], [0, 200]);
@@ -81,8 +86,8 @@ const Home = () => {
 					<div className={"b-hero__content"}>
 						<div className={"b-hero__contentInner"}>
 							
-							<h4 className={"b-hero__eyebrow"}>Lastly, you will read this.</h4>
-							<h1 className={"b-hero__heading"}>Supermarkt op wielen</h1>
+							<h4 className={"b-hero__eyebrow"}>Lastly, you will read this. asdga<p>{locale}</p></h4>
+							<h1 className={"b-hero__heading"}>{headline ? headline : 'Supermarket Op Wielen'}</h1>
 							<div className={"b-hero__intro"}>
 								<p>Laagste Prijs Garantie</p>
 							</div>
@@ -105,6 +110,29 @@ const Home = () => {
 	)
 }
 
+
+export const getStaticProps: GetStaticProps = async (params) => {
+  
+	let loc = params.locale;
+	let url; 
+	if(loc == 'nl'){
+		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${loc}/startpagina.json`;
+	} else {
+		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/homepage.json`;
+	}
+	
+	console.log(url);
+
+	const res = await fetch(url);
+	const data = await res.json();
+
+	return {
+	  props: {
+		  page: data
+	  },
+	  revalidate: 10, // In seconds
+	};
+  };
 
 export default Home; 
 

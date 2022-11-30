@@ -56,7 +56,7 @@ const links: { name: string; href: string }[] = [
 
 const Nav = (): JSX.Element => {
     // const { data: session } = useSession();
-    const router = useRouter()
+    const router = useRouter();
     const menuRef = useRef(null);
     const unitRef = useRef(null);
     const mobTogglRef = useRef(null); 
