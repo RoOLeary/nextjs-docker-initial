@@ -11,7 +11,7 @@ module.exports = withPWA({
     defaultLocale: 'en',
     domains: [
       {
-        domain: 'http://localhost:3000',
+        domain: 'localhost:3000',
         defaultLocale: 'en',
       },
       {
