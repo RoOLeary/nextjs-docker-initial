@@ -6,34 +6,34 @@ module.exports = withPWA({
   reactStrictMode: false,
   trailingSlash: false,
   distDir: '/build',
-  // i18n: {
-  //   locales: ['en', 'nl'],
-  //   defaultLocale: 'en',
-  //   domains: [
-  //     {
-  //       domain: 'localhost:3000',
-  //       defaultLocale: 'en',
-  //     },
-  //     {
-  //       // Note: subdomains must be included in the domain value to be matched
-  //       // e.g. www.example.com should be used if that is the expected hostname
-  //       domain: 'localhost:3000/nl',
-  //       defaultLocale: 'nl',
-  //        // specify other locales that should be redirected
-  //       // to this domain
-  //       locales: ['de', 'fr'],
-  //     },
-  //     // {
-  //     //   domain: 'localhost:3000/fr',
-  //     //   defaultLocale: 'fr',
-  //     // },
-  //     // {
-  //     //   domain: 'localhost:3000/de',
-  //     //   defaultLocale: 'de',
+  i18n: {
+    locales: ['en', 'nl'],
+    defaultLocale: 'en',
+    domains: [
+      {
+        domain: 'localhost:3000',
+        defaultLocale: 'en',
+      },
+      {
+        // Note: subdomains must be included in the domain value to be matched
+        // e.g. www.example.com should be used if that is the expected hostname
+        domain: 'localhost:3000/nl',
+        defaultLocale: 'nl',
+         // specify other locales that should be redirected
+        // to this domain
+        // locales: ['de', 'fr'],
+      },
+      // {
+      //   domain: 'localhost:3000/fr',
+      //   defaultLocale: 'fr',
+      // },
+      // {
+      //   domain: 'localhost:3000/de',
+      //   defaultLocale: 'de',
        
-  //     // },
-  //   ]
-  // },
+      // },
+    ]
+  },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
