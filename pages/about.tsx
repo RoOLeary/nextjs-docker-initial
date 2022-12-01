@@ -1,42 +1,47 @@
-import MainLayout from "../components/Globals/Layouts/MainLayout"
-import PageBlocks from "../components/PageBlocks"
-import { GetStaticProps } from "next"
-import { useRouter } from 'next/router';
+import MainLayout from '../components/Globals/Layouts/MainLayout'
+import PageBlocks from '../components/PageBlocks'
+import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 
 const About = ({ page, preview }:any) => {
 
-  const { locale } = useRouter(); 
-  console.log(locale);
-  const content = page.pageBlocks ? page.pageBlocks : null
+  const router = useRouter();
+  const content = page.pageBlocks;
+
+  if (!router.isFallback && !content) {
+    return <h1>404</h1>
+  }
+
   return(
     <MainLayout>
-      {preview && <h1>In Preview Mode</h1>}
-      {content ? <PageBlocks content={content} /> : <h1>Loading</h1>}
+      {preview ? <h1>In Preview Mode</h1> : null}
+      <p>About {router.locale ? `locale: ${router.locale}` : ''}</p>
+      <PageBlocks content={content} />
     </MainLayout>
   )
 }
 
 
-export const getStaticProps: GetStaticProps = async ({ locale, preview = false, previewData }) => {
-
+export const getStaticProps: GetStaticProps = async ({ preview = false, previewData }) => {
   
+  // console.log(params)
   const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`);
   const data = await res.json();
 
-  // let prevData;
-  // if(preview && previewData){
-  //   const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
-  //   prevData = await prevResponse.json()
-  // } 
-  // let page = preview ? previewData : data;
+  let prevData;
+  if(preview && previewData){
+    const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
+    prevData = await prevResponse.json()
+  } 
+  let page = preview ? prevData : data;
 
 
   return {
-    props: {
-      preview: preview ? true : false,
-      page: data
-    },
-	  revalidate: 10, // In seconds
+	props: {
+		preview: preview ? true : false,
+		page: page
+	},
+	revalidate: 10, // In seconds
   };
 };
 

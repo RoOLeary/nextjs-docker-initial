@@ -4,7 +4,7 @@ const withPWA = require('next-pwa')({
 })
 module.exports = withPWA({
   reactStrictMode: false,
-  trailingSlash: false,
+  trailingSlash: true,
   distDir: '/build',
   i18n: {
     locales: ['en', 'nl'],
@@ -50,10 +50,10 @@ module.exports = withPWA({
           return {
           '/': { page: '/' },
           '/about': { page: '/about' },
-          '/nl/about': { page: '/nl/about' },
+          '/nl/about': { page: '/nl/about', query: { title: 'Over Picnic' } },
           '/all-components': { page: '/all-components'},
-          // '/recipes': { page: '/recipes'},
-          // '/nl/recipes': { page: '/nl/recipes'}
+          '/recipes': { page: '/recipes'},
+          '/nl/recipes': { page: '/nl/recipes'}
           }
       },
 });
