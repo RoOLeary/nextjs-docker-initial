@@ -8,7 +8,8 @@ module.exports = withPWA({
   distDir: '/build',
   i18n: {
     locales: ['en', 'nl'],
-    defaultLocale: 'en'
+    defaultLocale: 'en',
+    localeDetection: false
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
