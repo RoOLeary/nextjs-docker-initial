@@ -19,7 +19,6 @@ const About = ({ page, preview }:any) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale, preview = false, previewData }) => {
 
-  // console.log('about', locale);
   
   const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`);
   const data = await res.json();
@@ -29,13 +28,13 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false, 
   //   const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
   //   prevData = await prevResponse.json()
   // } 
-  let page = preview ? previewData : data;
+  // let page = preview ? previewData : data;
 
 
   return {
     props: {
       preview: preview ? true : false,
-      page: page
+      page: data
     },
 	  revalidate: 10, // In seconds
   };

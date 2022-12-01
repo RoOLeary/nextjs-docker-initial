@@ -61,11 +61,11 @@ export default function Recipies(props) {
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     console.log('params', params);
     let url;
-	if(locale == "nl"){
-		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes.json`;
-	} else {
+	// if(locale == "nl"){
+	// 	url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes.json`;
+	// } else {
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`;
-	}
+	// }
     const res = await fetch(url);
     const data = await res.json();
     
@@ -73,6 +73,6 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
       props: {
           page: data
       },
-      revalidate: 10
+    //   revalidate: 10
     };
   };

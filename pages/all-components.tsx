@@ -43,12 +43,12 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false, 
 	// }
 	
 
-    let page = preview ? prevData : data;
+    // let page = preview ? prevData : data;
 
     return {
 		props: {
 			preview: preview ? true : false,
-			page: page
+			page: data
 		},
 		revalidate: 10, // In seconds
 	};
