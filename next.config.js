@@ -3,7 +3,7 @@ const runtimeCaching = require('next-pwa/cache');
 //   dest: 'public'
 // })
 module.exports = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   trailingSlash: true,
   distDir: '/build',
   i18n: {
@@ -21,13 +21,6 @@ module.exports = {
     path: '/',
     domains: ['placedog.net', 'unsplash.com', 'nextjs-docker-tau.vercel.app', 'localhost:3000'],
   },
-  // pwa: {
-  //   dest: 'public',
-  //   swSrc: 'service-worker.js',
-  //   runtimeCaching,
-  //   mode: 'production',
-  //   disable: process.env.NODE_ENV === 'development',
-  // },
   async headers() {
     return [
       {
