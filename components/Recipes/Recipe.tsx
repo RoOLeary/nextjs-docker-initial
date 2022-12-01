@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import { useRouter } from 'next/router';
 
 interface IRecipe {
     recipe?: any
@@ -10,11 +10,18 @@ interface IRecipe {
 
 const Recipe = ({ recipe }: IRecipe ) => {
 
+    const { locale } = useRouter(); 
+    // const data = locale.query;
     const { recipeTitle, recipeDescription, recipeImage } = recipe;
    
     return(
         <li className="o-grid__col xs:o-grid__col--span-6 m:o-grid__col--span-4 l:o-grid__col--span-3">
-            <Link href={`/recipes/${recipe.slug}`}>
+            <Link href={{
+                    pathname: `recipes/${recipe.slug}`,
+                    // query: data // the data
+                }}>
+
+
                 <article className="b-product" itemType="http://schema.org/Person" itemProp="performer">
                     <div className="b-product__photo">
                         <img alt={recipeTitle} className="b-product__photoImg" itemProp="image" loading="lazy" src={recipeImage ? recipeImage : 'https://placedog.net/280/180'} />

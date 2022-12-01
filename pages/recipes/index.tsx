@@ -10,8 +10,7 @@ import { GetStaticProps } from 'next'
 
 export default function Recipies(props) {
     const recipeList = props.page.data;
-    const { locale } = useRouter(); 
-    console.log(locale);
+    const { locale } = useRouter();
     return(
         <>
             <Head>
@@ -57,7 +56,7 @@ export default function Recipies(props) {
 }
 
 export const getStaticProps: GetStaticProps = async (params) => {
-  
+    // console.log(params.locale);
     let url;
 	if(params.locale == 'nl'){
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${params.locale}/recipes.json`;

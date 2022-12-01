@@ -3,9 +3,14 @@ import PageBlocks from '../../components/PageBlocks'
 import StaticHeader from '../../components/StaticHeader'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { ParsedUrlQuery } from 'querystring'
+import { useRouter } from 'next/router';
 
 const Recipe = ({ page, preview }:any) => {
     
+
+  const { locale } = useRouter();
+
+
   return(
     <MainLayout>
         {preview ? <h1>In Preview Mode</h1> : null}
@@ -28,47 +33,39 @@ interface IParams extends ParsedUrlQuery {
 
 export async function getStaticPaths(params) {
     // Call an external API endpoint to get posts
-    
-	let url
-    
-	if(params.locale == 'nl'){
-		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${params.locale}/recipes.json`;
-	} else {
-		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`;
-	}
-    
-
+    console.log(params);
+	  const url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`;
+   
     const res = await fetch(url);
     const posts = await res.json()
-    // console.log(posts.data);
     // Get the paths we want to pre-render based on posts
-    const paths = posts.data.map((post) => ({
+    const paths = posts && posts.data.map((post) => ({
         params: { slug: post.slug },
-    }))
+    }));
 
     // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
-    return { paths, fallback: false }
+    return { paths, fallback: true }
   }
   
-export const getStaticProps: GetStaticProps = async ({ params, preview = false, previewData }) => {
-    const slug = params.slug;
-    // console.log(slug);
-    let url
+export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false, previewData }) => {
     
-	if(params.locale == 'nl'){
-		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${params.locale}/recipes/${slug}.json`;
-	} else {
-		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${slug}.json`;
-	}
+    // console.log(locale);
+    // console.log('locale', locale);
 
+    let url;
+    if(locale == 'nl'){
+      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes/${params.slug}.json`;
+    } else {
+      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`;
+    }
     const res = await fetch(url)
     const post = await res.json()
     let prevData; 
 
     if(preview){
         // console.log('previewData', previewData)    
-        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${slug}.json?token=${previewData['token']}`);
+        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes/${params.slug}.json?token=${previewData['token']}`);
         prevData = await prevResponse.json();
         
     } 
