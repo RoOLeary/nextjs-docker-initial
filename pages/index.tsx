@@ -25,11 +25,12 @@ import imageLoader from './../imageLoader';
 import Image from 'next/image';
 import { products } from './../lib/utils';
 import { useRouter } from 'next/router'
-import { GetStaticProps, GetServerSideProps } from 'next'
+import { GetServerSideProps } from 'next'
 
-const Home = ({ page }) => {
+const Home = ({ data }) => {
 
-	const { title, headline } = page ? page.data[0] : null;
+	console.log(data);
+	const { headline } = data ? data.data[0] : null;
 
 	const { locale } = useRouter();  
 	const { word } = useTypingText(['Testing', 'To See', 'If This', 'works'], 250, 20);
@@ -127,12 +128,7 @@ export const getServerSideProps: GetServerSideProps = async ({ locale, context }
 	const res = await fetch(url);
 	const data = await res.json();
 
-	return {
-	  props: {
-		  page: data
-	  },
-	  revalidate: 10, // In seconds
-	};
+	return { props: { data } };
   };
 
 export default Home; 
