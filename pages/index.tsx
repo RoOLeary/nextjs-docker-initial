@@ -29,7 +29,7 @@ import { GetStaticProps } from 'next'
 
 const Home = ({ page }) => {
 
-	const { title, headline } = page.data[0];
+	const { title, headline } = page ? page.data[0] : null;
 
 	const { locale } = useRouter();  
 	const { word } = useTypingText(['Testing', 'To See', 'If This', 'works'], 250, 20);
@@ -41,9 +41,10 @@ const Home = ({ page }) => {
     const y5 = useTransform(scrollY, [0, 400], [0, -250]);
     const x1 = useTransform(scrollY, [500, 0], [-250, 0]);
     const x2 = useTransform(scrollY, [750, 0], [150, 0]);
-	// console.log(page.data[0].blocks);
-
-	const dummyText = `Man, that guy is the Red Grin Grumbold of pretending he knows what's going on. Oh you agree huh? You like that Red Grin Grumbold reference? Well guess what, I made him up. You really are your father's children. Think for yourselves, don't be sheep.`;
+	
+	const dummyText = `Man, that guy is the Red Grin Grumbold of pretending he knows what's going on. 
+					Oh you agree huh? You like that Red Grin Grumbold reference? Well guess what, I made him up. You really are your father's children. 
+					Think for yourselves, don't be sheep.`;
 	
 	return (
 		<>
@@ -100,7 +101,7 @@ const Home = ({ page }) => {
 				</div>
 			</section>
 			<Products heading={'Products'} productsintro={'blah blah blah'} products={products} />
-			{/* <Test color="primary"/> */}
+			
 			<Text heading={'Text Block Here'} column={dummyText} />
 			<USPs />
 			
@@ -111,17 +112,17 @@ const Home = ({ page }) => {
 }
 
 
-export const getStaticProps: GetStaticProps = async (params) => {
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   
-	let loc = params.locale;
+	console.log(locale)
 	let url; 
-	if(loc == 'nl'){
-		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${loc}/startpagina.json`;
+	if(locale == "nl"){
+		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/startpagina.json`;
 	} else {
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/homepage.json`;
 	}
 	
-	console.log(url);
+	// console.log(url);
 
 	const res = await fetch(url);
 	const data = await res.json();

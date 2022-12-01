@@ -33,7 +33,7 @@ interface IParams extends ParsedUrlQuery {
 
 export async function getStaticPaths(params) {
     // Call an external API endpoint to get posts
-    console.log(params);
+    // console.log(params);
 	  const url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`;
    
     const res = await fetch(url);
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview =
 
     let url;
     if(locale == 'nl'){
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes/${params.slug}.json`;
+      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/recipes/${params.slug}.json`;
     } else {
       url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`;
     }
@@ -64,13 +64,13 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview =
     let prevData; 
 
     if(preview){
-        // console.log('previewData', previewData)    
+       
         const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes/${params.slug}.json?token=${previewData['token']}`);
         prevData = await prevResponse.json();
         
     } 
 
-    let page = preview ? prevData : post;
+    let page = preview ? previewData : post;
 
     return {
         props: {

@@ -4,7 +4,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"lint": "next build",
-		"start": "serve out"
+		"start": "next start"
 	},
 	"dependencies": {
 		"framer-motion": "^7.6.6",

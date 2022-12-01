@@ -9,8 +9,11 @@ import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next'
 
 export default function Recipies(props) {
-    const recipeList = props.page.data;
+    
+    const recipeList = props.page.data ? props.page.data : null
+
     const { locale } = useRouter();
+
     return(
         <>
             <Head>
@@ -39,12 +42,12 @@ export default function Recipies(props) {
                     <div className="o-wrapper">
                         <div className="c-content">
                             <div className={'Recipies'}>
-                                <p>Recipies {locale ? `locale: ${locale}` : ''}</p>
+                                <p>Recipies {locale && `locale: ${locale}`}</p>
                                 <ul className={'b-products__list o-grid o-grid--gap-m'}>
-                                {recipeList && recipeList.map((recipe, i) => {
+                                {recipeList ? recipeList.map((recipe, i) => {
                                     // console.log(recipe)
                                     return( <Recipe recipe={recipe} key={i} /> );  
-                                })}
+                                }) : null}
                                 </ul>            
                             </div>
                         </div>
@@ -55,11 +58,11 @@ export default function Recipies(props) {
     )
 }
 
-export const getStaticProps: GetStaticProps = async (params) => {
-    // console.log(params.locale);
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+   
     let url;
-	if(params.locale == 'nl'){
-		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${params.locale}/recipes.json`;
+	if(locale == "nl"){
+		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes.json`;
 	} else {
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`;
 	}
