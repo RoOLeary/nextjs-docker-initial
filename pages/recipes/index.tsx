@@ -7,7 +7,6 @@ import StaticHeader from '../../components/StaticHeader';
 import Recipe from '../../components/Recipes/Recipe';
 import { useRouter } from 'next/router'; 
 import { GetStaticProps } from 'next'
-import { ParsedUrlQuery } from 'querystring'
 
 export default function Recipies(props) {
     const recipeList = props.page.data;
@@ -55,12 +54,6 @@ export default function Recipies(props) {
             </MainLayout>
         </>
     )
-}
-
-
-
-interface IParams extends ParsedUrlQuery {
-    slug: string
 }
 
 export const getStaticProps: GetStaticProps = async (params) => {
