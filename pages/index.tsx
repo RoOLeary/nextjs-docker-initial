@@ -25,7 +25,7 @@ import imageLoader from './../imageLoader';
 import Image from 'next/image';
 import { products } from './../lib/utils';
 import { useRouter } from 'next/router'
-import { GetStaticProps } from 'next'
+import { GetStaticProps, GetServerSideProps } from 'next'
 
 const Home = ({ page }) => {
 
@@ -112,7 +112,7 @@ const Home = ({ page }) => {
 }
 
 
-export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
   
 	console.log(locale)
 	let url; 

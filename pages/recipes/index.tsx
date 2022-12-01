@@ -6,7 +6,8 @@ import MainLayout from '../../components/Globals/Layouts/MainLayout';
 import StaticHeader from '../../components/StaticHeader';
 import Recipe from '../../components/Recipes/Recipe';
 import { useRouter } from 'next/router'; 
-import { GetStaticProps } from 'next'
+import { GetStaticProps, GetServerSideProps } from 'next'
+import { ParsedUrlQuery } from 'querystring'
 
 export default function Recipies(props) {
     
@@ -58,8 +59,8 @@ export default function Recipies(props) {
     )
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
-    // console.log('params', params);
+export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
+    console.log(context);
     let url;
 	if(locale == "nl"){
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes.json`;
@@ -73,6 +74,6 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
       props: {
           page: data
       },
-      revalidate: 10
+    //   revalidate: 10
     };
   };
