@@ -40,7 +40,7 @@ export default function Recipies(props) {
                     <div className="o-wrapper">
                         <div className="c-content">
                             <div className={'Recipies'}>
-                                <p>Recipies </p>
+                                <p>Recipies {locale ? `locale: ${locale}` : ''}</p>
                                 <ul className={'b-products__list o-grid o-grid--gap-m'}>
                                 {recipeList && recipeList.map((recipe, i) => {
                                     // console.log(recipe)

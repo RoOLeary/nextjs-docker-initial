@@ -1,14 +1,18 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 import PageBlocks from '../components/PageBlocks'
 import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 
 const About = ({ page, preview }:any) => {
 
+  const {locale } = useRouter();
+  console.log(locale);
   const { title } = page;
   const content = page.pageBlocks;
   return(
     <MainLayout>
       {preview ? <h1>In Preview Mode</h1> : null}
+      <p>About {locale ? `locale: ${locale}` : ''}</p>
       <PageBlocks content={content} />
     </MainLayout>
   )
