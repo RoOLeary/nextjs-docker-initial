@@ -55,7 +55,8 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview =
 
     let url;
     if(locale == 'nl'){
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/recipes/${params.slug}.json`;
+        // console.log('NL');
+        url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/recipes/${params.slug}.json`;
     } else {
       url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`;
     }

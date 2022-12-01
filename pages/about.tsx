@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 const About = ({ page, preview }:any) => {
 
   const { locale } = useRouter(); 
+  console.log(locale);
   const content = page.pageBlocks ? page.pageBlocks : null
   return(
     <MainLayout>
