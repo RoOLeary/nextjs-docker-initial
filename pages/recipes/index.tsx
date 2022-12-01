@@ -12,7 +12,7 @@ import { ParsedUrlQuery } from 'querystring'
 export default function Recipies(props) {
     const recipeList = props.page.data;
     const { locale } = useRouter(); 
- 
+    console.log(locale);
     return(
         <>
             <Head>
