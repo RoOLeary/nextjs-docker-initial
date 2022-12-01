@@ -10,7 +10,7 @@ import { GetStaticProps } from 'next'
 
 export default function Recipies(props) {
     
-    const recipeList = props.page.data ? props.page.data : null
+    let recipeList  = props.page.data ? props.page.data : null
 
     const { locale } = useRouter();
 
