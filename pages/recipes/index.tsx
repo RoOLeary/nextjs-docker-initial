@@ -12,7 +12,7 @@ import { ParsedUrlQuery } from 'querystring'
 export default function Recipies(props) {
     const recipeList = props.page.data;
     const { locale } = useRouter(); 
-    // console.log(locale);
+ 
     return(
         <>
             <Head>
@@ -63,10 +63,15 @@ interface IParams extends ParsedUrlQuery {
     slug: string
 }
 
-export const getStaticProps: GetStaticProps = async ({ preview = false, previewData }) => {
+export const getStaticProps: GetStaticProps = async (params) => {
   
-    
-    const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`);
+    let url;
+	if(params.locale == 'nl'){
+		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${params.locale}/recipes.json`;
+	} else {
+		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`;
+	}
+    const res = await fetch(url);
     const data = await res.json();
   
     // console.log(data);

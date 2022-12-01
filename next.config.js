@@ -11,10 +11,6 @@ module.exports = withPWA({
     defaultLocale: 'en',
     domains: [
       {
-        domain: 'localhost:3000',
-        defaultLocale: 'en',
-      },
-      {
         // Note: subdomains must be included in the domain value to be matched
         // e.g. www.example.com should be used if that is the expected hostname
         domain: 'localhost:3000/nl',
