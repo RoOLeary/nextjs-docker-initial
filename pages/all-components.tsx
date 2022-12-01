@@ -36,11 +36,11 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false, 
     let prevData;
 
 
-    if(preview){
-        // const previewData = context.previewData;
-        const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/all-components.json?token=${previewData['token']}`);
-        prevData = await prevResponse.json()
-	}
+    // if(preview){
+    //     // const previewData = context.previewData;
+    //     const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/all-components.json?token=${previewData['token']}`);
+    //     prevData = await prevResponse.json()
+	// }
 	
 
     let page = preview ? prevData : data;

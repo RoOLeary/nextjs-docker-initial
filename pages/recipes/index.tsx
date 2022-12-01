@@ -61,7 +61,7 @@ export default function Recipies(props) {
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
    
     let url;
-	if(locale == "nl"){
+	if(locale != "en"){
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes.json`;
 	} else {
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json`;

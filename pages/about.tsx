@@ -10,7 +10,7 @@ const About = ({ page, preview }:any) => {
   return(
     <MainLayout>
       {preview && <h1>In Preview Mode</h1>}
-      <PageBlocks content={content} />
+      {content ? <PageBlocks content={content} /> : <h1>Loading</h1>}
     </MainLayout>
   )
 }
@@ -23,11 +23,11 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false, 
   const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`);
   const data = await res.json();
 
-  let prevData;
-  if(preview && previewData){
-    const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
-    prevData = await prevResponse.json()
-  } 
+  // let prevData;
+  // if(preview && previewData){
+  //   const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
+  //   prevData = await prevResponse.json()
+  // } 
   let page = preview ? previewData : data;
 
 
