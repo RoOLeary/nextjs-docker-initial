@@ -4,7 +4,7 @@ const runtimeCaching = require('next-pwa/cache');
 // })
 module.exports = {
   reactStrictMode: true,
-  trailingSlash: true,
+  trailingSlash: false,
   distDir: '/build',
   i18n: {
     locales: ['en', 'nl'],
@@ -42,7 +42,7 @@ module.exports = {
       ) {
           return {
           '/': { page: '/' },
-          '/about': { page: '/about' },
+          '/about': { page: '/en/about' },
           '/nl/about': { page: '/nl/about'},
           '/all-components': { page: '/all-components'},
           '/recipes': { page: '/recipes'},

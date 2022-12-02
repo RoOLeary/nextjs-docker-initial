@@ -1,6 +1,6 @@
 import MainLayout from '../components/Globals/Layouts/MainLayout'
 import PageBlocks from '../components/PageBlocks'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
 const About = ({ page, preview }:any) => {
@@ -21,31 +21,29 @@ const About = ({ page, preview }:any) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
-// export const getStaticProps: GetStaticProps = async ({ locale,  preview = false, previewData }) => {
+// export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
+export const getStaticProps: GetStaticProps = async ({ locale,  preview = false, previewData }) => {
   
-  let url;  
-  if(locale == 'nl'){
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/pages/over-picnic.json`;
-  } else {
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`;
-  }
+  // let url;  
+  // if(locale == 'nl'){
+  //     const res = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/pages/over-picnic.json`;
+  // } else {
+  let url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`;
   
- 
   const res = await fetch(url);
   const data = await res.json();
 
   let prevData;
-  if(context.preview && context.previewData){
-    const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${context.previewData['token']}`);
+  if(preview && previewData){
+    const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
     prevData = await prevResponse.json()
   } 
-  let page = context.preview ? prevData : data;
+  let page = preview ? prevData : data;
 
 
   return {
 	props: {
-		preview: context.preview ? true : false,
+		preview: preview ? true : false,
 		page: page
 	},
 	revalidate: 10, // In seconds
