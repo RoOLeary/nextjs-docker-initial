@@ -1,7 +1,7 @@
 import Head from "next/head"
 import PageBlocks from "../components/PageBlocks"
 import MainLayout from "../components/Globals/Layouts/MainLayout"
-import { GetStaticProps } from "next";
+import { GetStaticProps, GetServerSideProps } from "next";
 import { useTypingText } from "../hooks/useTypingText";
 import { useRouter } from "next/router";
 
@@ -27,13 +27,14 @@ const AllComponents = ({ page, preview }:any) => {
 }
 
 
-export const getStaticProps: GetStaticProps = async ({ locale, preview = false, previewData }) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     
 	const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/all-components.json`);
     const data = await res.json();
 
+	console.log(data); 
     // const preview = context.preview;
-    let prevData;
+    // let prevData;
 
 
     // if(preview){
@@ -47,7 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, preview = false, 
 
     return {
 		props: {
-			preview: preview ? true : false,
+			preview: context.preview ? true : false,
 			page: data
 		},
 		revalidate: 10, // In seconds
