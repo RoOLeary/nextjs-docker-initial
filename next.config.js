@@ -36,19 +36,18 @@ module.exports = {
     ]
   },
 
-  exportPathMap: async function (
-        defaultPathMap,
-          { dev, dir, outDir, distDir, buildId }
-      ) {
-          return {
-          '/': { page: '/' },
-          '/about': { page: '/en/about' },
-          '/nl/about': { page: '/nl/about'},
-          '/all-components': { page: '/all-components'},
-          '/recipes': { page: '/recipes'},
-          '/nl/recipes': { page: '/nl/recipes'}
-          }
-      },
+  // exportPathMap: async function (
+  //       defaultPathMap,
+  //         { dev, dir, outDir, distDir, buildId }
+  //     ) {
+  //         return {
+  //         '/': { page: '/' },
+  //         '/about': { page: '/en/about' },
+  //         '/all-components': { page: '/all-components'},
+  //         '/recipes': { page: '/recipes'},
+  //         '/nl/recipes': { page: '/nl/recipes'}
+  //         }
+  //     },
 };
 
 

@@ -23,12 +23,13 @@ const About = ({ page, preview }:any) => {
 
 // export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
 export const getStaticProps: GetStaticProps = async ({ locale,  preview = false, previewData }) => {
-  
-  // let url;  
-  // if(locale == 'nl'){
-  //     const res = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/pages/over-picnic.json`;
-  // } else {
-  let url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`;
+  console.log(locale);
+  let url;  
+  if(locale == 'nl'){
+      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/pages/over-picnic.json`;
+  } else {
+      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`;
+  }
   
   const res = await fetch(url);
   const data = await res.json();
