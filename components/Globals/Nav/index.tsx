@@ -114,7 +114,7 @@ const Nav = (): JSX.Element => {
                             </Link>
                         </li>
                     ))}
-                    <Link href={`/${router.locale === 'nl' ? 'en' : 'nl' }`} locale={router.locale === 'nl' ? 'en' : 'nl'}>{router.locale === 'nl' ? '🇩🇪' : '🇳🇱'}</Link>
+                    <Link href={`/${router.locale === 'nl' ? 'en' : 'nl' }`} locale={router.locale === 'nl' ? 'en' : 'nl'}>{router.locale === 'nl' ? '🇬🇧' : '🇳🇱'}</Link>
                 </ul>
                 </LayoutGroup>
             </div>

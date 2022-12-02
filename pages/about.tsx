@@ -8,9 +8,9 @@ const About = ({ page, preview }:any) => {
   const router = useRouter();
   const content = page.pageBlocks;
 
-  if (!router.isFallback && !content) {
-    return <h1>404</h1>
-  }
+  // if (!router.isFallback && !content) {
+  //   return <h1>404</h1>
+  // }
 
   return(
     <MainLayout>
@@ -24,14 +24,14 @@ const About = ({ page, preview }:any) => {
 // export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
 export const getStaticProps: GetStaticProps = async ({ locale,  preview = false, previewData }) => {
   // console.log(locale);
-  let url;  
+  let slug;  
   if(locale == 'nl'){
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/pages/over-picnic.json`;
+      slug = `over-picnic`;
   } else {
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json`;
+      slug = `about`;
   }
   
-  const res = await fetch(url);
+  const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/pages/${slug}.json`);
   const data = await res.json();
 
   let prevData;
