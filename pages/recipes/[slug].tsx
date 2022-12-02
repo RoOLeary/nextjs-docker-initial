@@ -50,15 +50,17 @@ export async function getStaticPaths(params) {
   
 export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false, previewData }) => {
     
+    // console.log(locale);
+    // console.log('locale', locale);
+
     let url;
     if(locale == 'nl'){
-        url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes/${params.slug}.json`;
+      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/recipes/${params.slug}.json`;
     } else {
-        url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`;
+      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`;
     }
-    console.log(url);
     const res = await fetch(url)
-    const post = await res.json();
+    const post = await res.json()
     let prevData; 
 
     if(preview){
