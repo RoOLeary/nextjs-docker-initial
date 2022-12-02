@@ -29,7 +29,7 @@ import { GetServerSideProps } from 'next'
 
 const Home = ({ data }) => {
 
-	console.log(data);
+	
 	const { headline } = data ? data.data[0] : null;
 
 	const { locale } = useRouter();  
