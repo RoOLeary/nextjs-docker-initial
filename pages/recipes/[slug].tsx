@@ -50,11 +50,6 @@ export async function getStaticPaths(params) {
   
 export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false, previewData }) => {
     
-    // console.log(locale);
-    // console.log('locale', locale);
-    console.log('recipe', locale);
-  
-
     let url;
     if(locale == 'nl'){
         url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes/${params.slug}.json`;

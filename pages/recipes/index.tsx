@@ -60,7 +60,7 @@ export default function Recipies(props) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
-    console.log(context);
+    
     let url;
 	if(locale == "nl"){
 		url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes.json`;
