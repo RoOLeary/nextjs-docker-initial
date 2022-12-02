@@ -22,25 +22,23 @@ const About = ({ page, preview }:any) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
-// export const getStaticProps: GetStaticProps = async ({ locale,  preview = false, previewData }) => {
+// export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false, previewData }) => {
   
-  
-  
-  const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/pages/${context.query.slug}.json`);
+  const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/pages/about.json`);
   const data = await res.json();
 
-  let prevData;
-  if(context.preview && context.previewData){
-    const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${context.previewData['token']}`);
-    prevData = await prevResponse.json()
-  } 
-  let page = context.preview ? prevData : data;
+  // let prevData;
+  // if(preview && previewData){
+  //   const prevResponse = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/pages/about.json?token=${previewData['token']}`);
+  //   prevData = await prevResponse.json()
+  // } 
+  // let page = preview ? prevData : data;
 
 
   return {
 	props: {
-		preview: context.preview ? true : false,
-		page: page
+		// preview: preview ? true : false,
+		page: data
 	},
 	revalidate: 10, // In seconds
   };

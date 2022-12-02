@@ -42,7 +42,7 @@ module.exports = {
       ) {
           return {
           '/': { page: '/' },
-          '/about': { page: '/en/about' },
+          '/about': { page: '/about' },
           '/all-components': { page: '/all-components'},
           '/recipes': { page: '/recipes'},
           '/nl/recipes': { page: '/nl/recipes'}

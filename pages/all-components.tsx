@@ -29,8 +29,8 @@ const AllComponents = ({ page, preview }:any) => {
 
 export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false, previewData }) => {
     
-	// console.log(params)
-	const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/pages/all-components.json`);
+	
+	const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/en/pages/all-components.json`);
     const data = await res.json();
 
 	// console.log(data); 
