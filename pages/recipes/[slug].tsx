@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 
 const Recipe = ({ page, preview }:any) => {
     
+    
   return(
     <MainLayout>
         {preview ? <h1>In Preview Mode</h1> : null}
@@ -27,11 +28,11 @@ interface IParams extends ParsedUrlQuery {
     slug: string
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({locales}) {
     // Call an external API endpoint to get posts
-    // console.log(params);
+    console.log(locales);
 	
-    const res = await fetch('https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes.json');
+    const res = await fetch('https://servd-test-staging.cl-eu-west-3.servd.dev/api/en/recipes.json');
     const posts = await res.json()
     // Get the paths we want to pre-render based on posts
     const paths = posts && posts.data.map((post) => ({
@@ -48,12 +49,8 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview =
     // console.log(locale);
     // console.log('locale', locale);
 
-    let url;
-    if(locale == 'nl'){
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/recipes/${params.slug}.json`;
-    } else {
-      url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/recipes/${params.slug}.json`;
-    }
+    let url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/recipes/${params.slug}.json`;
+    
     const res = await fetch(url)
     const page = await res.json()
     let prevData; 
