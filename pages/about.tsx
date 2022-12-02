@@ -15,7 +15,7 @@ const About = ({ page, preview }:any) => {
   return(
     <MainLayout>
       {preview ? <h1>In Preview Mode</h1> : null}
-      <p>About {router.locale ? `locale: ${router.locale}` : ''}</p>
+      {/* <p>About {router.locale ? `locale: ${router.locale}` : ''}</p> */}
       <PageBlocks content={content} />
     </MainLayout>
   )
@@ -23,7 +23,7 @@ const About = ({ page, preview }:any) => {
 
 // export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
 export const getStaticProps: GetStaticProps = async ({ locale,  preview = false, previewData }) => {
-  console.log(locale);
+  // console.log(locale);
   let url;  
   if(locale == 'nl'){
       url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/nl/pages/over-picnic.json`;
