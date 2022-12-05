@@ -6,11 +6,11 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: false,
   distDir: '/build',
-  // i18n: {
-  //   locales: ['en', 'nl'],
-  //   defaultLocale: 'en',
-  //   localeDetection: false
-  // },
+  i18n: {
+    locales: ['en', 'nl'],
+    defaultLocale: 'en',
+    localeDetection: false
+  },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
