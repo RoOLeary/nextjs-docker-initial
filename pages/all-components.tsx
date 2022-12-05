@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 const AllComponents = ({ page, preview }:any) => {
 	
-	let content = page ? page.pageBlocks : "";
+	let content = page ? page.pageBlocks : [];
 	const { locale } = useRouter();
 
 	return (
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params, preview =
 
     return {
 		props: {
-			preview: preview ? true : false,
+			// preview: preview ? true : false,
 			page: data
 		},
 		revalidate: 10, // In seconds

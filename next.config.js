@@ -6,11 +6,11 @@ module.exports = {
   reactStrictMode: true,
   trailingSlash: false,
   distDir: '/build',
-  i18n: {
-    locales: ['en', 'nl'],
-    defaultLocale: 'en',
-    localeDetection: false
-  },
+  // i18n: {
+  //   locales: ['en', 'nl'],
+  //   defaultLocale: 'en',
+  //   localeDetection: false
+  // },
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
@@ -43,9 +43,11 @@ module.exports = {
           return {
           '/': { page: '/' },
           '/about': { page: '/about' },
+          '/nl/about': { page: '/nl/about' },
           '/all-components': { page: '/all-components'},
+          '/nl/all-components': { page: '/all-components'},
           '/recipes': { page: '/recipes'},
-          '/nl/recipes': { page: '/nl/recipes'}
+          '/nl/recipes': { page: '/recipes'}
           }
       },
 };
