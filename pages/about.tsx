@@ -23,9 +23,15 @@ const About = ({ page, preview }:any) => {
 
 // export const getServerSideProps: GetServerSideProps = async ({ locale, context }:any) => {
 export const getStaticProps: GetStaticProps = async ({ locale, params, preview = false, previewData }) => {
-  
-  console.log(params);
-  const res = await fetch(`https://servd-test-staging.cl-eu-west-3.servd.dev/api/en/pages/about.json`);
+
+  let url; 
+  if(locale == 'nl'){
+    url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/pages/over-picnic.json`;
+  } else {
+    url = `https://servd-test-staging.cl-eu-west-3.servd.dev/api/${locale}/pages/about.json`; 
+  }
+
+  const res = await fetch(url);
   const data = await res.json();
 
   let prevData;
